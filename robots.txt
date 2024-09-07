@@ -1,0 +1,6 @@
+user-agent: *
+Disallow: /about/
+Disallow: /categories/
+Disallow: /tags/
+Crawl-delay: 120
+Sitemap: https://hpcesia.github.io/sitemap.xml
