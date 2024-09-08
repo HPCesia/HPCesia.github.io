@@ -668,6 +668,146 @@ div.timenode .meta:after</span>
       </tags>
   </entry>
   <entry>
+    <title>Hexo 博客搜索引擎收录与 SEO 优化个人经验</title>
+    <url>/posts/2024/1f77b1be/</url>
+    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><p>测试</p></div></details>
+<div class="timeline"><span class="timeline-title">更新日志</span><div class="timenode"><div class="meta"><p>2024-09-04</p></div><div class="body"><p>新增「添加 nofollow 标签」相关内容。</p></div></div>
+<div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>发布文章。</p></div></div></div>
+<p>以下以 Bing 为例进行说明。</p>
+<h1 id="在-Bing-Webmaster-Tools-中登录并添加网站">在 Bing Webmaster Tools 中登录并添加网站</h1>
+<p><a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a> 是必应的网站管理员工具，可以添加个人网站并带进行一些网站操作。打开 <a href="https://www.bing.com/webmasters">Webmaster</a> 后点击「开始」或右上角「登录」以登录到官网。可以选择三种登录账号：Google、Microsoft、Facebook。<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825132253.png" alt="Bing Webmaster Tools 界面" loading="lazy"><br>
+初次登录会提示添加网站，有两种添加方式：从 GSC 导入、手动添加。如果网站已通过 GSC 收录，可以直接用 GSC，我选择手动添加。然后在右侧的输入框中输入网站URL即可。<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825131823.png" alt="添加网站界面" loading="lazy"><br>
+然后会要求验证网站。</p>
+<h1 id="验证网站">验证网站</h1>
+<p>验证网站有多种方式，我选择的是下载 <code>BingSiteAuth.xml</code> 文件进行验证。</p>
+<p>Webmaster 会要求你将这个文件放到网站的根目录，我们只需要将下载下来的 <code>BingSiteAuth.xml</code> 文件放到我们博客的 <code>source</code> 目录下，使用 <code>hexo d -g</code> 生成并推送到 Github 上即可，可以访问网站根目录下找到 <code>BingSiteAuth.xml</code>。</p>
+<p>然后在 Webmaster 页面中点击验证即可。</p>
+<h1 id="添加网站地图">添加网站地图</h1>
+<p>在博客根目录下打开终端，输入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>并在 <code>_config.yaml</code> 中新增如下配置项：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Sitemap Generator</span>
+<span class="token key atrule">sitemap</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> sitemap.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>接着使用 <code>hexo d -g</code> 生成并推送到 Github 上。在 Webmaster 左侧边栏选择「网站地图」选项<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152134.png" alt="侧边栏" loading="lazy"><br>
+然后点击右上角的「提交网站地图」按钮，输入你的网站的 <code>sitemap.xml</code> 位置。按照上述配置方法，我输入的是 <code>https://hpcesia.github.io/sitemap.xml</code>。等待一段时间后，网站地图就会审核成功，如图所示：<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152551.png" alt="网站地图添加成功样例" loading="lazy"></p>
+<p>等待 48 小时审核后，就可以在搜索引擎上搜索到自己的博客了。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002700.png" alt="审核通过样式" loading="lazy"></p>
+<h1 id="编制-URL">编制 URL</h1>
+<p>审核通过后，可能还是搜不到自己的博客，这时候就需要打开左侧边栏的「URL 检查」界面</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002900.png" alt="20240829002900" loading="lazy"></p>
+<p>输入自己的博客主页链接检查 URL，如果提示「已发现但未爬网，该 URL 无法在必应上显示」，先确认自己博客没有问题，然后选择「请求编制索引」即可，等待一段时间应该就好了。如果一直不进行索引，可以去联系客服处理。</p>
+<h1 id="Github-Action-自动提交-URL">Github Action 自动提交 URL</h1>
+<p>如果博客更新较勤，可以使用 <a href="https://github.com/Lete114/Hexo-SEO-AutoPush"><code>Hexo-SEO-AutoPush</code></a> 插件来配置 Github Action 以定期推送 URL 到搜索引擎上，提高爬虫抓取几率。</p>
+<h2 id="安装">安装</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-seo-autopush <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="配置文件">配置文件</h2>
+<p>在博客根目录下的 <code>_config.yml</code> 配置文件中添加以下内容：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable: 开启/关闭 推送</span>
+<span class="token comment"># cron: 执行时间周期</span>
+<span class="token comment"># deployBranch: 部署分支</span>
+<span class="token comment"># count: 每次提交最新的10篇文章，输入0或者不填写则默认为所有文章(建议是最新的10篇文章)</span>
+<span class="token comment"># date: 更新时间(updated)|创建日期(created)</span>
+<span class="token comment"># https://github.com/Lete114/hexo-seo-autopush.git</span>
+<span class="token key atrule">hexo_seo_autopush</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cron</span><span class="token punctuation">:</span> 0 4 * * *
+  <span class="token key atrule">deployBranch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">baidu</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
+    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">bing</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
+    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">google</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
+    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于生成的 actions 是在<code>.github/workflows/HexoSeoAutoPush.yml</code>，<code>.</code> 开头的文件或文件夹都会被视为隐藏文件，<code>hexo-deployer-git</code> 不会部署隐藏文件，所以需要新增配置项 <code>ignore_hidden</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span>
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>HPCesia/HPCesia.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+  <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 忽略隐藏文件及文件夹(目录)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="APIKEY-设置">APIKEY 设置</h2>
+<p>打开博客部署的 Github 仓库的「Setting」选项卡：</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031826526.webp" alt="选项卡" loading="lazy"></p>
+<p>在侧边栏找到「Secrets and variables」选项，点开其中的「Actions」选项：</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031827356.webp" alt="" loading="lazy"></p>
+<p>然后点击「New repository secret」：</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031829068.webp" alt="" loading="lazy"></p>
+<p>在「Name」和「Secret」处分别填写下方表格中的内容：</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baidu_token</td>
+<td>UlxxxxxxxxxxxxxB9</td>
+<td>【必填】Value 输入百度的 token</td>
+</tr>
+<tr>
+<td>bing_apikey</td>
+<td>47xxxxxxxxxxxxx91</td>
+<td>【必填】Value 输入必应的 apikey</td>
+</tr>
+<tr>
+<td>google_private_key</td>
+<td>xxxxxxxxxxxxxxxxx</td>
+<td>【必填】Value 输入谷歌的 private_key （注意：填写的时候需要使用<strong>双引号</strong>包起来，如: <code>&quot;private_key&quot;</code>）</td>
+</tr>
+<tr>
+<td>google_client_email</td>
+<td>xxxxxxxxxxxxxxxxx</td>
+<td>【必填】Value 输入谷歌的 client_email</td>
+</tr>
+</tbody>
+</table>
+<p>后续跟随<a href="https://github.com/Lete114/Hexo-SEO-AutoPush?tab=readme-ov-file#baidu-key">插件说明</a>操作即可。</p>
+<h1 id="添加-nofollow-标签">添加 nofollow 标签</h1>
+<p><code>hexo-filter-nofollow</code> 插件可以自动化地为博客中的外链添加 <code>nofollow</code> 标签。</p>
+<p>输入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-filter-nofollow <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装 <code>hexo-filter-nofollow</code> 插件，然后在 <code>_config.yml</code> 中添加配置项：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable - 是否启用插件，默认值为 true</span>
+<span class="token comment"># field - 插件的处理范围，默认值为 site，可选 post 或 site</span>
+<span class="token comment"># post - 仅处理文章内容</span>
+<span class="token comment"># site - 处理全站所有页面</span>
+<span class="token comment"># exclude - 域名白名单，不同的子域名视为不同的域名（如 www）</span>
+<span class="token comment"># exclude1.com不包括 www.exclude1.com 或 en.exclude1.com</span>
+<span class="token key atrule">nofollow</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> site
+  <span class="token key atrule">exclude</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">'exclude1.com'</span>
+    <span class="token punctuation">-</span> <span class="token string">'exclude2.com'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code> 三连即可。</p>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/RainbowC0/p/18107581">将 Github Pages 个人博客录入搜索引擎（以 Bing 为例） - RainbowC0 - 博客园</a></li>
+<li><a href="https://lengnian.github.io/posts/7cddb87d/">Hexo+GitHub Pages搭建的个人博客加入到Bing搜索引擎 | WeiSJ&amp;HEXO </a></li>
+<li><a href="https://www.ehcoo.com/seo.html">【搜索优化】Hexo-next百度和谷歌搜索优化 | Ehcoo</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>小屋相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Fluid 主题无侵入改造记录</title>
     <url>/posts/2024/a06e351a/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-07</p></div><div class="body"><p>更新主题更换提醒。</p></div></div><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>规范了更新日志格式。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-27</p></div><div class="body"><p>新增「文章时效性显示」、「随机文章跳转」与「代码块美化」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>新增「顶部阅读进度条」与「建站时间显示」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
@@ -993,222 +1133,6 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
       </tags>
   </entry>
   <entry>
-    <title>Hexo 博客搜索引擎收录与 SEO 优化个人经验</title>
-    <url>/posts/2024/1f77b1be/</url>
-    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><p>测试</p></div></details>
-<div class="timeline"><span class="timeline-title">更新日志</span><div class="timenode"><div class="meta"><p>2024-09-04</p></div><div class="body"><p>新增「添加 nofollow 标签」相关内容。</p></div></div>
-<div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>发布文章。</p></div></div></div>
-<p>以下以 Bing 为例进行说明。</p>
-<h1 id="在-Bing-Webmaster-Tools-中登录并添加网站">在 Bing Webmaster Tools 中登录并添加网站</h1>
-<p><a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a> 是必应的网站管理员工具，可以添加个人网站并带进行一些网站操作。打开 <a href="https://www.bing.com/webmasters">Webmaster</a> 后点击「开始」或右上角「登录」以登录到官网。可以选择三种登录账号：Google、Microsoft、Facebook。<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825132253.png" alt="Bing Webmaster Tools 界面" loading="lazy"><br>
-初次登录会提示添加网站，有两种添加方式：从 GSC 导入、手动添加。如果网站已通过 GSC 收录，可以直接用 GSC，我选择手动添加。然后在右侧的输入框中输入网站URL即可。<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825131823.png" alt="添加网站界面" loading="lazy"><br>
-然后会要求验证网站。</p>
-<h1 id="验证网站">验证网站</h1>
-<p>验证网站有多种方式，我选择的是下载 <code>BingSiteAuth.xml</code> 文件进行验证。</p>
-<p>Webmaster 会要求你将这个文件放到网站的根目录，我们只需要将下载下来的 <code>BingSiteAuth.xml</code> 文件放到我们博客的 <code>source</code> 目录下，使用 <code>hexo d -g</code> 生成并推送到 Github 上即可，可以访问网站根目录下找到 <code>BingSiteAuth.xml</code>。</p>
-<p>然后在 Webmaster 页面中点击验证即可。</p>
-<h1 id="添加网站地图">添加网站地图</h1>
-<p>在博客根目录下打开终端，输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>并在 <code>_config.yaml</code> 中新增如下配置项：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Sitemap Generator</span>
-<span class="token key atrule">sitemap</span><span class="token punctuation">:</span>
-  <span class="token key atrule">path</span><span class="token punctuation">:</span> sitemap.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>接着使用 <code>hexo d -g</code> 生成并推送到 Github 上。在 Webmaster 左侧边栏选择「网站地图」选项<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152134.png" alt="侧边栏" loading="lazy"><br>
-然后点击右上角的「提交网站地图」按钮，输入你的网站的 <code>sitemap.xml</code> 位置。按照上述配置方法，我输入的是 <code>https://hpcesia.github.io/sitemap.xml</code>。等待一段时间后，网站地图就会审核成功，如图所示：<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152551.png" alt="网站地图添加成功样例" loading="lazy"></p>
-<p>等待 48 小时审核后，就可以在搜索引擎上搜索到自己的博客了。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002700.png" alt="审核通过样式" loading="lazy"></p>
-<h1 id="编制-URL">编制 URL</h1>
-<p>审核通过后，可能还是搜不到自己的博客，这时候就需要打开左侧边栏的「URL 检查」界面</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002900.png" alt="20240829002900" loading="lazy"></p>
-<p>输入自己的博客主页链接检查 URL，如果提示「已发现但未爬网，该 URL 无法在必应上显示」，先确认自己博客没有问题，然后选择「请求编制索引」即可，等待一段时间应该就好了。如果一直不进行索引，可以去联系客服处理。</p>
-<h1 id="Github-Action-自动提交-URL">Github Action 自动提交 URL</h1>
-<p>如果博客更新较勤，可以使用 <a href="https://github.com/Lete114/Hexo-SEO-AutoPush"><code>Hexo-SEO-AutoPush</code></a> 插件来配置 Github Action 以定期推送 URL 到搜索引擎上，提高爬虫抓取几率。</p>
-<h2 id="安装">安装</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-seo-autopush <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="配置文件">配置文件</h2>
-<p>在博客根目录下的 <code>_config.yml</code> 配置文件中添加以下内容：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable: 开启/关闭 推送</span>
-<span class="token comment"># cron: 执行时间周期</span>
-<span class="token comment"># deployBranch: 部署分支</span>
-<span class="token comment"># count: 每次提交最新的10篇文章，输入0或者不填写则默认为所有文章(建议是最新的10篇文章)</span>
-<span class="token comment"># date: 更新时间(updated)|创建日期(created)</span>
-<span class="token comment"># https://github.com/Lete114/hexo-seo-autopush.git</span>
-<span class="token key atrule">hexo_seo_autopush</span><span class="token punctuation">:</span>
-  <span class="token key atrule">cron</span><span class="token punctuation">:</span> 0 4 * * *
-  <span class="token key atrule">deployBranch</span><span class="token punctuation">:</span>
-  <span class="token key atrule">baidu</span><span class="token punctuation">:</span>
-    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
-    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
-  <span class="token key atrule">bing</span><span class="token punctuation">:</span>
-    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
-    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
-  <span class="token key atrule">google</span><span class="token punctuation">:</span>
-    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
-    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>由于生成的 actions 是在<code>.github/workflows/HexoSeoAutoPush.yml</code>，<code>.</code> 开头的文件或文件夹都会被视为隐藏文件，<code>hexo-deployer-git</code> 不会部署隐藏文件，所以需要新增配置项 <code>ignore_hidden</code></p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span>
-  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>HPCesia/HPCesia.github.io.git
-  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
-  <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 忽略隐藏文件及文件夹(目录)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="APIKEY-设置">APIKEY 设置</h2>
-<p>打开博客部署的 Github 仓库的「Setting」选项卡：</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031826526.webp" alt="选项卡" loading="lazy"></p>
-<p>在侧边栏找到「Secrets and variables」选项，点开其中的「Actions」选项：</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031827356.webp" alt="" loading="lazy"></p>
-<p>然后点击「New repository secret」：</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031829068.webp" alt="" loading="lazy"></p>
-<p>在「Name」和「Secret」处分别填写下方表格中的内容：</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>baidu_token</td>
-<td>UlxxxxxxxxxxxxxB9</td>
-<td>【必填】Value 输入百度的 token</td>
-</tr>
-<tr>
-<td>bing_apikey</td>
-<td>47xxxxxxxxxxxxx91</td>
-<td>【必填】Value 输入必应的 apikey</td>
-</tr>
-<tr>
-<td>google_private_key</td>
-<td>xxxxxxxxxxxxxxxxx</td>
-<td>【必填】Value 输入谷歌的 private_key （注意：填写的时候需要使用<strong>双引号</strong>包起来，如: <code>&quot;private_key&quot;</code>）</td>
-</tr>
-<tr>
-<td>google_client_email</td>
-<td>xxxxxxxxxxxxxxxxx</td>
-<td>【必填】Value 输入谷歌的 client_email</td>
-</tr>
-</tbody>
-</table>
-<p>后续跟随<a href="https://github.com/Lete114/Hexo-SEO-AutoPush?tab=readme-ov-file#baidu-key">插件说明</a>操作即可。</p>
-<h1 id="添加-nofollow-标签">添加 nofollow 标签</h1>
-<p><code>hexo-filter-nofollow</code> 插件可以自动化地为博客中的外链添加 <code>nofollow</code> 标签。</p>
-<p>输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-filter-nofollow <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>安装 <code>hexo-filter-nofollow</code> 插件，然后在 <code>_config.yml</code> 中添加配置项：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable - 是否启用插件，默认值为 true</span>
-<span class="token comment"># field - 插件的处理范围，默认值为 site，可选 post 或 site</span>
-<span class="token comment"># post - 仅处理文章内容</span>
-<span class="token comment"># site - 处理全站所有页面</span>
-<span class="token comment"># exclude - 域名白名单，不同的子域名视为不同的域名（如 www）</span>
-<span class="token comment"># exclude1.com不包括 www.exclude1.com 或 en.exclude1.com</span>
-<span class="token key atrule">nofollow</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">field</span><span class="token punctuation">:</span> site
-  <span class="token key atrule">exclude</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> <span class="token string">'exclude1.com'</span>
-    <span class="token punctuation">-</span> <span class="token string">'exclude2.com'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>使用 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code> 三连即可。</p>
-<h1 id="参考资料">参考资料</h1>
-<ul>
-<li><a href="https://www.cnblogs.com/RainbowC0/p/18107581">将 Github Pages 个人博客录入搜索引擎（以 Bing 为例） - RainbowC0 - 博客园</a></li>
-<li><a href="https://lengnian.github.io/posts/7cddb87d/">Hexo+GitHub Pages搭建的个人博客加入到Bing搜索引擎 | WeiSJ&amp;HEXO </a></li>
-<li><a href="https://www.ehcoo.com/seo.html">【搜索优化】Hexo-next百度和谷歌搜索优化 | Ehcoo</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>小屋相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>考研数据结构笔记 - KMP 算法</title>
-    <url>/posts/2024/fc617a15/</url>
-    <content><![CDATA[<div class="note info modern"><i class="solitude fas fa-info-circle"></i><p>本文基于考研 408 的 KMP 算法编写。</p></div>
-<p>KMP 算法核心思想：<strong>主字符串指针只进不退</strong></p>
-<h1 id="KMP-匹配算法">KMP 匹配算法</h1>
-<p>这个比较简单，基于 <code>next</code> 数组进行计算即可。</p>
-<p>匹配使用双指针进行，主字符串的指针只进不退，当模式串指针指向的字符与主字符串指针指向的字符匹配时，两个指针一起 +1；当模式串的某个字符不匹配时，则根据 <code>next</code> 数组中的对应值，将模式串指针移动到相应的地方。直接看代码更简单：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>optional<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">kmpMatch</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> str<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> next <span class="token operator">=</span> <span class="token function">generateNext</span><span class="token punctuation">(</span>pattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// pattern无符号，需要额外+1来处理首字符不匹配的情况</span>
-    size_t str_ptr <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pattern_ptr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>str_ptr <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> pattern_ptr <span class="token operator">&lt;=</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> str<span class="token punctuation">[</span>str_ptr<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 匹配时，指针都后移</span>
-            str_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
-            pattern_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 不匹配时，模式串指针回到next数组中对应位置</span>
-            pattern_ptr <span class="token operator">=</span> next<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">></span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 匹配成功，返回匹配的首个字符位置</span>
-        <span class="token keyword">return</span> str_ptr <span class="token operator">-</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 匹配失败，返回空</span>
-        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="KMP-next-数组生成算法">KMP next 数组生成算法</h1>
-<p>这个才是重中之重。先上算法代码：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">generateNext</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">next</span><span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            next<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>以下为叙述方便起见，采用类似 MATLAB 的 <code>str[a:b]</code> 的形式来表示 <code>str.substr(a, b - a)</code> 这一子串。</p>
-<p>算法的输出 <code>next</code> 数组中，<code>next[i]</code> 对应的是 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1。算法的循环可以看作两个部分，一个部分是递增 <code>i</code>，而另一个循环则是移动 <code>j</code> 来找到 <code>pattern[0:i]</code> 的最长公共前后缀长度，所以每次 <code>i++</code> 后，<code>j</code> 都表示 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1(因为 <code>j</code> 也跟着递增了)。</p>
-<p>着重考虑第二个循环，即 <code>i++</code> 后移动 <code>j</code> 的部分。循环开始时，比较 <code>pattern[0:i]</code> 后缀的最后一个字符，即 <code>pattern[i]</code> ，与 <code>pattern[0:i - 1]</code> 的最长公共前后缀所对应前缀的下一个字符，即 <code>pattern[j - 1]</code> 是否相等。</p>
-<p>如果相等，就说明 <code>pattern[0:i]</code> 的最长公共前后缀为 <code>pattern[0:j - 1]</code> 和 <code>pattern[i - j:i]</code>，因为 <code>pattern[0:i - 1]</code> 的最长公共前后缀恰为 <code>pattern[0:j - 2]</code> 和 <code>pattern[i - j:i - 1]</code>。</p>
-<p>如果不相等，则回退 <code>j</code>。这是因为 <code>pattern[0:j - 2] == pattern[i - j:i - 1]</code>，而 <code>next[j - 1]</code> 就是 <code>pattern[0:j - 2]</code> 的最大公共前后缀长度 +1，也是 <code>pattern[i - j:i - 1]</code> 的最大公共前后缀长度 +1，所以要把 <code>j</code> 回退到 <code>next[j - 1]</code>。</p>
-<p>换句话来说，第二个循环就是利用已经计算好的公共前后缀长度与前后缀相同的性质，按顺序不断尝试寻找最长的公共前后缀，如果发现前后缀不匹配，就回退到次长公共前后缀继续尝试寻找，直到 <code>j</code> 回退到 <code>pattern[0]</code>，也就是找不到任何公共前后缀时循环结束，递增 <code>i</code>。</p>
-<h1 id="KMP-nextval-数组">KMP nextval 数组</h1>
-<p>在 KMP 的匹配算法中，如果 <code>pattern[i]</code> 失配，则模式串指针回退到 <code>next[i] - 1</code> 处。但如果 <code>pattern[i] = pattern[next[i] - 1]</code>，那回退后进行的下一次匹配一定是失配的，还要继续回退，相当于进行了一次无用的匹配。</p>
-<p><code>nextval</code> 就是用来解决这个问题的，在计算出 <code>next</code> 数组后，再遍历 <code>next</code> 数组做一次修改，如果 <code>pattern[i] = pattern[next[i] - 1]</code>，就让 <code>next[i] = next[next[i] - 1]</code>，省去一次无用的跳转。</p>
-<p>算法代码如下：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">generateNextval</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span><span class="token operator">&amp;</span> next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 Hexo + Github Page 搭建个人博客的实践记录。</title>
     <url>/posts/2024/48acad6d/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>迁移「添加网站到搜索引擎」部分到<a href="/posts/2024/1f77b1be/" title="Hexo 博客搜索引擎收录与 SEO 优化个人经验">另一篇文章</a>。<br>规范了更新日志格式。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-30</p></div><div class="body"><p>更新了「数学公式渲染」、「搜索引擎」、「评论系统」的部分内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-28</p></div><div class="body"><p>更新了「数学公式渲染」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-27</p></div><div class="body"><p>新增「优化博客性能」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>新增「添加 RSS 订阅」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-25</p></div><div class="body"><p>新增「添加网站到搜索引擎」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-24</p></div><div class="body"><p>新增「字体修改」与「启用评论数学公式」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-21</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
@@ -1488,6 +1412,82 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
         <tag>Hexo</tag>
         <tag>博客</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>考研数据结构笔记 - KMP 算法</title>
+    <url>/posts/2024/fc617a15/</url>
+    <content><![CDATA[<div class="note info modern"><i class="solitude fas fa-info-circle"></i><p>本文基于考研 408 的 KMP 算法编写。</p></div>
+<p>KMP 算法核心思想：<strong>主字符串指针只进不退</strong></p>
+<h1 id="KMP-匹配算法">KMP 匹配算法</h1>
+<p>这个比较简单，基于 <code>next</code> 数组进行计算即可。</p>
+<p>匹配使用双指针进行，主字符串的指针只进不退，当模式串指针指向的字符与主字符串指针指向的字符匹配时，两个指针一起 +1；当模式串的某个字符不匹配时，则根据 <code>next</code> 数组中的对应值，将模式串指针移动到相应的地方。直接看代码更简单：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>optional<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">kmpMatch</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> str<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> next <span class="token operator">=</span> <span class="token function">generateNext</span><span class="token punctuation">(</span>pattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// pattern无符号，需要额外+1来处理首字符不匹配的情况</span>
+    size_t str_ptr <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pattern_ptr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>str_ptr <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> pattern_ptr <span class="token operator">&lt;=</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> str<span class="token punctuation">[</span>str_ptr<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 匹配时，指针都后移</span>
+            str_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
+            pattern_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 不匹配时，模式串指针回到next数组中对应位置</span>
+            pattern_ptr <span class="token operator">=</span> next<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">></span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 匹配成功，返回匹配的首个字符位置</span>
+        <span class="token keyword">return</span> str_ptr <span class="token operator">-</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 匹配失败，返回空</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="KMP-next-数组生成算法">KMP next 数组生成算法</h1>
+<p>这个才是重中之重。先上算法代码：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">generateNext</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">next</span><span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            next<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以下为叙述方便起见，采用类似 MATLAB 的 <code>str[a:b]</code> 的形式来表示 <code>str.substr(a, b - a)</code> 这一子串。</p>
+<p>算法的输出 <code>next</code> 数组中，<code>next[i]</code> 对应的是 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1。算法的循环可以看作两个部分，一个部分是递增 <code>i</code>，而另一个循环则是移动 <code>j</code> 来找到 <code>pattern[0:i]</code> 的最长公共前后缀长度，所以每次 <code>i++</code> 后，<code>j</code> 都表示 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1(因为 <code>j</code> 也跟着递增了)。</p>
+<p>着重考虑第二个循环，即 <code>i++</code> 后移动 <code>j</code> 的部分。循环开始时，比较 <code>pattern[0:i]</code> 后缀的最后一个字符，即 <code>pattern[i]</code> ，与 <code>pattern[0:i - 1]</code> 的最长公共前后缀所对应前缀的下一个字符，即 <code>pattern[j - 1]</code> 是否相等。</p>
+<p>如果相等，就说明 <code>pattern[0:i]</code> 的最长公共前后缀为 <code>pattern[0:j - 1]</code> 和 <code>pattern[i - j:i]</code>，因为 <code>pattern[0:i - 1]</code> 的最长公共前后缀恰为 <code>pattern[0:j - 2]</code> 和 <code>pattern[i - j:i - 1]</code>。</p>
+<p>如果不相等，则回退 <code>j</code>。这是因为 <code>pattern[0:j - 2] == pattern[i - j:i - 1]</code>，而 <code>next[j - 1]</code> 就是 <code>pattern[0:j - 2]</code> 的最大公共前后缀长度 +1，也是 <code>pattern[i - j:i - 1]</code> 的最大公共前后缀长度 +1，所以要把 <code>j</code> 回退到 <code>next[j - 1]</code>。</p>
+<p>换句话来说，第二个循环就是利用已经计算好的公共前后缀长度与前后缀相同的性质，按顺序不断尝试寻找最长的公共前后缀，如果发现前后缀不匹配，就回退到次长公共前后缀继续尝试寻找，直到 <code>j</code> 回退到 <code>pattern[0]</code>，也就是找不到任何公共前后缀时循环结束，递增 <code>i</code>。</p>
+<h1 id="KMP-nextval-数组">KMP nextval 数组</h1>
+<p>在 KMP 的匹配算法中，如果 <code>pattern[i]</code> 失配，则模式串指针回退到 <code>next[i] - 1</code> 处。但如果 <code>pattern[i] = pattern[next[i] - 1]</code>，那回退后进行的下一次匹配一定是失配的，还要继续回退，相当于进行了一次无用的匹配。</p>
+<p><code>nextval</code> 就是用来解决这个问题的，在计算出 <code>next</code> 数组后，再遍历 <code>next</code> 数组做一次修改，如果 <code>pattern[i] = pattern[next[i] - 1]</code>，就让 <code>next[i] = next[next[i] - 1]</code>，省去一次无用的跳转。</p>
+<p>算法代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">generateNextval</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span><span class="token operator">&amp;</span> next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>考研</tag>
       </tags>
   </entry>
   <entry>
@@ -2031,7 +2031,7 @@ Markdown 内容
 &#123;% fold 默认开启 1 %&#125;
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认开启的</span><span class="token punctuation">**</span></span>
 &#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="时间轴">时间轴</h2>
+<h2 id="时间轴-timeline">时间轴 timeline</h2>
 <div class="tabs" id="时间轴,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#时间轴,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#时间轴,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#时间轴,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="时间轴,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline [时间轴标题] %&#125;
 &#123;% timenode [时间节点标题] %&#125;
 内容
@@ -2070,102 +2070,123 @@ Markdown 内容
         <i class="solitude fas fa-chevron-right"></i>
     </div></a><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link '我的装备' '生活与出行的必备品' '/equipment/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 <!-- ## 媒体 -->
-<h2 id="仓库">仓库</h2>
+<h2 id="仓库-repo">仓库 repo</h2>
 <div class="tabs" id="仓库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#仓库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#仓库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#仓库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="仓库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github [repo] %&#125;
 &#123;% gitlab [repo] %&#125;
 &#123;% gitee [repo] %&#125;
 &#123;% gitea [repo] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-  <a class='name-9gx9pn1ws repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
-  <p class='desc-9gx9pn1ws repo-desc'></p>
+  <a class='name-fesyltifj repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
+  <p class='desc-fesyltifj repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-9gx9pn1ws'></span>
+    <span class='star-fesyltifj'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-9gx9pn1ws'></span>
+    <span class='fork-fesyltifj'></span>
   </div>
-  <img class='lang-9gx9pn1ws repo-language no-lightbox' />
+  <img class='lang-fesyltifj repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-9gx9pn1ws').innerText = data.name;
-        document.querySelector('.desc-9gx9pn1ws').innerText = data.description;
-        document.querySelector('.star-9gx9pn1ws').innerText = data.stargazers_count;
-        document.querySelector('.fork-9gx9pn1ws').innerText = data.forks_count;
-        document.querySelector('.lang-9gx9pn1ws').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-fesyltifj').innerText = data.name;
+        document.querySelector('.desc-fesyltifj').innerText = data.description;
+        document.querySelector('.star-fesyltifj').innerText = data.stargazers_count;
+        document.querySelector('.fork-fesyltifj').innerText = data.forks_count;
+        document.querySelector('.lang-fesyltifj').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-zwk6upxxw repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-zwk6upxxw repo-desc'></p>
+  <a class='name-fzver1x1o repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-fzver1x1o repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-zwk6upxxw'></span>
+    <span class='star-fzver1x1o'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-zwk6upxxw'></span>
+    <span class='fork-fzver1x1o'></span>
   </div>
-  <img class='lang-zwk6upxxw repo-language no-lightbox' />
+  <img class='lang-fzver1x1o repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-zwk6upxxw').innerText = data.name;
-        document.querySelector('.desc-zwk6upxxw').innerText = data.description;
-        document.querySelector('.star-zwk6upxxw').innerText = data.stargazers_count;
-        document.querySelector('.fork-zwk6upxxw').innerText = data.forks_count;
-        document.querySelector('.lang-zwk6upxxw').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-fzver1x1o').innerText = data.name;
+        document.querySelector('.desc-fzver1x1o').innerText = data.description;
+        document.querySelector('.star-fzver1x1o').innerText = data.stargazers_count;
+        document.querySelector('.fork-fzver1x1o').innerText = data.forks_count;
+        document.querySelector('.lang-fzver1x1o').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-517o0bnhz repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-517o0bnhz repo-desc'></p>
+  <a class='name-q70d5k69f repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-q70d5k69f repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-517o0bnhz'></span>
+    <span class='star-q70d5k69f'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-517o0bnhz'></span>
+    <span class='fork-q70d5k69f'></span>
   </div>
-  <img class='lang-517o0bnhz repo-language no-lightbox' />
+  <img class='lang-q70d5k69f repo-language no-lightbox' />
   <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-517o0bnhz').innerText = data.name;
-        document.querySelector('.desc-517o0bnhz').innerText = data.description;
-        document.querySelector('.star-517o0bnhz').innerText = data.stargazers_count;
-        document.querySelector('.fork-517o0bnhz').innerText = data.forks_count;
-        document.querySelector('.lang-517o0bnhz').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-q70d5k69f').innerText = data.name;
+        document.querySelector('.desc-q70d5k69f').innerText = data.description;
+        document.querySelector('.star-q70d5k69f').innerText = data.stargazers_count;
+        document.querySelector('.fork-q70d5k69f').innerText = data.forks_count;
+        document.querySelector('.lang-q70d5k69f').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-ut7sdn1lq repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
-  <p class='desc-ut7sdn1lq repo-desc'></p>
+  <a class='name-f23ixbb35 repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
+  <p class='desc-f23ixbb35 repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-ut7sdn1lq'></span>
+    <span class='star-f23ixbb35'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-ut7sdn1lq'></span>
+    <span class='fork-f23ixbb35'></span>
   </div>
-  <img class='lang-ut7sdn1lq repo-language no-lightbox' />
+  <img class='lang-f23ixbb35 repo-language no-lightbox' />
   <script>
     fetch('https://gitlab.com/api/v4/projects/efu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-ut7sdn1lq').innerText = data.name;
-        document.querySelector('.desc-ut7sdn1lq').innerText = data.description;
-        document.querySelector('.star-ut7sdn1lq').innerText = data.star_count;
-        document.querySelector('.fork-ut7sdn1lq').innerText = data.forks_count;
-        document.querySelector('.lang-ut7sdn1lq').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-f23ixbb35').innerText = data.name;
+        document.querySelector('.desc-f23ixbb35').innerText = data.description;
+        document.querySelector('.star-f23ixbb35').innerText = data.star_count;
+        document.querySelector('.fork-f23ixbb35').innerText = data.forks_count;
+        document.querySelector('.lang-f23ixbb35').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github HPCesia/HPCesia.github.io %&#125;
 &#123;% github everfu/hexo-theme-solitude %&#125;
 &#123;% gitee everfu/hexo-theme-solitude %&#125;
 &#123;% gitlab efu/hexo-theme-solitude %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<!-- ## 标签 -->]]></content>
+<h2 id="标签-label">标签 label</h2>
+<div class="tabs" id="标签,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label <span class="token url">[<span class="token content">内容</span>] [<span class="token variable">颜色</span>]</span> %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签,-1"><ul>
+<li>[内容]：标签内的文字</li>
+<li>[颜色]：标签的背景颜色
+<ul>
+<li>可用颜色：<code>red | green | blue | yellow | pink | purple | orange</code></li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签,-2"><p><span class="hl-label bg-red">这是红色</span><br>
+<span class="hl-label bg-green">这是绿色</span><br>
+<span class="hl-label bg-blue">这是蓝色</span><br>
+<span class="hl-label bg-yellow">这是黄色</span><br>
+<span class="hl-label bg-pink">这是粉色</span><br>
+<span class="hl-label bg-purple">这是紫色</span><br>
+<span class="hl-label bg-orange">这是橙色</span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label 这是红色 red %&#125;
+&#123;% label 这是绿色 green %&#125;
+&#123;% label 这是蓝色 blue %&#125;
+&#123;% label 这是黄色 yellow %&#125;
+&#123;% label 这是粉色 pink %&#125;
+&#123;% label 这是紫色 purple %&#125;
+&#123;% label 这是橙色 orange %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+]]></content>
       <categories>
         <category>小屋相关</category>
       </categories>
