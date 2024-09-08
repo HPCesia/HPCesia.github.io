@@ -4,7 +4,7 @@
     <title>Fluid 移植添加标签语法</title>
     <url>/posts/2024/a0486011/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-07</p></div><div class="body"><p>更新主题更换提醒。</p></div></div><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>更新「时间轴」相关内容。</p><p>更新了「选项卡」相关内容，修复了 BUG 解决部分中 mathjax 相关的修复方式无法生效的问题。</p><p>规范了更新日志格式。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-30</p></div><div class="body"><p>更新了「选项卡」相关内容，将避坑提醒转移到 BUG 解决部分。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-28</p></div><div class="body"><p>更新了「选项卡」相关内容，新增避坑提醒。新增「链接卡片」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-27</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
-<div class="note danger no-icon"><p>本博客已更换至 <a href="https://solitude.js.org/zh/">Solitude</a> 主题，Fluid 主题相关内容仅供参考。</p></div>
+<div class="note danger no-icon modern"><p>本博客已更换至 <a href="https://solitude.js.org/zh/">Solitude</a> 主题，Fluid 主题相关内容仅供参考。</p></div>
 <h1 id="选项卡">选项卡</h1>
 <p>Tabs 标签是从 <a href="https://github.com/jerryc127/hexo-theme-butterfly/">Butterfly 主题</a>上扒下来的，也参考了 <a href="https://github.com/YunYouJun/hexo-tag-common">hexo-tag-common</a> 插件。</p>
 <p>先看效果演示。</p>
@@ -42,14 +42,14 @@ Any content (support inline tags too).
 <li>可以指定带空格或不带空格；</li>
 <li>例如 <code>Tab caption @icon</code> 和 <code>Tab caption@icon</code>。</li>
 <li>可选参数。</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab-2"><div class="note info no-icon"><p>Demo 1 - 预设选择第一个（默认）</p></div>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab-2"><div class="note info no-icon modern"><p>Demo 1 - 预设选择第一个（默认）</p></div>
 <div class="tabs" id="test1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test1-0">test1 0</button></li><li class="tab"><button type="button" data-href="#test1-1">test1 1</button></li><li class="tab"><button type="button" data-href="#test1-2">test1 2</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-0"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-1"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note info no-icon"><p>Demo 2 - 预设选择 tabs</p></div>
+<div class="note info no-icon modern"><p>Demo 2 - 预设选择 tabs</p></div>
 <div class="tabs" id="test2,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test2,-0">test2, 0</button></li><li class="tab"><button type="button" data-href="#test2,-1">test2, 1</button></li><li class="tab"><button type="button" data-href="#test2,-2">test2, 2</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test2,-0"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test2,-1"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test2,-2"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note info no-icon"><p>Demo 3 - 没有预设值</p></div>
+<div class="note info no-icon modern"><p>Demo 3 - 没有预设值</p></div>
 <div class="tabs" id="test3,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test3,-0">test3, 0</button></li><li class="tab"><button type="button" data-href="#test3,-1">test3, 1</button></li><li class="tab"><button type="button" data-href="#test3,-2">test3, 2</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test3,-0"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3,-1"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3,-2"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note info no-icon"><p>Demo 4 - 自定义Tab名 + 只有 icon + icon 和 Tab 名</p></div>
-<div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test4-0">第一个Tab</button></li><li class="tab"><button type="button" data-href="#test4-1"><i  style="text-align: center;" class="tab solitude iconfont icon-github-fill"></i></button></li><li class="tab"><button type="button" data-href="#test4-2"><i  class="tab solitude iconfont icon-random"></i>随机</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test4-0"><p><strong>tab名字为第一个Tab</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-1"><p><strong>只有图标 没有Tab名字</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><strong>名字+icon</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab-3"><div class="note info no-icon"><p>Demo 1 - 预设选择第一个（默认）</p></div>
+<div class="note info no-icon modern"><p>Demo 4 - 自定义Tab名 + 只有 icon + icon 和 Tab 名</p></div>
+<div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test4-0">第一个Tab</button></li><li class="tab"><button type="button" data-href="#test4-1"><i  style="text-align: center;" class="tab solitude iconfont icon-github-fill"></i></button></li><li class="tab"><button type="button" data-href="#test4-2"><i  class="tab solitude iconfont icon-random"></i>随机</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test4-0"><p><strong>tab名字为第一个Tab</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-1"><p><strong>只有图标 没有Tab名字</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><strong>名字+icon</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tab-3"><div class="note info no-icon modern"><p>Demo 1 - 预设选择第一个（默认）</p></div>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test1 %&#125;
 <span class="token comment">&lt;!-- tab --></span>
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span>
@@ -63,7 +63,7 @@ Any content (support inline tags too).
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span>
 <span class="token comment">&lt;!-- endtab --></span>
 &#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note info no-icon"><p>Demo 2 - 预设选择 tabs</p></div>
+<div class="note info no-icon modern"><p>Demo 2 - 预设选择 tabs</p></div>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test2, 3 %&#125;
 <span class="token comment">&lt;!-- tab --></span>
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span>
@@ -77,7 +77,7 @@ Any content (support inline tags too).
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span>
 <span class="token comment">&lt;!-- endtab --></span>
 &#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note info no-icon"><p>Demo 3 - 没有预设值</p></div>
+<div class="note info no-icon modern"><p>Demo 3 - 没有预设值</p></div>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test3, -1 %&#125;
 <span class="token comment">&lt;!-- tab --></span>
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span>
@@ -91,7 +91,7 @@ Any content (support inline tags too).
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span>
 <span class="token comment">&lt;!-- endtab --></span>
 &#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note info no-icon"><p>Demo 4 - 自定义Tab名 + 只有 icon + icon 和 Tab 名</p></div>
+<div class="note info no-icon modern"><p>Demo 4 - 自定义Tab名 + 只有 icon + icon 和 Tab 名</p></div>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test4 %&#125;
 <span class="token comment">&lt;!-- tab 第一个Tab --></span>
 <span class="token bold"><span class="token punctuation">**</span><span class="token content">tab名字为第一个Tab</span><span class="token punctuation">**</span></span>
@@ -655,7 +655,7 @@ div.timenode .meta:after</span>
         <span class="token property-declaration"><span class="token property">color</span> <span class="token func"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code> 三连，即可正常渲染并使用时间轴了。</p>
 <h1 id="更多标签">更多标签</h1>
-<div class="note info no-icon"><p>会想办法移植更多好用的标签，敬请期待。</p></div>]]></content>
+<div class="note info no-icon modern"><p>会想办法移植更多好用的标签，敬请期待。</p></div>]]></content>
       <categories>
         <category>小屋相关</category>
       </categories>
@@ -811,7 +811,7 @@ div.timenode .meta:after</span>
     <title>Fluid 主题无侵入改造记录</title>
     <url>/posts/2024/a06e351a/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-07</p></div><div class="body"><p>更新主题更换提醒。</p></div></div><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>规范了更新日志格式。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-27</p></div><div class="body"><p>新增「文章时效性显示」、「随机文章跳转」与「代码块美化」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>新增「顶部阅读进度条」与「建站时间显示」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
-<div class="note danger no-icon"><p>本博客已更换至 <a href="https://solitude.js.org/zh/">Solitude</a> 主题，Fluid 主题相关内容仅供参考。</p></div>
+<div class="note danger no-icon modern"><p>本博客已更换至 <a href="https://solitude.js.org/zh/">Solitude</a> 主题，Fluid 主题相关内容仅供参考。</p></div>
 <p><a href="https://hexo.io">Hexo</a> 的 <a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a> 主题是一个很好的主题，功能基本完整，页面简洁，加载浏览都很流畅。但是我对这个主题的页面仍有想修改的地方，特此记录。</p>
 <p>同时为了保证在更新主题是不会影响我的修改，因此本文中所有修改都是<strong>非侵入式</strong>（不修改主题源代码）的。</p>
 <h1 id="文章时效性提示">文章时效性提示</h1>
@@ -886,7 +886,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     <span class="token number">10000</span> <span class="token comment">// 应该在完成其他渲染后执行，因此将优先级设大一点</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note info no-icon"><p>如果需要修改代码块右上角图标，请更换 <code>collapseBtn</code> 的 icon 部分 <code>&quot;iconfont icon-code&quot;</code>。</p></div>
+<div class="note info no-icon modern"><p>如果需要修改代码块右上角图标，请更换 <code>collapseBtn</code> 的 icon 部分 <code>&quot;iconfont icon-code&quot;</code>。</p></div>
 <p>再在 <code>custom/css</code> 中新建 <code>code-pretty.styl</code> 文件</p>
 <pre class="line-numbers language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">.markdown-body .highlight table<span class="token punctuation">,</span>
 .markdown-body .code-wrapper pre <span class="token punctuation">&#123;</span></span>
@@ -1103,7 +1103,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">menu</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token punctuation">&#123;</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"random"</span><span class="token punctuation">,</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"随机文章"</span><span class="token punctuation">,</span> <span class="token key atrule">link</span><span class="token punctuation">:</span> <span class="token string">"javascript:randomPost();"</span><span class="token punctuation">,</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">"iconfont icon-random"</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>使用 <code>hexo cl</code> + <code>hexo d -g</code> 重新生成并部署即可。</p>
-<div class="note info no-icon"><p>以上代码中 <code>icon: &quot;iconfont icon-random&quot;</code> 使用了我自己的 Iconfont 图标库而非<a href="https://hexo.fluid-dev.com/docs/icon/">主题内置 Iconfont 图标库</a>，有需要请自行到 <a href="https://www.iconfont.cn/">Iconfont</a> 创建自己的图标库。</p></div>
+<div class="note info no-icon modern"><p>以上代码中 <code>icon: &quot;iconfont icon-random&quot;</code> 使用了我自己的 Iconfont 图标库而非<a href="https://hexo.fluid-dev.com/docs/icon/">主题内置 Iconfont 图标库</a>，有需要请自行到 <a href="https://www.iconfont.cn/">Iconfont</a> 创建自己的图标库。</p></div>
 <h1 id="新增标签语法">新增标签语法</h1>
 <p>参看<a href="/posts/2024/a0486011/" title="Fluid 移植添加标签语法">另一篇文章</a></p>
 <h1 id="参考资料">参考资料</h1>
@@ -1136,7 +1136,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
     <title>Hexo 搭建个人博客的实践记录</title>
     <url>/posts/2024/48acad6d/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>迁移「添加网站到搜索引擎」部分到<a href="/posts/2024/1f77b1be/" title="Hexo 博客搜索引擎收录与 SEO">另一篇文章</a>。<br>规范了更新日志格式。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-30</p></div><div class="body"><p>更新了「数学公式渲染」、「搜索引擎」、「评论系统」的部分内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-28</p></div><div class="body"><p>更新了「数学公式渲染」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-27</p></div><div class="body"><p>新增「优化博客性能」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>新增「添加 RSS 订阅」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-25</p></div><div class="body"><p>新增「添加网站到搜索引擎」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-24</p></div><div class="body"><p>新增「字体修改」与「启用评论数学公式」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-21</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
-<div class="note undefined no-icon"><p>为了方便自己以后更换电脑后重新配置这个博客，以及日常调试，在此将自己的建站经验记录下来。</p>
+<div class="note undefined no-icon modern"><p>为了方便自己以后更换电脑后重新配置这个博客，以及日常调试，在此将自己的建站经验记录下来。</p>
 <p>本文仅适用于 Windows 平台。</p></div>
 <h1 id="环境搭建">环境搭建</h1>
 <h2 id="前置环境">前置环境</h2>
@@ -1198,7 +1198,7 @@ hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
   <span class="token key atrule">force</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="主题">主题</h2>
 <p>可以在 Hexo 官网的<a href="https://hexo.io/themes/">主题列表</a>里选择心仪的主题进行更换，并参考主题的配置说明进行配置。</p>
-<div class="note danger no-icon"><p>本博客已更换至 <a href="https://solitude.js.org/zh/">Solitude</a> 主题，以下 Fluid 主题相关内容仅供参考。</p></div>
+<div class="note danger no-icon modern"><p>本博客已更换至 <a href="https://solitude.js.org/zh/">Solitude</a> 主题，以下 Fluid 主题相关内容仅供参考。</p></div>
 <p>本博客使用 <a href="https://hexo.fluid-dev.com/">Fluid</a> 主题。</p>
 <h3 id="站名与图标">站名与图标</h3>
 <p>按照 <a href="https://hexo.fluid-dev.com/docs/start/">Fluid 官方配置文档</a>安装 Fluid 主题后，先在 <code>_config.yml</code> 中修改主站名、描述和网站语言</p>
@@ -1235,7 +1235,7 @@ hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <p>再使用 <code>hexo clean</code> + <code>hexo g</code>，即可更换字体。</p>
 <h3 id="头图">头图</h3>
 <p>在 <code>_config.fluid.yml</code> 中搜索 <code>banner_img</code> 即可找到各页面的头图配置。由于大陆访问 Github 的速度相当便秘，头图应该使用 <code>.webp</code> 格式进行高度压缩，以在质量不太拉胯的前提下加快加载速度。</p>
-<div class="note info no-icon"><p>本站使用的头图原图链接如下：<br>
+<div class="note info no-icon modern"><p>本站使用的头图原图链接如下：<br>
 主页：<a href="https://www.pixiv.net/artworks/101693777">「无题」</a><br>
 关于页：<a href="https://www.pixiv.net/artworks/104655300">「致以——无瑕的时代」</a><br>
 其他页面及文章预览图：<a href="https://www.pixiv.net/artworks/101648848">「无题」</a></p></div>
@@ -1276,7 +1276,7 @@ hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_css</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css <span class="token comment"># Twikoo Katex 数学公式渲染</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>再重新 <code>hexo clean</code> + <code>hexo g</code>，即可在评论区激活数学公式渲染。</p>
-<div class="note info no-icon"><p>如果发现评论头像无法加载，请参考<a href="https://twikoo.js.org/frontend.html#%E6%9B%B4%E6%8D%A2-cdn-%E9%95%9C%E5%83%8F">Twikoo 前端部署</a>更换 <code>_config.fluid.yml</code> 的 <code>static_prefix</code> 配置项中关于 Twikoo 的静态资源链接。</p></div>
+<div class="note info no-icon modern"><p>如果发现评论头像无法加载，请参考<a href="https://twikoo.js.org/frontend.html#%E6%9B%B4%E6%8D%A2-cdn-%E9%95%9C%E5%83%8F">Twikoo 前端部署</a>更换 <code>_config.fluid.yml</code> 的 <code>static_prefix</code> 配置项中关于 Twikoo 的静态资源链接。</p></div>
 <h3 id="添加-RSS-订阅">添加 RSS 订阅</h3>
 <p>安装 <a href="https://github.com/hexojs/hexo-generator-feed"><code>hexo-generator-feed</code></a> 插件:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1415,9 +1415,58 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
       </tags>
   </entry>
   <entry>
+    <title>VSCode 功能与美化扩展插件推荐</title>
+    <url>/posts/2024/bb896ab4/</url>
+    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-06</p></div><div class="body"><p>新增插件推荐：</p><ul><li>Excalidraw</li><li>CodeGeeX</li><li>Code Spell Checker</li></ul></div></div><div class="timenode"><div class="meta"><p>2024-09-05</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
+<h1 id="功能">功能</h1>
+<h2 id="Path-Intellisense">Path Intellisense</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a> 扩展可以在输入文件路径的时候给出自动补全提示，方便输入。</p>
+<h2 id="Project-Manager">Project Manager</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager">Project Manager</a> 扩展可以在侧边栏新增一个「项目管理器」选项，通过在项目管理器中保存项目，可以实现不同工作区之间的快速切换。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041853645.webp" alt="项目管理器界面" loading="lazy"></p>
+<h2 id="Error-Lens">Error Lens</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens">Error Lens</a> 扩展可以直接把错误、警告与提示等信息直接显示在代码行后面，而不是只能把光标移动到下划线处才能看到。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041856869.webp" alt="" loading="lazy"><br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041858317.webp" alt="" loading="lazy"></p>
+<h2 id="Todo-Tree">Todo Tree</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Todo Tree</a> 扩展可以搜索整个工作区内的「TODO」、「FIXME」、「BUG」等字段，并在侧边栏的选项中查看。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041946944.webp" alt="效果演示" loading="lazy"></p>
+<h2 id="Trailing-Spaces">Trailing Spaces</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> 扩展可以标红每行代码尾部多余的空格。</p>
+<h2 id="Excalidraw">Excalidraw</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor">Excalidraw</a> 扩展可以在 VSCode 内绘制手绘风格的矢量图片，支持导出 <code>.png</code> 和 <code>.svg</code> 格式。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409061221045.webp" alt="Excalidraw 绘图" loading="lazy"></p>
+<h2 id="CodeGeeX">CodeGeeX</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=aminer.codegeex">CodeGeeX</a> 扩展可以调用本地或网络的大模型，来加速代码编写。CodeGeeX 的大模型在 Github 上开源，因此可以通过本地运行大模型，放心地在涉及商业秘密的项目中使用。</p>
+<h2 id="Code-Spell-Checker">Code Spell Checker</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a> 扩展可以检测代码中的英文拼写错误并给出修改建议。</p>
+<h2 id="翻译-英汉词典">翻译(英汉词典)</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=CodeInChinese.EnglishChineseDictionary">翻译(英汉词典)</a> 扩展可以在选中单词时在右下角给出单词的翻译，并且可以翻译下划线、驼峰等格式的单词，方便理解代码。</p>
+<details><summary>效果演示</summary><div class="content"><p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2018-12-25-vscode%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8%E6%89%B9%E9%87%8F1.gif" alt="" loading="lazy"><br><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2018-12-03_vscode%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8_%E5%BD%A2%E5%AE%B9%E8%AF%8D_%E5%90%8D%E8%AF%8D%E7%BB%84%E5%90%88.png" alt="" loading="lazy"><br><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2020-08-16_ACCOUNT_NUMBER.png" alt="" loading="lazy"><br><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2021-09-14-%E6%82%AC%E5%81%9C%E6%98%BE%E7%A4%BA%E7%BF%BB%E8%AF%91%E7%BB%93%E6%9E%9C.gif" alt="" loading="lazy"></p></div></details>
+<h2 id="驼峰翻译助手">驼峰翻译助手</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=svenzhao.var-translation">驼峰翻译助手</a>扩展可以调用翻译 API，将中文直接翻译为英文的不同格式的变量名，再也不用发愁怎么命名变量。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/SvenZhao/var-translation/images/vscode1.gif" alt="效果演示" loading="lazy"></p>
+<h1 id="美化">美化</h1>
+<h2 id="Material-Icon-Theme">Material Icon Theme</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a> 扩展是一个文件图标扩展，其为各种文件与文件夹都制作了特殊的图标，方便浏览。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041949412.webp" alt="效果演示" loading="lazy"></p>
+<h2 id="background-cover">background-cover</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=manasxx.background-cover">background-cover</a> 扩展可以直接在其自带的命令中修改更换 VSCode 背景图片。<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041848190.webp" alt="扩展配置命令" loading="lazy"></p>
+<p>更换背景图后效果如下：<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041840501.webp" alt="更换背景图效果" loading="lazy"></p>
+]]></content>
+      <categories>
+        <category>经验记录</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>考研数据结构笔记 - KMP 算法</title>
     <url>/posts/2024/fc617a15/</url>
-    <content><![CDATA[<div class="note info"><i class="solitude fas fa-info-circle"></i><p>本文基于考研 408 的 KMP 算法编写。</p></div>
+    <content><![CDATA[<div class="note info modern"><i class="solitude fas fa-info-circle"></i><p>本文基于考研 408 的 KMP 算法编写。</p></div>
 <p>KMP 算法核心思想：<strong>主字符串指针只进不退</strong></p>
 <h1 id="KMP-匹配算法">KMP 匹配算法</h1>
 <p>这个比较简单，基于 <code>next</code> 数组进行计算即可。</p>
@@ -1491,58 +1540,220 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
       </tags>
   </entry>
   <entry>
-    <title>VSCode 功能与美化扩展插件推荐</title>
-    <url>/posts/2024/bb896ab4/</url>
-    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-06</p></div><div class="body"><p>新增插件推荐：</p><ul><li>Excalidraw</li><li>CodeGeeX</li><li>Code Spell Checker</li></ul></div></div><div class="timenode"><div class="meta"><p>2024-09-05</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
-<h1 id="功能">功能</h1>
-<h2 id="Path-Intellisense">Path Intellisense</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a> 扩展可以在输入文件路径的时候给出自动补全提示，方便输入。</p>
-<h2 id="Project-Manager">Project Manager</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager">Project Manager</a> 扩展可以在侧边栏新增一个「项目管理器」选项，通过在项目管理器中保存项目，可以实现不同工作区之间的快速切换。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041853645.webp" alt="项目管理器界面" loading="lazy"></p>
-<h2 id="Error-Lens">Error Lens</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens">Error Lens</a> 扩展可以直接把错误、警告与提示等信息直接显示在代码行后面，而不是只能把光标移动到下划线处才能看到。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041856869.webp" alt="" loading="lazy"><br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041858317.webp" alt="" loading="lazy"></p>
-<h2 id="Todo-Tree">Todo Tree</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Todo Tree</a> 扩展可以搜索整个工作区内的「TODO」、「FIXME」、「BUG」等字段，并在侧边栏的选项中查看。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041946944.webp" alt="效果演示" loading="lazy"></p>
-<h2 id="Trailing-Spaces">Trailing Spaces</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces">Trailing Spaces</a> 扩展可以标红每行代码尾部多余的空格。</p>
-<h2 id="Excalidraw">Excalidraw</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor">Excalidraw</a> 扩展可以在 VSCode 内绘制手绘风格的矢量图片，支持导出 <code>.png</code> 和 <code>.svg</code> 格式。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409061221045.webp" alt="Excalidraw 绘图" loading="lazy"></p>
-<h2 id="CodeGeeX">CodeGeeX</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=aminer.codegeex">CodeGeeX</a> 扩展可以调用本地或网络的大模型，来加速代码编写。CodeGeeX 的大模型在 Github 上开源，因此可以通过本地运行大模型，放心地在涉及商业秘密的项目中使用。</p>
-<h2 id="Code-Spell-Checker">Code Spell Checker</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker</a> 扩展可以检测代码中的英文拼写错误并给出修改建议。</p>
-<h2 id="翻译-英汉词典">翻译(英汉词典)</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=CodeInChinese.EnglishChineseDictionary">翻译(英汉词典)</a> 扩展可以在选中单词时在右下角给出单词的翻译，并且可以翻译下划线、驼峰等格式的单词，方便理解代码。</p>
-<details><summary>效果演示</summary><div class="content"><p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2018-12-25-vscode%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8%E6%89%B9%E9%87%8F1.gif" alt="" loading="lazy"><br><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2018-12-03_vscode%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8_%E5%BD%A2%E5%AE%B9%E8%AF%8D_%E5%90%8D%E8%AF%8D%E7%BB%84%E5%90%88.png" alt="" loading="lazy"><br><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2020-08-16_ACCOUNT_NUMBER.png" alt="" loading="lazy"><br><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/program-in-chinese/vscode_english_chinese_dictionary/%E6%88%AA%E5%9B%BE/2021-09-14-%E6%82%AC%E5%81%9C%E6%98%BE%E7%A4%BA%E7%BF%BB%E8%AF%91%E7%BB%93%E6%9E%9C.gif" alt="" loading="lazy"></p></div></details>
-<h2 id="驼峰翻译助手">驼峰翻译助手</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=svenzhao.var-translation">驼峰翻译助手</a>扩展可以调用翻译 API，将中文直接翻译为英文的不同格式的变量名，再也不用发愁怎么命名变量。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/SvenZhao/var-translation/images/vscode1.gif" alt="效果演示" loading="lazy"></p>
-<h1 id="美化">美化</h1>
-<h2 id="Material-Icon-Theme">Material Icon Theme</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a> 扩展是一个文件图标扩展，其为各种文件与文件夹都制作了特殊的图标，方便浏览。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041949412.webp" alt="效果演示" loading="lazy"></p>
-<h2 id="background-cover">background-cover</h2>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=manasxx.background-cover">background-cover</a> 扩展可以直接在其自带的命令中修改更换 VSCode 背景图片。<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041848190.webp" alt="扩展配置命令" loading="lazy"></p>
-<p>更换背景图后效果如下：<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041840501.webp" alt="更换背景图效果" loading="lazy"></p>
-]]></content>
+    <title>主题标签说明</title>
+    <url>/posts/2024/e5415539/</url>
+    <content><![CDATA[<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>由于 <a href="https://solitude.js.org/zh/">Solitude 主题</a>的<a href="https://solitude.js.org/preview/zh/posts/e19cb4b7.html">标签插件文档</a>内容过少，我编写了这个文章，用于记录翻源码找到的可用的标签和使用方式。</p></div>
+<h1 id="内置标签">内置标签</h1>
+<p>内置标签可直接使用。</p>
+<h2 id="标签页-tabs">标签页 tabs</h2>
+<div class="tabs" id="标签页,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签页,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签页,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签页,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签页,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签页,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs <span class="token url">[<span class="token content">唯一名称</span>] [<span class="token variable">索引</span>]</span> %&#125;
+<span class="token comment">&lt;!-- tab [标签标题] [@图标] --></span>
+任意内容（支持内联标签）。
+<span class="token comment">&lt;!-- endtab --></span>
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-1"><ul>
+<li>[唯一名称]：每个标签块的唯一名称，不包含逗号。
+<ul>
+<li>它将用作每个标签的#id前缀及其索引号。</li>
+<li>如果名称中包含空格，则在生成的#id中将所有空格替换为连字符。</li>
+<li>文章/页面的当前URL必须是唯一的！</li>
+</ul>
+</li>
+<li>[索引]：活动标签的索引号。
+<ul>
+<li>如果未指定，将选择第一个标签（1）。</li>
+<li>如果索引为-1，则不会选择任何标签。这将是一个剧透。</li>
+<li>可选参数。</li>
+</ul>
+</li>
+<li>[标签标题]：当前标签的标题。
+<ul>
+<li>如果未指定，将使用唯一名称与标签索引后缀作为标签标题。</li>
+<li>如果未指定标题但指定了图标，则标题将为空。</li>
+<li>可选参数。</li>
+</ul>
+</li>
+<li>[@图标]：图标名称（完整名称，例如 “fas fa-github”）。
+<ul>
+<li>可以指定带或不带空格的空格；例如，”标签标题 @图标” 类似于 “标签标题@图标”。</li>
+<li>可选参数。</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签页,-2"><div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 1 - 默认情况下，选择第一个标签</p></div>
+<div class="tabs" id="演示1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示1-0">test1</button></li><li class="tab"><button type="button" data-href="#演示1-1">test2</button></li><li class="tab"><button type="button" data-href="#演示1-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示1-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
+<div class="tabs" id="演示2,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示2,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示2,-1">test2</button></li><li class="tab active"><button type="button" data-href="#演示2,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示2,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示2,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="演示2,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
+<div class="tabs" id="演示3,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示3,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示3,-1">test2</button></li><li class="tab"><button type="button" data-href="#演示3,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示3,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
+<div class="tabs" id="演示4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示4-0">test1</button></li><li class="tab"><button type="button" data-href="#演示4-1"><i  style="text-align: center;" class="tab solitude fas fa-music"></i></button></li><li class="tab"><button type="button" data-href="#演示4-2"><i  class="tab solitude fas fa-music"></i>音乐</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示4-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-3"><div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示1 - 默认情况下，选择第一个标签</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示1 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test2 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test3 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示2, 2 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test2 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test3 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示3, -1 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test2 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test3 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示4 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab @fas fa-music --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab 音乐 @fas fa-music --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="图库-gallery">图库 gallery</h2>
+<div class="tabs" id="图库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#图库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#图库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#图库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="图库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
+![]([图片 url])
+![]([图片 url])
+![]([图片 url])
+&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="图库,-1"><div class="gallery-container waterfall">
+        <div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp alt="" /></div>
+      </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="图库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp)
+&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h1 id="外挂标签">外挂标签</h1>
+<p>外挂标签需安装 <a href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code></a> 插件。</p>
+<div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>该插件有大量功能未完善。</p></div>
+<h2 id="引用-note">引用 note</h2>
+<div class="tabs" id="引用,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#引用,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#引用,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#引用,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#引用,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="引用,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note <span class="token url">[<span class="token content">类型</span>] [<span class="token variable">图标</span>]</span> %&#125;
+Markdown 内容
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-1"><ul>
+<li>[类型]：引用的色彩类型。
+<ul>
+<li>可选项：<code>default | primary | success | info | warning | danger</code></li>
+</ul>
+</li>
+<li>[图标]：引用前的图标
+<ul>
+<li>可填写 Font Awesome 图标名称</li>
+<li>不填时不附带图标</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="引用,-2"><div class="note default modern"><i class="solitude fas fa-bullhorn"></i><p>2025 年快到了…</p></div>
+<div class="note primary modern"><i class="solitude fas fa-car-crash"></i><p>小心开车 安全至上</p></div>
+<div class="note success modern"><i class="solitude fas fa-fan"></i><p>这是三片呢？还是四片？</p></div>
+<div class="note info modern"><i class="solitude fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div>
+<div class="note warning modern"><i class="solitude far fa-hand-scissors"></i><p>剪刀石头布</p></div>
+<div class="note danger modern"><i class="solitude fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note default 'fas fa-bullhorn' %&#125;2025 年快到了....&#123;% endnote %&#125;
+
+&#123;% note primary 'fas fa-car-crash' %&#125;小心开车 安全至上&#123;% endnote %&#125;
+
+&#123;% note success 'fas fa-fan'%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;
+
+&#123;% note info 'fas fa-battery-half' %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;
+
+&#123;% note warning 'far fa-hand-scissors' %&#125;剪刀石头布&#123;% endnote %&#125;
+
+&#123;% note danger 'fab fa-internet-explorer' %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="按钮-button">按钮 button</h2>
+<div class="tabs" id="按钮,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#按钮,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#按钮,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#按钮,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="按钮,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button <span class="token url">[<span class="token content">图标</span>] [<span class="token variable">内容</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="按钮,-1"><p><button class="st-btn" onclick="pjax.loadUrl(&#39;&#x2F;music&#x2F;&#39;)"><i class="solitude fas fa-music"></i><span>音乐馆</span></button></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="按钮,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button 'fas fa-music' '音乐馆' '/music/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="折叠-fold">折叠 fold</h2>
+<div class="tabs" id="折叠,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#折叠,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#折叠,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#折叠,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#折叠,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="折叠,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">默认开启</span>]</span> %&#125;
+Markdown 内容
+&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-1"><ul>
+<li>[标题]：每个折叠块的标题，不包含逗号。</li>
+<li>[默认开启]：活动标签的索引号。
+<ul>
+<li>可填写任意内容，均视为默认开启</li>
+<li>可选参数</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="折叠,-2"><details><summary>默认关闭</summary><div class="content"><p><strong>这是默认关闭的</strong></p></div></details>
+<details open="1"><summary>默认开启</summary><div class="content"><p><strong>这是默认开启的</strong></p></div></details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold 默认关闭 %&#125;
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认关闭的</span><span class="token punctuation">**</span></span>
+&#123;% endfold %&#125;
+&#123;% fold 默认开启 1 %&#125;
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认开启的</span><span class="token punctuation">**</span></span>
+&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="时间轴">时间轴</h2>
+<div class="tabs" id="时间轴,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#时间轴,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#时间轴,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#时间轴,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="时间轴,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline [时间轴标题] %&#125;
+&#123;% timenode [时间节点标题] %&#125;
+内容
+&#123;% endtimenode %&#125;
+&#123;% timenode [时间节点标题] %&#125;
+内容
+&#123;% endtimenode %&#125;
+&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="时间轴,-1"><div class="timeline"><span class="timeline-title">时间轴样式预览</span><div class="timenode"><div class="meta"><p>2024-09-01</p></div><div class="body"><p>更新 ijkl。</p></div></div>
+<div class="timenode"><div class="meta"><p>2020-11-21</p></div><div class="body"><p>更新 efgh。</p></div></div>
+<div class="timenode"><div class="meta"><p>2010-02-02</p></div><div class="body"><p>更新 abcd。</p></div></div>
+<div class="timenode"><div class="meta"><p>2000-01-01</p></div><div class="body"><p>发布文章。</p></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="时间轴,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline 时间轴样式预览 %&#125;
+&#123;% timenode 2024-09-01 %&#125;
+更新 ijkl。
+&#123;% endtimenode %&#125;
+&#123;% timenode 2020-11-21 %&#125;
+更新 efgh。
+&#123;% endtimenode %&#125;
+&#123;% timenode 2010-02-02 %&#125;
+更新 abcd。
+&#123;% endtimenode %&#125;
+&#123;% timenode 2000-01-01 %&#125;
+发布文章。
+&#123;% endtimenode %&#125;
+&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="链接卡片-link">链接卡片 link</h2>
+<div class="tabs" id="链接卡片,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#链接卡片,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#链接卡片,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#链接卡片,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="链接卡片,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">描述</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="链接卡片,-1"><a class="tag-link" href="/equipment/" target="_self">
+    <div class="tag-link-tips">站内链接</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left">
+          <i class="solitude fas fa-link"></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">我的装备</div>
+            <div class="tag-link-sitename">生活与出行的必备品</div>
+        </div>
+        <i class="solitude fas fa-chevron-right"></i>
+    </div></a><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link '我的装备' '生活与出行的必备品' '/equipment/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<!-- ## 媒体 -->
+<!-- ## 仓库 -->
+<!-- ## 标签 -->]]></content>
       <categories>
-        <category>经验记录</category>
+        <category>小屋相关</category>
       </categories>
       <tags>
-        <tag>VSCode</tag>
+        <tag>Hexo</tag>
+        <tag>Solitude</tag>
       </tags>
   </entry>
   <entry>
     <title>一些有限差分方法的数学推导</title>
     <url>/posts/2024/9632325/</url>
-    <content><![CDATA[<div class="note info"><i class="solitude fas fa-info-circle"></i><p>本文由以前的课程论文摘抄到博客，原文为本人厦门大学数学系课程《微分方程数值解》的课程论文，参考时请注意。</p></div>
+    <content><![CDATA[<div class="note info modern"><i class="solitude fas fa-info-circle"></i><p>本文由以前的课程论文摘抄到博客，原文为本人厦门大学数学系课程《微分方程数值解》的课程论文，参考时请注意。</p></div>
 <h1 id="简介">简介</h1>
 <p>本文默认读者对有限差分方法有一定了解，因此不做过多的前置知识介绍。</p>
 <p>考虑如下初值问题:</p>
@@ -1567,7 +1778,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 <h1 id="准确性推导">准确性推导</h1>
 <p>首先定义局部截断误差(Local Truncation Error) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">R^{(n)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span>，其定义为：<br>
 其他点处的精确解在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">t^{(n)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span> 处按照差分格式计算得到的结果与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">t^{(n)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span> 处的精确解的差值。</p>
-<div class="note warning"><i class="solitude fas fa-circle-exclamation"></i><p>上述局部截断误差与通常定义的局部截断误差相差一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>，参考时请注意。</p></div>
+<div class="note warning modern"><i class="solitude fas fa-circle-exclamation"></i><p>上述局部截断误差与通常定义的局部截断误差相差一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>，参考时请注意。</p></div>
 <h2 id="向前欧拉格式">向前欧拉格式</h2>
 <p>向前欧拉格式的局部截断误差 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">R^{(n)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span> 可表示为如下等式</p>
 <p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mfrac><mrow><mi>u</mi><mo stretchy="false">(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo><mo>−</mo><mi>u</mi><mo stretchy="false">(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mi>h</mi></mfrac><mo>−</mo><msup><mi>u</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">R ^ { (n) } =  \frac {u ( t ^ {( n + 1) } ) - u ( t ^ { (n) } )}{h} - u&#x27; ( t ^ { (n) } ). 
@@ -1867,216 +2078,6 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
         <tag>数学</tag>
         <tag>有限差分</tag>
         <tag>数值计算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主题标签说明</title>
-    <url>/posts/2024/e5415539/</url>
-    <content><![CDATA[<p>由于 Solitude 主题的标签插件文档内容过少，我编写了这个文章，用于记录翻源码找到的可用的标签和使用方式。</p>
-<h1 id="内置标签">内置标签</h1>
-<p>内置标签可直接使用。</p>
-<h2 id="标签页-tabs">标签页 tabs</h2>
-<div class="tabs" id="标签页,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签页,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签页,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签页,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签页,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签页,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs <span class="token url">[<span class="token content">唯一名称</span>] [<span class="token variable">索引</span>]</span> %&#125;
-<span class="token comment">&lt;!-- tab [标签标题] [@图标] --></span>
-任意内容（支持内联标签）。
-<span class="token comment">&lt;!-- endtab --></span>
-&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-1"><ul>
-<li>[唯一名称]：每个标签块的唯一名称，不包含逗号。
-<ul>
-<li>它将用作每个标签的#id前缀及其索引号。</li>
-<li>如果名称中包含空格，则在生成的#id中将所有空格替换为连字符。</li>
-<li>文章/页面的当前URL必须是唯一的！</li>
-</ul>
-</li>
-<li>[索引]：活动标签的索引号。
-<ul>
-<li>如果未指定，将选择第一个标签（1）。</li>
-<li>如果索引为-1，则不会选择任何标签。这将是一个剧透。</li>
-<li>可选参数。</li>
-</ul>
-</li>
-<li>[标签标题]：当前标签的标题。
-<ul>
-<li>如果未指定，将使用唯一名称与标签索引后缀作为标签标题。</li>
-<li>如果未指定标题但指定了图标，则标题将为空。</li>
-<li>可选参数。</li>
-</ul>
-</li>
-<li>[@图标]：图标名称（完整名称，例如 “fas fa-github”）。
-<ul>
-<li>可以指定带或不带空格的空格；例如，”标签标题 @图标” 类似于 “标签标题@图标”。</li>
-<li>可选参数。</li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签页,-2"><div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 1 - 默认情况下，选择第一个标签</p></div>
-<div class="tabs" id="演示1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示1-0">test1</button></li><li class="tab"><button type="button" data-href="#演示1-1">test2</button></li><li class="tab"><button type="button" data-href="#演示1-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示1-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
-<div class="tabs" id="演示2,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示2,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示2,-1">test2</button></li><li class="tab active"><button type="button" data-href="#演示2,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示2,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示2,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="演示2,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
-<div class="tabs" id="演示3,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示3,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示3,-1">test2</button></li><li class="tab"><button type="button" data-href="#演示3,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示3,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
-<div class="tabs" id="演示4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示4-0">test1</button></li><li class="tab"><button type="button" data-href="#演示4-1"><i  style="text-align: center;" class="tab solitude fas fa-music"></i></button></li><li class="tab"><button type="button" data-href="#演示4-2"><i  class="tab solitude fas fa-music"></i>音乐</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示4-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-3"><div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示1 - 默认情况下，选择第一个标签</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示1 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test2 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test3 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示2, 2 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test2 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test3 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示3, -1 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test2 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test3 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note primary"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示4 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab @fas fa-music --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab 音乐 @fas fa-music --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="图库-gallery">图库 gallery</h2>
-<div class="tabs" id="图库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#图库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#图库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#图库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="图库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
-![]([图片 url])
-![]([图片 url])
-![]([图片 url])
-&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="图库,-1"><div class="gallery-container waterfall">
-        <div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp alt="" /></div>
-      </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="图库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp)
-&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h1 id="外挂标签">外挂标签</h1>
-<p>外挂标签需安装 <code>hexo-solitude-tag</code></p>
-<h2 id="引用-note">引用 note</h2>
-<div class="tabs" id="引用,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#引用,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#引用,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#引用,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#引用,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="引用,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note <span class="token url">[<span class="token content">类型</span>] [<span class="token variable">图标</span>]</span> %&#125;
-Markdown 内容
-&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-1"><ul>
-<li>[类型]：引用的色彩类型。
-<ul>
-<li>可选项：<code>default | primary | success | info | warning | danger</code></li>
-</ul>
-</li>
-<li>[图标]：引用前的图标
-<ul>
-<li>可填写 Font Awesome 图标名称</li>
-<li>不填时不附带图标</li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="引用,-2"><div class="note default"><i class="solitude fas fa-bullhorn"></i><p>2025 年快到了…</p></div>
-<div class="note primary"><i class="solitude fas fa-car-crash"></i><p>小心开车 安全至上</p></div>
-<div class="note success"><i class="solitude fas fa-fan"></i><p>这是三片呢？还是四片？</p></div>
-<div class="note info"><i class="solitude fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div>
-<div class="note warning"><i class="solitude far fa-hand-scissors"></i><p>剪刀石头布</p></div>
-<div class="note danger"><i class="solitude fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note default 'fas fa-bullhorn' %&#125;2025 年快到了....&#123;% endnote %&#125;
-
-&#123;% note primary 'fas fa-car-crash' %&#125;小心开车 安全至上&#123;% endnote %&#125;
-
-&#123;% note success 'fas fa-fan'%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;
-
-&#123;% note info 'fas fa-battery-half' %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;
-
-&#123;% note warning 'far fa-hand-scissors' %&#125;剪刀石头布&#123;% endnote %&#125;
-
-&#123;% note danger 'fab fa-internet-explorer' %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="按钮-button">按钮 button</h2>
-<div class="tabs" id="按钮,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#按钮,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#按钮,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#按钮,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="按钮,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button <span class="token url">[<span class="token content">图标</span>] [<span class="token variable">内容</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="按钮,-1"><p><button class="st-btn" onclick="pjax.loadUrl(&#39;&#x2F;music&#x2F;&#39;)"><i class="solitude fas fa-music"></i><span>音乐馆</span></button></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="按钮,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button 'fas fa-music' '音乐馆' '/music/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="折叠-fold">折叠 fold</h2>
-<div class="tabs" id="折叠,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#折叠,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#折叠,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#折叠,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#折叠,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="折叠,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">默认开启</span>]</span> %&#125;
-Markdown 内容
-&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-1"><ul>
-<li>[标题]：每个折叠块的标题，不包含逗号。</li>
-<li>[默认开启]：活动标签的索引号。
-<ul>
-<li>可填写任意内容，均视为默认开启</li>
-<li>可选参数</li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="折叠,-2"><details><summary>默认关闭</summary><div class="content"><p><strong>这是默认关闭的</strong></p></div></details>
-<details open="1"><summary>默认开启</summary><div class="content"><p><strong>这是默认开启的</strong></p></div></details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold 默认关闭 %&#125;
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认关闭的</span><span class="token punctuation">**</span></span>
-&#123;% endfold %&#125;
-&#123;% fold 默认开启 1 %&#125;
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认开启的</span><span class="token punctuation">**</span></span>
-&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="时间轴">时间轴</h2>
-<div class="tabs" id="时间轴,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#时间轴,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#时间轴,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#时间轴,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="时间轴,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline [时间轴标题] %&#125;
-&#123;% timenode [时间节点标题] %&#125;
-内容
-&#123;% endtimenode %&#125;
-&#123;% timenode [时间节点标题] %&#125;
-内容
-&#123;% endtimenode %&#125;
-&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="时间轴,-1"><div class="timeline"><span class="timeline-title">时间轴样式预览</span><div class="timenode"><div class="meta"><p>2024-09-01</p></div><div class="body"><p>更新 ijkl。</p></div></div>
-<div class="timenode"><div class="meta"><p>2020-11-21</p></div><div class="body"><p>更新 efgh。</p></div></div>
-<div class="timenode"><div class="meta"><p>2010-02-02</p></div><div class="body"><p>更新 abcd。</p></div></div>
-<div class="timenode"><div class="meta"><p>2000-01-01</p></div><div class="body"><p>发布文章。</p></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="时间轴,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline 时间轴样式预览 %&#125;
-&#123;% timenode 2024-09-01 %&#125;
-更新 ijkl。
-&#123;% endtimenode %&#125;
-&#123;% timenode 2020-11-21 %&#125;
-更新 efgh。
-&#123;% endtimenode %&#125;
-&#123;% timenode 2010-02-02 %&#125;
-更新 abcd。
-&#123;% endtimenode %&#125;
-&#123;% timenode 2000-01-01 %&#125;
-发布文章。
-&#123;% endtimenode %&#125;
-&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="链接卡片-link">链接卡片 link</h2>
-<div class="tabs" id="链接卡片,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#链接卡片,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#链接卡片,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#链接卡片,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="链接卡片,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">描述</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="链接卡片,-1"><a class="tag-link" href="/equipment/" target="_self">
-    <div class="tag-link-tips">站内链接</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left">
-          <i class="solitude fas fa-link"></i>
-        </div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">我的装备</div>
-            <div class="tag-link-sitename">生活与出行的必备品</div>
-        </div>
-        <i class="solitude fas fa-chevron-right"></i>
-    </div></a><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link '我的装备' '生活与出行的必备品' '/equipment/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<!-- ## 媒体 -->
-<!-- ## 仓库 -->
-<!-- ## 标签 -->]]></content>
-      <categories>
-        <category>小屋相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Solitude</tag>
       </tags>
   </entry>
 </search>
