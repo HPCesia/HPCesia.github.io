@@ -668,146 +668,6 @@ div.timenode .meta:after</span>
       </tags>
   </entry>
   <entry>
-    <title>Hexo 博客搜索引擎收录与 SEO 优化个人经验</title>
-    <url>/posts/2024/1f77b1be/</url>
-    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><p>测试</p></div></details>
-<div class="timeline"><span class="timeline-title">更新日志</span><div class="timenode"><div class="meta"><p>2024-09-04</p></div><div class="body"><p>新增「添加 nofollow 标签」相关内容。</p></div></div>
-<div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>发布文章。</p></div></div></div>
-<p>以下以 Bing 为例进行说明。</p>
-<h1 id="在-Bing-Webmaster-Tools-中登录并添加网站">在 Bing Webmaster Tools 中登录并添加网站</h1>
-<p><a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a> 是必应的网站管理员工具，可以添加个人网站并带进行一些网站操作。打开 <a href="https://www.bing.com/webmasters">Webmaster</a> 后点击「开始」或右上角「登录」以登录到官网。可以选择三种登录账号：Google、Microsoft、Facebook。<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825132253.png" alt="Bing Webmaster Tools 界面" loading="lazy"><br>
-初次登录会提示添加网站，有两种添加方式：从 GSC 导入、手动添加。如果网站已通过 GSC 收录，可以直接用 GSC，我选择手动添加。然后在右侧的输入框中输入网站URL即可。<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825131823.png" alt="添加网站界面" loading="lazy"><br>
-然后会要求验证网站。</p>
-<h1 id="验证网站">验证网站</h1>
-<p>验证网站有多种方式，我选择的是下载 <code>BingSiteAuth.xml</code> 文件进行验证。</p>
-<p>Webmaster 会要求你将这个文件放到网站的根目录，我们只需要将下载下来的 <code>BingSiteAuth.xml</code> 文件放到我们博客的 <code>source</code> 目录下，使用 <code>hexo d -g</code> 生成并推送到 Github 上即可，可以访问网站根目录下找到 <code>BingSiteAuth.xml</code>。</p>
-<p>然后在 Webmaster 页面中点击验证即可。</p>
-<h1 id="添加网站地图">添加网站地图</h1>
-<p>在博客根目录下打开终端，输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>并在 <code>_config.yaml</code> 中新增如下配置项：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Sitemap Generator</span>
-<span class="token key atrule">sitemap</span><span class="token punctuation">:</span>
-  <span class="token key atrule">path</span><span class="token punctuation">:</span> sitemap.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>接着使用 <code>hexo d -g</code> 生成并推送到 Github 上。在 Webmaster 左侧边栏选择「网站地图」选项<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152134.png" alt="侧边栏" loading="lazy"><br>
-然后点击右上角的「提交网站地图」按钮，输入你的网站的 <code>sitemap.xml</code> 位置。按照上述配置方法，我输入的是 <code>https://hpcesia.github.io/sitemap.xml</code>。等待一段时间后，网站地图就会审核成功，如图所示：<br>
-<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152551.png" alt="网站地图添加成功样例" loading="lazy"></p>
-<p>等待 48 小时审核后，就可以在搜索引擎上搜索到自己的博客了。</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002700.png" alt="审核通过样式" loading="lazy"></p>
-<h1 id="编制-URL">编制 URL</h1>
-<p>审核通过后，可能还是搜不到自己的博客，这时候就需要打开左侧边栏的「URL 检查」界面</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002900.png" alt="20240829002900" loading="lazy"></p>
-<p>输入自己的博客主页链接检查 URL，如果提示「已发现但未爬网，该 URL 无法在必应上显示」，先确认自己博客没有问题，然后选择「请求编制索引」即可，等待一段时间应该就好了。如果一直不进行索引，可以去联系客服处理。</p>
-<h1 id="Github-Action-自动提交-URL">Github Action 自动提交 URL</h1>
-<p>如果博客更新较勤，可以使用 <a href="https://github.com/Lete114/Hexo-SEO-AutoPush"><code>Hexo-SEO-AutoPush</code></a> 插件来配置 Github Action 以定期推送 URL 到搜索引擎上，提高爬虫抓取几率。</p>
-<h2 id="安装">安装</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-seo-autopush <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="配置文件">配置文件</h2>
-<p>在博客根目录下的 <code>_config.yml</code> 配置文件中添加以下内容：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable: 开启/关闭 推送</span>
-<span class="token comment"># cron: 执行时间周期</span>
-<span class="token comment"># deployBranch: 部署分支</span>
-<span class="token comment"># count: 每次提交最新的10篇文章，输入0或者不填写则默认为所有文章(建议是最新的10篇文章)</span>
-<span class="token comment"># date: 更新时间(updated)|创建日期(created)</span>
-<span class="token comment"># https://github.com/Lete114/hexo-seo-autopush.git</span>
-<span class="token key atrule">hexo_seo_autopush</span><span class="token punctuation">:</span>
-  <span class="token key atrule">cron</span><span class="token punctuation">:</span> 0 4 * * *
-  <span class="token key atrule">deployBranch</span><span class="token punctuation">:</span>
-  <span class="token key atrule">baidu</span><span class="token punctuation">:</span>
-    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
-    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
-  <span class="token key atrule">bing</span><span class="token punctuation">:</span>
-    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
-    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
-  <span class="token key atrule">google</span><span class="token punctuation">:</span>
-    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
-    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>由于生成的 actions 是在<code>.github/workflows/HexoSeoAutoPush.yml</code>，<code>.</code> 开头的文件或文件夹都会被视为隐藏文件，<code>hexo-deployer-git</code> 不会部署隐藏文件，所以需要新增配置项 <code>ignore_hidden</code></p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span>
-  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>HPCesia/HPCesia.github.io.git
-  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
-  <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 忽略隐藏文件及文件夹(目录)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="APIKEY-设置">APIKEY 设置</h2>
-<p>打开博客部署的 Github 仓库的「Setting」选项卡：</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031826526.webp" alt="选项卡" loading="lazy"></p>
-<p>在侧边栏找到「Secrets and variables」选项，点开其中的「Actions」选项：</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031827356.webp" alt="" loading="lazy"></p>
-<p>然后点击「New repository secret」：</p>
-<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031829068.webp" alt="" loading="lazy"></p>
-<p>在「Name」和「Secret」处分别填写下方表格中的内容：</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>baidu_token</td>
-<td>UlxxxxxxxxxxxxxB9</td>
-<td>【必填】Value 输入百度的 token</td>
-</tr>
-<tr>
-<td>bing_apikey</td>
-<td>47xxxxxxxxxxxxx91</td>
-<td>【必填】Value 输入必应的 apikey</td>
-</tr>
-<tr>
-<td>google_private_key</td>
-<td>xxxxxxxxxxxxxxxxx</td>
-<td>【必填】Value 输入谷歌的 private_key （注意：填写的时候需要使用<strong>双引号</strong>包起来，如: <code>&quot;private_key&quot;</code>）</td>
-</tr>
-<tr>
-<td>google_client_email</td>
-<td>xxxxxxxxxxxxxxxxx</td>
-<td>【必填】Value 输入谷歌的 client_email</td>
-</tr>
-</tbody>
-</table>
-<p>后续跟随<a href="https://github.com/Lete114/Hexo-SEO-AutoPush?tab=readme-ov-file#baidu-key">插件说明</a>操作即可。</p>
-<h1 id="添加-nofollow-标签">添加 nofollow 标签</h1>
-<p><code>hexo-filter-nofollow</code> 插件可以自动化地为博客中的外链添加 <code>nofollow</code> 标签。</p>
-<p>输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-filter-nofollow <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>安装 <code>hexo-filter-nofollow</code> 插件，然后在 <code>_config.yml</code> 中添加配置项：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable - 是否启用插件，默认值为 true</span>
-<span class="token comment"># field - 插件的处理范围，默认值为 site，可选 post 或 site</span>
-<span class="token comment"># post - 仅处理文章内容</span>
-<span class="token comment"># site - 处理全站所有页面</span>
-<span class="token comment"># exclude - 域名白名单，不同的子域名视为不同的域名（如 www）</span>
-<span class="token comment"># exclude1.com不包括 www.exclude1.com 或 en.exclude1.com</span>
-<span class="token key atrule">nofollow</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">field</span><span class="token punctuation">:</span> site
-  <span class="token key atrule">exclude</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> <span class="token string">'exclude1.com'</span>
-    <span class="token punctuation">-</span> <span class="token string">'exclude2.com'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>使用 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code> 三连即可。</p>
-<h1 id="参考资料">参考资料</h1>
-<ul>
-<li><a href="https://www.cnblogs.com/RainbowC0/p/18107581">将 Github Pages 个人博客录入搜索引擎（以 Bing 为例） - RainbowC0 - 博客园</a></li>
-<li><a href="https://lengnian.github.io/posts/7cddb87d/">Hexo+GitHub Pages搭建的个人博客加入到Bing搜索引擎 | WeiSJ&amp;HEXO </a></li>
-<li><a href="https://www.ehcoo.com/seo.html">【搜索优化】Hexo-next百度和谷歌搜索优化 | Ehcoo</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>小屋相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Fluid 主题无侵入改造记录</title>
     <url>/posts/2024/a06e351a/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-07</p></div><div class="body"><p>更新主题更换提醒。</p></div></div><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>规范了更新日志格式。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-27</p></div><div class="body"><p>新增「文章时效性显示」、「随机文章跳转」与「代码块美化」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>新增「顶部阅读进度条」与「建站时间显示」相关内容。</p></div></div><div class="timenode"><div class="meta"><p>2024-08-26</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
@@ -1130,6 +990,146 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
         <tag>CSS</tag>
         <tag>JavaScript</tag>
         <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 博客搜索引擎收录与 SEO 优化个人经验</title>
+    <url>/posts/2024/1f77b1be/</url>
+    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><p>测试</p></div></details>
+<div class="timeline"><span class="timeline-title">更新日志</span><div class="timenode"><div class="meta"><p>2024-09-04</p></div><div class="body"><p>新增「添加 nofollow 标签」相关内容。</p></div></div>
+<div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>发布文章。</p></div></div></div>
+<p>以下以 Bing 为例进行说明。</p>
+<h1 id="在-Bing-Webmaster-Tools-中登录并添加网站">在 Bing Webmaster Tools 中登录并添加网站</h1>
+<p><a href="https://www.bing.com/webmasters">Bing Webmaster Tools</a> 是必应的网站管理员工具，可以添加个人网站并带进行一些网站操作。打开 <a href="https://www.bing.com/webmasters">Webmaster</a> 后点击「开始」或右上角「登录」以登录到官网。可以选择三种登录账号：Google、Microsoft、Facebook。<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825132253.png" alt="Bing Webmaster Tools 界面" loading="lazy"><br>
+初次登录会提示添加网站，有两种添加方式：从 GSC 导入、手动添加。如果网站已通过 GSC 收录，可以直接用 GSC，我选择手动添加。然后在右侧的输入框中输入网站URL即可。<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825131823.png" alt="添加网站界面" loading="lazy"><br>
+然后会要求验证网站。</p>
+<h1 id="验证网站">验证网站</h1>
+<p>验证网站有多种方式，我选择的是下载 <code>BingSiteAuth.xml</code> 文件进行验证。</p>
+<p>Webmaster 会要求你将这个文件放到网站的根目录，我们只需要将下载下来的 <code>BingSiteAuth.xml</code> 文件放到我们博客的 <code>source</code> 目录下，使用 <code>hexo d -g</code> 生成并推送到 Github 上即可，可以访问网站根目录下找到 <code>BingSiteAuth.xml</code>。</p>
+<p>然后在 Webmaster 页面中点击验证即可。</p>
+<h1 id="添加网站地图">添加网站地图</h1>
+<p>在博客根目录下打开终端，输入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>并在 <code>_config.yaml</code> 中新增如下配置项：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Sitemap Generator</span>
+<span class="token key atrule">sitemap</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> sitemap.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>接着使用 <code>hexo d -g</code> 生成并推送到 Github 上。在 Webmaster 左侧边栏选择「网站地图」选项<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152134.png" alt="侧边栏" loading="lazy"><br>
+然后点击右上角的「提交网站地图」按钮，输入你的网站的 <code>sitemap.xml</code> 位置。按照上述配置方法，我输入的是 <code>https://hpcesia.github.io/sitemap.xml</code>。等待一段时间后，网站地图就会审核成功，如图所示：<br>
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240825152551.png" alt="网站地图添加成功样例" loading="lazy"></p>
+<p>等待 48 小时审核后，就可以在搜索引擎上搜索到自己的博客了。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002700.png" alt="审核通过样式" loading="lazy"></p>
+<h1 id="编制-URL">编制 URL</h1>
+<p>审核通过后，可能还是搜不到自己的博客，这时候就需要打开左侧边栏的「URL 检查」界面</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/20240829002900.png" alt="20240829002900" loading="lazy"></p>
+<p>输入自己的博客主页链接检查 URL，如果提示「已发现但未爬网，该 URL 无法在必应上显示」，先确认自己博客没有问题，然后选择「请求编制索引」即可，等待一段时间应该就好了。如果一直不进行索引，可以去联系客服处理。</p>
+<h1 id="Github-Action-自动提交-URL">Github Action 自动提交 URL</h1>
+<p>如果博客更新较勤，可以使用 <a href="https://github.com/Lete114/Hexo-SEO-AutoPush"><code>Hexo-SEO-AutoPush</code></a> 插件来配置 Github Action 以定期推送 URL 到搜索引擎上，提高爬虫抓取几率。</p>
+<h2 id="安装">安装</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-seo-autopush <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="配置文件">配置文件</h2>
+<p>在博客根目录下的 <code>_config.yml</code> 配置文件中添加以下内容：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable: 开启/关闭 推送</span>
+<span class="token comment"># cron: 执行时间周期</span>
+<span class="token comment"># deployBranch: 部署分支</span>
+<span class="token comment"># count: 每次提交最新的10篇文章，输入0或者不填写则默认为所有文章(建议是最新的10篇文章)</span>
+<span class="token comment"># date: 更新时间(updated)|创建日期(created)</span>
+<span class="token comment"># https://github.com/Lete114/hexo-seo-autopush.git</span>
+<span class="token key atrule">hexo_seo_autopush</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cron</span><span class="token punctuation">:</span> 0 4 * * *
+  <span class="token key atrule">deployBranch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">baidu</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
+    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">bing</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
+    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">google</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">date</span><span class="token punctuation">:</span> created
+    <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于生成的 actions 是在<code>.github/workflows/HexoSeoAutoPush.yml</code>，<code>.</code> 开头的文件或文件夹都会被视为隐藏文件，<code>hexo-deployer-git</code> 不会部署隐藏文件，所以需要新增配置项 <code>ignore_hidden</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span>
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>HPCesia/HPCesia.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+  <span class="token key atrule">ignore_hidden</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 忽略隐藏文件及文件夹(目录)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="APIKEY-设置">APIKEY 设置</h2>
+<p>打开博客部署的 Github 仓库的「Setting」选项卡：</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031826526.webp" alt="选项卡" loading="lazy"></p>
+<p>在侧边栏找到「Secrets and variables」选项，点开其中的「Actions」选项：</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031827356.webp" alt="" loading="lazy"></p>
+<p>然后点击「New repository secret」：</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409031829068.webp" alt="" loading="lazy"></p>
+<p>在「Name」和「Secret」处分别填写下方表格中的内容：</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baidu_token</td>
+<td>UlxxxxxxxxxxxxxB9</td>
+<td>【必填】Value 输入百度的 token</td>
+</tr>
+<tr>
+<td>bing_apikey</td>
+<td>47xxxxxxxxxxxxx91</td>
+<td>【必填】Value 输入必应的 apikey</td>
+</tr>
+<tr>
+<td>google_private_key</td>
+<td>xxxxxxxxxxxxxxxxx</td>
+<td>【必填】Value 输入谷歌的 private_key （注意：填写的时候需要使用<strong>双引号</strong>包起来，如: <code>&quot;private_key&quot;</code>）</td>
+</tr>
+<tr>
+<td>google_client_email</td>
+<td>xxxxxxxxxxxxxxxxx</td>
+<td>【必填】Value 输入谷歌的 client_email</td>
+</tr>
+</tbody>
+</table>
+<p>后续跟随<a href="https://github.com/Lete114/Hexo-SEO-AutoPush?tab=readme-ov-file#baidu-key">插件说明</a>操作即可。</p>
+<h1 id="添加-nofollow-标签">添加 nofollow 标签</h1>
+<p><code>hexo-filter-nofollow</code> 插件可以自动化地为博客中的外链添加 <code>nofollow</code> 标签。</p>
+<p>输入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-filter-nofollow <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装 <code>hexo-filter-nofollow</code> 插件，然后在 <code>_config.yml</code> 中添加配置项：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># enable - 是否启用插件，默认值为 true</span>
+<span class="token comment"># field - 插件的处理范围，默认值为 site，可选 post 或 site</span>
+<span class="token comment"># post - 仅处理文章内容</span>
+<span class="token comment"># site - 处理全站所有页面</span>
+<span class="token comment"># exclude - 域名白名单，不同的子域名视为不同的域名（如 www）</span>
+<span class="token comment"># exclude1.com不包括 www.exclude1.com 或 en.exclude1.com</span>
+<span class="token key atrule">nofollow</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> site
+  <span class="token key atrule">exclude</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">'exclude1.com'</span>
+    <span class="token punctuation">-</span> <span class="token string">'exclude2.com'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code> 三连即可。</p>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/RainbowC0/p/18107581">将 Github Pages 个人博客录入搜索引擎（以 Bing 为例） - RainbowC0 - 博客园</a></li>
+<li><a href="https://lengnian.github.io/posts/7cddb87d/">Hexo+GitHub Pages搭建的个人博客加入到Bing搜索引擎 | WeiSJ&amp;HEXO </a></li>
+<li><a href="https://www.ehcoo.com/seo.html">【搜索优化】Hexo-next百度和谷歌搜索优化 | Ehcoo</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>小屋相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -1870,7 +1870,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
-    <title>Solitude 主题标签使用说明</title>
+    <title>Solitude 主题内置与外挂标签插件使用说明</title>
     <url>/posts/2024/e5415539/</url>
     <content><![CDATA[<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>由于 <a href="https://solitude.js.org/zh/">Solitude 主题</a>的<a href="https://solitude.js.org/preview/zh/posts/e19cb4b7.html">标签插件文档</a>内容过少，我编写了这个文章，用于记录翻源码找到的可用的标签和使用方式。</p></div>
 <h1 id="内置标签">内置标签</h1>
@@ -2075,90 +2075,90 @@ Markdown 内容
 &#123;% gitlab [repo] %&#125;
 &#123;% gitee [repo] %&#125;
 &#123;% gitea [repo] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-  <a class='name-fesyltifj repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
-  <p class='desc-fesyltifj repo-desc'></p>
+  <a class='name-cg9djoihp repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
+  <p class='desc-cg9djoihp repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-fesyltifj'></span>
+    <span class='star-cg9djoihp'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-fesyltifj'></span>
+    <span class='fork-cg9djoihp'></span>
   </div>
-  <img class='lang-fesyltifj repo-language no-lightbox' />
+  <img class='lang-cg9djoihp repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-fesyltifj').innerText = data.name;
-        document.querySelector('.desc-fesyltifj').innerText = data.description;
-        document.querySelector('.star-fesyltifj').innerText = data.stargazers_count;
-        document.querySelector('.fork-fesyltifj').innerText = data.forks_count;
-        document.querySelector('.lang-fesyltifj').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-cg9djoihp').innerText = data.name;
+        document.querySelector('.desc-cg9djoihp').innerText = data.description;
+        document.querySelector('.star-cg9djoihp').innerText = data.stargazers_count;
+        document.querySelector('.fork-cg9djoihp').innerText = data.forks_count;
+        document.querySelector('.lang-cg9djoihp').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-fzver1x1o repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-fzver1x1o repo-desc'></p>
+  <a class='name-eqyjwe46g repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-eqyjwe46g repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-fzver1x1o'></span>
+    <span class='star-eqyjwe46g'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-fzver1x1o'></span>
+    <span class='fork-eqyjwe46g'></span>
   </div>
-  <img class='lang-fzver1x1o repo-language no-lightbox' />
+  <img class='lang-eqyjwe46g repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-fzver1x1o').innerText = data.name;
-        document.querySelector('.desc-fzver1x1o').innerText = data.description;
-        document.querySelector('.star-fzver1x1o').innerText = data.stargazers_count;
-        document.querySelector('.fork-fzver1x1o').innerText = data.forks_count;
-        document.querySelector('.lang-fzver1x1o').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-eqyjwe46g').innerText = data.name;
+        document.querySelector('.desc-eqyjwe46g').innerText = data.description;
+        document.querySelector('.star-eqyjwe46g').innerText = data.stargazers_count;
+        document.querySelector('.fork-eqyjwe46g').innerText = data.forks_count;
+        document.querySelector('.lang-eqyjwe46g').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-q70d5k69f repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-q70d5k69f repo-desc'></p>
+  <a class='name-95mcwl16c repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-95mcwl16c repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-q70d5k69f'></span>
+    <span class='star-95mcwl16c'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-q70d5k69f'></span>
+    <span class='fork-95mcwl16c'></span>
   </div>
-  <img class='lang-q70d5k69f repo-language no-lightbox' />
+  <img class='lang-95mcwl16c repo-language no-lightbox' />
   <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-q70d5k69f').innerText = data.name;
-        document.querySelector('.desc-q70d5k69f').innerText = data.description;
-        document.querySelector('.star-q70d5k69f').innerText = data.stargazers_count;
-        document.querySelector('.fork-q70d5k69f').innerText = data.forks_count;
-        document.querySelector('.lang-q70d5k69f').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-95mcwl16c').innerText = data.name;
+        document.querySelector('.desc-95mcwl16c').innerText = data.description;
+        document.querySelector('.star-95mcwl16c').innerText = data.stargazers_count;
+        document.querySelector('.fork-95mcwl16c').innerText = data.forks_count;
+        document.querySelector('.lang-95mcwl16c').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-f23ixbb35 repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
-  <p class='desc-f23ixbb35 repo-desc'></p>
+  <a class='name-m12rek3ps repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
+  <p class='desc-m12rek3ps repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-f23ixbb35'></span>
+    <span class='star-m12rek3ps'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-f23ixbb35'></span>
+    <span class='fork-m12rek3ps'></span>
   </div>
-  <img class='lang-f23ixbb35 repo-language no-lightbox' />
+  <img class='lang-m12rek3ps repo-language no-lightbox' />
   <script>
     fetch('https://gitlab.com/api/v4/projects/efu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-f23ixbb35').innerText = data.name;
-        document.querySelector('.desc-f23ixbb35').innerText = data.description;
-        document.querySelector('.star-f23ixbb35').innerText = data.star_count;
-        document.querySelector('.fork-f23ixbb35').innerText = data.forks_count;
-        document.querySelector('.lang-f23ixbb35').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-m12rek3ps').innerText = data.name;
+        document.querySelector('.desc-m12rek3ps').innerText = data.description;
+        document.querySelector('.star-m12rek3ps').innerText = data.star_count;
+        document.querySelector('.fork-m12rek3ps').innerText = data.forks_count;
+        document.querySelector('.lang-m12rek3ps').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github HPCesia/HPCesia.github.io %&#125;
