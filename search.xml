@@ -1651,6 +1651,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 ![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp)
 &#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="文章-article">文章 article</h2>
+<div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>注意：如果在使用 <code>hexo clean</code> 后使用 <code>hexo generate</code>，可能会导致 <code>article</code> 标签无法正常渲染，请在生成后修改含有 <code>article</code> 标签的文章并重新生成。</p></div>
 <div class="tabs" id="文章,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#文章,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#文章,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#文章,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#文章,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="文章,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% article [路径] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="文章,-1"><ul>
 <li>[路径]：应与 <code>_config.yml</code> 的 <code>permalink</code> 配置项一致</li>
 </ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="文章,-2"><div class="recent-post-item" onclick="pjax.loadUrl('/posts/2024/e5415539/')"><div class="post_cover"><a href="/posts/2024/e5415539/" class="fancybox" title="Solitude 主题内置与外挂标签插件使用说明"><img class="post_bg" src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072035830.webp" alt="Solitude 主题内置与外挂标签插件使用说明"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="article-meta sticky-warp"><span class="original">小屋相关</span></span></div><a class="article-title fancybox" href="/posts/2024/e5415539/" title="Solitude 主题内置与外挂标签插件使用说明">Solitude 主题内置与外挂标签插件使用说明</a></div><div class="content"></div><div class="article-meta-wrap"><span class="article-meta tags"><a class="article-meta__tags fancybox" href="tags/Hexo/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Hexo</span></a><a class="article-meta__tags fancybox" href="tags/Solitude/" onclick="event.stopPropagation();"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Solitude</span></a></span><span class="post-meta-date"><time datetime="Sat Sep 07 2024 22:59:33 GMT+0800" style="display: inline;"></time></span></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="文章,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% article 'posts/2024/e5415539/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
@@ -1752,90 +1753,90 @@ Markdown 内容
 &#123;% gitlab [repo] %&#125;
 &#123;% gitee [repo] %&#125;
 &#123;% gitea [repo] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-  <a class='name-yrbzxxyre repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
-  <p class='desc-yrbzxxyre repo-desc'></p>
+  <a class='name-wrbxqscpy repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
+  <p class='desc-wrbxqscpy repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-yrbzxxyre'></span>
+    <span class='star-wrbxqscpy'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-yrbzxxyre'></span>
+    <span class='fork-wrbxqscpy'></span>
   </div>
-  <img class='lang-yrbzxxyre repo-language no-lightbox' />
+  <img class='lang-wrbxqscpy repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-yrbzxxyre').innerText = data.name;
-        document.querySelector('.desc-yrbzxxyre').innerText = data.description;
-        document.querySelector('.star-yrbzxxyre').innerText = data.stargazers_count;
-        document.querySelector('.fork-yrbzxxyre').innerText = data.forks_count;
-        document.querySelector('.lang-yrbzxxyre').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-wrbxqscpy').innerText = data.name;
+        document.querySelector('.desc-wrbxqscpy').innerText = data.description;
+        document.querySelector('.star-wrbxqscpy').innerText = data.stargazers_count;
+        document.querySelector('.fork-wrbxqscpy').innerText = data.forks_count;
+        document.querySelector('.lang-wrbxqscpy').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-q73xwizgc repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-q73xwizgc repo-desc'></p>
+  <a class='name-samms0ea3 repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-samms0ea3 repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-q73xwizgc'></span>
+    <span class='star-samms0ea3'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-q73xwizgc'></span>
+    <span class='fork-samms0ea3'></span>
   </div>
-  <img class='lang-q73xwizgc repo-language no-lightbox' />
+  <img class='lang-samms0ea3 repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-q73xwizgc').innerText = data.name;
-        document.querySelector('.desc-q73xwizgc').innerText = data.description;
-        document.querySelector('.star-q73xwizgc').innerText = data.stargazers_count;
-        document.querySelector('.fork-q73xwizgc').innerText = data.forks_count;
-        document.querySelector('.lang-q73xwizgc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-samms0ea3').innerText = data.name;
+        document.querySelector('.desc-samms0ea3').innerText = data.description;
+        document.querySelector('.star-samms0ea3').innerText = data.stargazers_count;
+        document.querySelector('.fork-samms0ea3').innerText = data.forks_count;
+        document.querySelector('.lang-samms0ea3').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-7wo6ejxc4 repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-7wo6ejxc4 repo-desc'></p>
+  <a class='name-cug32fdcn repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-cug32fdcn repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-7wo6ejxc4'></span>
+    <span class='star-cug32fdcn'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-7wo6ejxc4'></span>
+    <span class='fork-cug32fdcn'></span>
   </div>
-  <img class='lang-7wo6ejxc4 repo-language no-lightbox' />
+  <img class='lang-cug32fdcn repo-language no-lightbox' />
   <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-7wo6ejxc4').innerText = data.name;
-        document.querySelector('.desc-7wo6ejxc4').innerText = data.description;
-        document.querySelector('.star-7wo6ejxc4').innerText = data.stargazers_count;
-        document.querySelector('.fork-7wo6ejxc4').innerText = data.forks_count;
-        document.querySelector('.lang-7wo6ejxc4').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-cug32fdcn').innerText = data.name;
+        document.querySelector('.desc-cug32fdcn').innerText = data.description;
+        document.querySelector('.star-cug32fdcn').innerText = data.stargazers_count;
+        document.querySelector('.fork-cug32fdcn').innerText = data.forks_count;
+        document.querySelector('.lang-cug32fdcn').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-ykag3vsd3 repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
-  <p class='desc-ykag3vsd3 repo-desc'></p>
+  <a class='name-xzlt99r0u repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
+  <p class='desc-xzlt99r0u repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-ykag3vsd3'></span>
+    <span class='star-xzlt99r0u'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-ykag3vsd3'></span>
+    <span class='fork-xzlt99r0u'></span>
   </div>
-  <img class='lang-ykag3vsd3 repo-language no-lightbox' />
+  <img class='lang-xzlt99r0u repo-language no-lightbox' />
   <script>
     fetch('https://gitlab.com/api/v4/projects/efu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-ykag3vsd3').innerText = data.name;
-        document.querySelector('.desc-ykag3vsd3').innerText = data.description;
-        document.querySelector('.star-ykag3vsd3').innerText = data.star_count;
-        document.querySelector('.fork-ykag3vsd3').innerText = data.forks_count;
-        document.querySelector('.lang-ykag3vsd3').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-xzlt99r0u').innerText = data.name;
+        document.querySelector('.desc-xzlt99r0u').innerText = data.description;
+        document.querySelector('.star-xzlt99r0u').innerText = data.star_count;
+        document.querySelector('.fork-xzlt99r0u').innerText = data.forks_count;
+        document.querySelector('.lang-xzlt99r0u').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github HPCesia/HPCesia.github.io %&#125;
