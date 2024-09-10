@@ -1493,7 +1493,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
   <entry>
     <title>VSCode 功能与美化扩展插件推荐</title>
     <url>/posts/2024/bb896ab4/</url>
-    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-06</p></div><div class="body"><p>新增插件推荐：</p><ul><li>Excalidraw</li><li>CodeGeeX</li><li>Code Spell Checker</li></ul></div></div><div class="timenode"><div class="meta"><p>2024-09-05</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
+    <content><![CDATA[<details><summary>更新日志</summary><div class="content"><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-10</p></div><div class="body"><p>新增插件推荐：</p><ul><li>SpaceBox UI Enhancer</li></ul></div></div><div class="timenode"><div class="meta"><p>2024-09-06</p></div><div class="body"><p>新增插件推荐：</p><ul><li>Excalidraw</li><li>CodeGeeX</li><li>Code Spell Checker</li></ul></div></div><div class="timenode"><div class="meta"><p>2024-09-05</p></div><div class="body"><p>发布文章。</p></div></div></div></div></details>
 <h1 id="功能">功能</h1>
 <h2 id="Path-Intellisense">Path Intellisense</h2>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a> 扩展可以在输入文件路径的时候给出自动补全提示，方便输入。</p>
@@ -1531,12 +1531,345 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 <img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041848190.webp" alt="扩展配置命令" loading="lazy"></p>
 <p>更换背景图后效果如下：<br>
 <img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409041840501.webp" alt="更换背景图效果" loading="lazy"></p>
+<h2 id="SpaceBox-UI-Enhancer">SpaceBox UI Enhancer</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=SpaceBox.spacebox-ui">SpaceBox UI Enhancer</a> 扩展为 VSCode 的菜单增加了大量对效率影响较小的过渡动画效果。</p>
+<p><img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/amnweb/SpaceBox-UI-Enhancer/images/demo.gif" alt="动画效果演示" loading="lazy"></p>
 ]]></content>
       <categories>
         <category>经验记录</category>
       </categories>
       <tags>
         <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Solitude 主题内置与外挂标签插件使用说明</title>
+    <url>/posts/2024/e5415539/</url>
+    <content><![CDATA[<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>由于 <a href="https://solitude.js.org/zh/">Solitude 主题</a>的<a href="https://solitude.js.org/preview/zh/posts/e19cb4b7.html">标签插件文档</a>内容过少，我编写了这个文章，用于记录翻源码找到的可用的标签和使用方式。</p></div>
+<h1 id="内置标签">内置标签</h1>
+<p>内置标签可直接使用。</p>
+<h2 id="标签页-tabs">标签页 tabs</h2>
+<div class="tabs" id="标签页,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签页,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签页,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签页,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签页,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签页,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs <span class="token url">[<span class="token content">唯一名称</span>] [<span class="token variable">索引</span>]</span> %&#125;
+<span class="token comment">&lt;!-- tab [标签标题] [@图标] --></span>
+任意内容（支持内联标签）。
+<span class="token comment">&lt;!-- endtab --></span>
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-1"><ul>
+<li>[唯一名称]：每个标签块的唯一名称，不包含逗号。
+<ul>
+<li>它将用作每个标签的#id前缀及其索引号。</li>
+<li>如果名称中包含空格，则在生成的#id中将所有空格替换为连字符。</li>
+<li>文章/页面的当前URL必须是唯一的！</li>
+</ul>
+</li>
+<li>[索引]：活动标签的索引号。
+<ul>
+<li>如果未指定，将选择第一个标签（1）。</li>
+<li>如果索引为-1，则不会选择任何标签。这将是一个剧透。</li>
+<li>可选参数。</li>
+</ul>
+</li>
+<li>[标签标题]：当前标签的标题。
+<ul>
+<li>如果未指定，将使用唯一名称与标签索引后缀作为标签标题。</li>
+<li>如果未指定标题但指定了图标，则标题将为空。</li>
+<li>可选参数。</li>
+</ul>
+</li>
+<li>[@图标]：图标名称（完整名称，例如 “fas fa-github”）。
+<ul>
+<li>可以指定带或不带空格的空格；例如，”标签标题 @图标” 类似于 “标签标题@图标”。</li>
+<li>可选参数。</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签页,-2"><div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 1 - 默认情况下，选择第一个标签</p></div>
+<div class="tabs" id="演示1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示1-0">test1</button></li><li class="tab"><button type="button" data-href="#演示1-1">test2</button></li><li class="tab"><button type="button" data-href="#演示1-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示1-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
+<div class="tabs" id="演示2,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示2,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示2,-1">test2</button></li><li class="tab active"><button type="button" data-href="#演示2,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示2,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示2,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="演示2,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
+<div class="tabs" id="演示3,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示3,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示3,-1">test2</button></li><li class="tab"><button type="button" data-href="#演示3,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示3,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
+<div class="tabs" id="演示4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示4-0">test1</button></li><li class="tab"><button type="button" data-href="#演示4-1"><i  style="text-align: center;" class="tab solitude fas fa-music"></i></button></li><li class="tab"><button type="button" data-href="#演示4-2"><i  class="tab solitude fas fa-music"></i>音乐</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示4-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-3"><div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示1 - 默认情况下，选择第一个标签</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示1 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test2 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test3 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示2, 2 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test2 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test3 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示3, -1 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test2 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab test3 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示4 %&#125;
+<span class="token comment">&lt;!-- tab test1 --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab @fas fa-music --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+<span class="token comment">&lt;!-- tab 音乐 @fas fa-music --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab--></span>
+&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="图库-gallery">图库 gallery</h2>
+<div class="tabs" id="图库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#图库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#图库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#图库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="图库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
+![]([图片 url])
+![]([图片 url])
+![]([图片 url])
+&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="图库,-1"><div class="gallery-container waterfall">
+        <div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp alt="" /></div>
+      </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="图库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp)
+![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp)
+&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="文章-article">文章 article</h2>
+<div class="tabs" id="文章,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#文章,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#文章,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#文章,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#文章,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="文章,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% article [路径] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="文章,-1"><ul>
+<li>[路径]：应与 <code>_config.yml</code> 的 <code>permalink</code> 配置项一致</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="文章,-2"><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="文章,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% article 'posts/2024/e5415539/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h1 id="外挂标签">外挂标签</h1>
+<p>外挂标签需安装 <a href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code></a> 插件。</p>
+<div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>该插件有大量功能未完善。插件内的样式文件与 Butterfly 主题以及 <a href="https://github.com/Akilarlxh/hexo-butterfly-tag-plugins-plus"><code>hexo-butterfly-tag-plugins-plus</code></a> 插件的样式文件一致，因此可以参考上述两个项目的标签插件源码修改 <code>hexo-solitude-tag</code> 插件的代码。</p></div>
+<h2 id="引用-note">引用 note</h2>
+<div class="tabs" id="引用,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#引用,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#引用,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#引用,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#引用,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="引用,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note <span class="token url">[<span class="token content">类型</span>] [<span class="token variable">图标</span>]</span> %&#125;
+Markdown 内容
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-1"><ul>
+<li>[类型]：引用的色彩类型。
+<ul>
+<li>可选项：<code>default | primary | success | info | warning | danger</code></li>
+</ul>
+</li>
+<li>[图标]：引用前的图标
+<ul>
+<li>可填写 Font Awesome 图标名称</li>
+<li>不填时不附带图标</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="引用,-2"><div class="note default modern"><i class="solitude fas fa-bullhorn"></i><p>2025 年快到了…</p></div>
+<div class="note primary modern"><i class="solitude fas fa-car-crash"></i><p>小心开车 安全至上</p></div>
+<div class="note success modern"><i class="solitude fas fa-fan"></i><p>这是三片呢？还是四片？</p></div>
+<div class="note info modern"><i class="solitude fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div>
+<div class="note warning modern"><i class="solitude far fa-hand-scissors"></i><p>剪刀石头布</p></div>
+<div class="note danger modern"><i class="solitude fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note default 'fas fa-bullhorn' %&#125;2025 年快到了....&#123;% endnote %&#125;
+
+&#123;% note primary 'fas fa-car-crash' %&#125;小心开车 安全至上&#123;% endnote %&#125;
+
+&#123;% note success 'fas fa-fan'%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;
+
+&#123;% note info 'fas fa-battery-half' %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;
+
+&#123;% note warning 'far fa-hand-scissors' %&#125;剪刀石头布&#123;% endnote %&#125;
+
+&#123;% note danger 'fab fa-internet-explorer' %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="按钮-button">按钮 button</h2>
+<div class="tabs" id="按钮,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#按钮,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#按钮,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#按钮,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="按钮,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button <span class="token url">[<span class="token content">图标</span>] [<span class="token variable">内容</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="按钮,-1"><p><button class="st-btn" onclick="pjax.loadUrl(&#39;&#x2F;music&#x2F;&#39;)"><i class="solitude fas fa-music"></i><span>音乐馆</span></button></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="按钮,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button 'fas fa-music' '音乐馆' '/music/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="折叠-fold">折叠 fold</h2>
+<div class="tabs" id="折叠,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#折叠,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#折叠,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#折叠,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#折叠,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="折叠,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">默认开启</span>]</span> %&#125;
+Markdown 内容
+&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-1"><ul>
+<li>[标题]：每个折叠块的标题，不包含逗号。</li>
+<li>[默认开启]：活动标签的索引号。
+<ul>
+<li>可填写任意内容，均视为默认开启</li>
+<li>可选参数</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="折叠,-2"><details><summary>默认关闭</summary><div class="content"><p><strong>这是默认关闭的</strong></p></div></details>
+<details open="1"><summary>默认开启</summary><div class="content"><p><strong>这是默认开启的</strong></p></div></details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold 默认关闭 %&#125;
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认关闭的</span><span class="token punctuation">**</span></span>
+&#123;% endfold %&#125;
+&#123;% fold 默认开启 1 %&#125;
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认开启的</span><span class="token punctuation">**</span></span>
+&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="时间轴-timeline">时间轴 timeline</h2>
+<div class="tabs" id="时间轴,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#时间轴,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#时间轴,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#时间轴,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="时间轴,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline [时间轴标题] %&#125;
+&#123;% timenode [时间节点标题] %&#125;
+内容
+&#123;% endtimenode %&#125;
+&#123;% timenode [时间节点标题] %&#125;
+内容
+&#123;% endtimenode %&#125;
+&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="时间轴,-1"><div class="timeline"><span class="timeline-title">时间轴样式预览</span><div class="timenode"><div class="meta"><p>2024-09-01</p></div><div class="body"><p>更新 ijkl。</p></div></div>
+<div class="timenode"><div class="meta"><p>2020-11-21</p></div><div class="body"><p>更新 efgh。</p></div></div>
+<div class="timenode"><div class="meta"><p>2010-02-02</p></div><div class="body"><p>更新 abcd。</p></div></div>
+<div class="timenode"><div class="meta"><p>2000-01-01</p></div><div class="body"><p>发布文章。</p></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="时间轴,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline 时间轴样式预览 %&#125;
+&#123;% timenode 2024-09-01 %&#125;
+更新 ijkl。
+&#123;% endtimenode %&#125;
+&#123;% timenode 2020-11-21 %&#125;
+更新 efgh。
+&#123;% endtimenode %&#125;
+&#123;% timenode 2010-02-02 %&#125;
+更新 abcd。
+&#123;% endtimenode %&#125;
+&#123;% timenode 2000-01-01 %&#125;
+发布文章。
+&#123;% endtimenode %&#125;
+&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="链接卡片-link">链接卡片 link</h2>
+<div class="tabs" id="链接卡片,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#链接卡片,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#链接卡片,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#链接卡片,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="链接卡片,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">描述</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="链接卡片,-1"><a class="tag-link" href="/equipment/" target="_self">
+    <div class="tag-link-tips">站内链接</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left">
+          <i class="solitude fas fa-link"></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">我的装备</div>
+            <div class="tag-link-sitename">生活与出行的必备品</div>
+        </div>
+        <i class="solitude fas fa-chevron-right"></i>
+    </div></a><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link '我的装备' '生活与出行的必备品' '/equipment/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<!-- ## 媒体 -->
+<h2 id="仓库-repo">仓库 repo</h2>
+<div class="tabs" id="仓库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#仓库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#仓库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#仓库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="仓库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github [repo] %&#125;
+&#123;% gitlab [repo] %&#125;
+&#123;% gitee [repo] %&#125;
+&#123;% gitea [repo] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
+  <a class='name-46o9dl8jl repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
+  <p class='desc-46o9dl8jl repo-desc'></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class='star-46o9dl8jl'></span>
+    <i class="fas fa-code-branch"></i>
+    <span class='fork-46o9dl8jl'></span>
+  </div>
+  <img class='lang-46o9dl8jl repo-language no-lightbox' />
+  <script>
+    fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-46o9dl8jl').innerText = data.name;
+        document.querySelector('.desc-46o9dl8jl').innerText = data.description;
+        document.querySelector('.star-46o9dl8jl').innerText = data.stargazers_count;
+        document.querySelector('.fork-46o9dl8jl').innerText = data.forks_count;
+        document.querySelector('.lang-46o9dl8jl').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div>
+<div class="repo-card">
+  <a class='name-s8h3i5dtd repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-s8h3i5dtd repo-desc'></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class='star-s8h3i5dtd'></span>
+    <i class="fas fa-code-branch"></i>
+    <span class='fork-s8h3i5dtd'></span>
+  </div>
+  <img class='lang-s8h3i5dtd repo-language no-lightbox' />
+  <script>
+    fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-s8h3i5dtd').innerText = data.name;
+        document.querySelector('.desc-s8h3i5dtd').innerText = data.description;
+        document.querySelector('.star-s8h3i5dtd').innerText = data.stargazers_count;
+        document.querySelector('.fork-s8h3i5dtd').innerText = data.forks_count;
+        document.querySelector('.lang-s8h3i5dtd').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div>
+<div class="repo-card">
+  <a class='name-dmxrcyco3 repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-dmxrcyco3 repo-desc'></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class='star-dmxrcyco3'></span>
+    <i class="fas fa-code-branch"></i>
+    <span class='fork-dmxrcyco3'></span>
+  </div>
+  <img class='lang-dmxrcyco3 repo-language no-lightbox' />
+  <script>
+    fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-dmxrcyco3').innerText = data.name;
+        document.querySelector('.desc-dmxrcyco3').innerText = data.description;
+        document.querySelector('.star-dmxrcyco3').innerText = data.stargazers_count;
+        document.querySelector('.fork-dmxrcyco3').innerText = data.forks_count;
+        document.querySelector('.lang-dmxrcyco3').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div>
+<div class="repo-card">
+  <a class='name-w3ayef2ue repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
+  <p class='desc-w3ayef2ue repo-desc'></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class='star-w3ayef2ue'></span>
+    <i class="fas fa-code-branch"></i>
+    <span class='fork-w3ayef2ue'></span>
+  </div>
+  <img class='lang-w3ayef2ue repo-language no-lightbox' />
+  <script>
+    fetch('https://gitlab.com/api/v4/projects/efu/hexo-theme-solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-w3ayef2ue').innerText = data.name;
+        document.querySelector('.desc-w3ayef2ue').innerText = data.description;
+        document.querySelector('.star-w3ayef2ue').innerText = data.star_count;
+        document.querySelector('.fork-w3ayef2ue').innerText = data.forks_count;
+        document.querySelector('.lang-w3ayef2ue').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github HPCesia/HPCesia.github.io %&#125;
+&#123;% github everfu/hexo-theme-solitude %&#125;
+&#123;% gitee everfu/hexo-theme-solitude %&#125;
+&#123;% gitlab efu/hexo-theme-solitude %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="标签-label">标签 label</h2>
+<div class="tabs" id="标签,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label <span class="token url">[<span class="token content">内容</span>] [<span class="token variable">颜色</span>]</span> %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签,-1"><ul>
+<li>[内容]：标签内的文字</li>
+<li>[颜色]：标签的背景颜色
+<ul>
+<li>可用颜色：<code>red | green | blue | yellow | pink | purple | orange</code></li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签,-2"><p><span class="hl-label bg-red">这是红色</span><br>
+<span class="hl-label bg-green">这是绿色</span><br>
+<span class="hl-label bg-blue">这是蓝色</span><br>
+<span class="hl-label bg-yellow">这是黄色</span><br>
+<span class="hl-label bg-pink">这是粉色</span><br>
+<span class="hl-label bg-purple">这是紫色</span><br>
+<span class="hl-label bg-orange">这是橙色</span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label 这是红色 red %&#125;
+&#123;% label 这是绿色 green %&#125;
+&#123;% label 这是蓝色 blue %&#125;
+&#123;% label 这是黄色 yellow %&#125;
+&#123;% label 这是粉色 pink %&#125;
+&#123;% label 这是紫色 purple %&#125;
+&#123;% label 这是橙色 orange %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+]]></content>
+      <categories>
+        <category>小屋相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Solitude</tag>
       </tags>
   </entry>
   <entry>
@@ -1867,332 +2200,6 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
         <tag>数学</tag>
         <tag>有限差分</tag>
         <tag>数值计算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Solitude 主题内置与外挂标签插件使用说明</title>
-    <url>/posts/2024/e5415539/</url>
-    <content><![CDATA[<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>由于 <a href="https://solitude.js.org/zh/">Solitude 主题</a>的<a href="https://solitude.js.org/preview/zh/posts/e19cb4b7.html">标签插件文档</a>内容过少，我编写了这个文章，用于记录翻源码找到的可用的标签和使用方式。</p></div>
-<h1 id="内置标签">内置标签</h1>
-<p>内置标签可直接使用。</p>
-<h2 id="标签页-tabs">标签页 tabs</h2>
-<div class="tabs" id="标签页,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签页,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签页,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签页,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签页,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签页,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs <span class="token url">[<span class="token content">唯一名称</span>] [<span class="token variable">索引</span>]</span> %&#125;
-<span class="token comment">&lt;!-- tab [标签标题] [@图标] --></span>
-任意内容（支持内联标签）。
-<span class="token comment">&lt;!-- endtab --></span>
-&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-1"><ul>
-<li>[唯一名称]：每个标签块的唯一名称，不包含逗号。
-<ul>
-<li>它将用作每个标签的#id前缀及其索引号。</li>
-<li>如果名称中包含空格，则在生成的#id中将所有空格替换为连字符。</li>
-<li>文章/页面的当前URL必须是唯一的！</li>
-</ul>
-</li>
-<li>[索引]：活动标签的索引号。
-<ul>
-<li>如果未指定，将选择第一个标签（1）。</li>
-<li>如果索引为-1，则不会选择任何标签。这将是一个剧透。</li>
-<li>可选参数。</li>
-</ul>
-</li>
-<li>[标签标题]：当前标签的标题。
-<ul>
-<li>如果未指定，将使用唯一名称与标签索引后缀作为标签标题。</li>
-<li>如果未指定标题但指定了图标，则标题将为空。</li>
-<li>可选参数。</li>
-</ul>
-</li>
-<li>[@图标]：图标名称（完整名称，例如 “fas fa-github”）。
-<ul>
-<li>可以指定带或不带空格的空格；例如，”标签标题 @图标” 类似于 “标签标题@图标”。</li>
-<li>可选参数。</li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签页,-2"><div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 1 - 默认情况下，选择第一个标签</p></div>
-<div class="tabs" id="演示1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示1-0">test1</button></li><li class="tab"><button type="button" data-href="#演示1-1">test2</button></li><li class="tab"><button type="button" data-href="#演示1-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示1-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
-<div class="tabs" id="演示2,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示2,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示2,-1">test2</button></li><li class="tab active"><button type="button" data-href="#演示2,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示2,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示2,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="演示2,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
-<div class="tabs" id="演示3,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#演示3,-0">test1</button></li><li class="tab"><button type="button" data-href="#演示3,-1">test2</button></li><li class="tab"><button type="button" data-href="#演示3,-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="演示3,-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3,-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
-<div class="tabs" id="演示4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示4-0">test1</button></li><li class="tab"><button type="button" data-href="#演示4-1"><i  style="text-align: center;" class="tab solitude fas fa-music"></i></button></li><li class="tab"><button type="button" data-href="#演示4-2"><i  class="tab solitude fas fa-music"></i>音乐</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示4-0"><p><strong>这是标签 1。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-1"><p><strong>这是标签 2。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示4-2"><p><strong>这是标签 3。</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页,-3"><div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示1 - 默认情况下，选择第一个标签</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示1 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test2 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test3 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 2 - 预设选择标签</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示2, 2 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test2 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test3 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 3 - 没有预设标签</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示3, -1 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test2 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab test3 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>演示 4 - 自定义标签名称 + 图标 + 标签名称和图标</p></div>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% subtabs 演示4 %&#125;
-<span class="token comment">&lt;!-- tab test1 --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 1。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab @fas fa-music --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 2。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-<span class="token comment">&lt;!-- tab 音乐 @fas fa-music --></span>
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是标签 3。</span><span class="token punctuation">**</span></span>
-<span class="token comment">&lt;!-- endtab--></span>
-&#123;% endsubtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="图库-gallery">图库 gallery</h2>
-<div class="tabs" id="图库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#图库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#图库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#图库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="图库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
-![]([图片 url])
-![]([图片 url])
-![]([图片 url])
-&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="图库,-1"><div class="gallery-container waterfall">
-        <div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp alt="" /></div>
-      </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="图库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540032.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409062136036.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409072140582.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021602284.webp)
-![](https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409021540815.webp)
-&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h1 id="外挂标签">外挂标签</h1>
-<p>外挂标签需安装 <a href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code></a> 插件。</p>
-<div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>该插件有大量功能未完善。插件内的样式文件与 Butterfly 主题以及 <a href="https://github.com/Akilarlxh/hexo-butterfly-tag-plugins-plus"><code>hexo-butterfly-tag-plugins-plus</code></a> 插件的样式文件一致，因此可以参考上述两个项目的标签插件源码修改 <code>hexo-solitude-tag</code> 插件的代码。</p></div>
-<h2 id="引用-note">引用 note</h2>
-<div class="tabs" id="引用,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#引用,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#引用,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#引用,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#引用,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="引用,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note <span class="token url">[<span class="token content">类型</span>] [<span class="token variable">图标</span>]</span> %&#125;
-Markdown 内容
-&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-1"><ul>
-<li>[类型]：引用的色彩类型。
-<ul>
-<li>可选项：<code>default | primary | success | info | warning | danger</code></li>
-</ul>
-</li>
-<li>[图标]：引用前的图标
-<ul>
-<li>可填写 Font Awesome 图标名称</li>
-<li>不填时不附带图标</li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="引用,-2"><div class="note default modern"><i class="solitude fas fa-bullhorn"></i><p>2025 年快到了…</p></div>
-<div class="note primary modern"><i class="solitude fas fa-car-crash"></i><p>小心开车 安全至上</p></div>
-<div class="note success modern"><i class="solitude fas fa-fan"></i><p>这是三片呢？还是四片？</p></div>
-<div class="note info modern"><i class="solitude fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div>
-<div class="note warning modern"><i class="solitude far fa-hand-scissors"></i><p>剪刀石头布</p></div>
-<div class="note danger modern"><i class="solitude fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note default 'fas fa-bullhorn' %&#125;2025 年快到了....&#123;% endnote %&#125;
-
-&#123;% note primary 'fas fa-car-crash' %&#125;小心开车 安全至上&#123;% endnote %&#125;
-
-&#123;% note success 'fas fa-fan'%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;
-
-&#123;% note info 'fas fa-battery-half' %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;
-
-&#123;% note warning 'far fa-hand-scissors' %&#125;剪刀石头布&#123;% endnote %&#125;
-
-&#123;% note danger 'fab fa-internet-explorer' %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="按钮-button">按钮 button</h2>
-<div class="tabs" id="按钮,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#按钮,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#按钮,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#按钮,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="按钮,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button <span class="token url">[<span class="token content">图标</span>] [<span class="token variable">内容</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="按钮,-1"><p><button class="st-btn" onclick="pjax.loadUrl(&#39;&#x2F;music&#x2F;&#39;)"><i class="solitude fas fa-music"></i><span>音乐馆</span></button></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="按钮,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% button 'fas fa-music' '音乐馆' '/music/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="折叠-fold">折叠 fold</h2>
-<div class="tabs" id="折叠,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#折叠,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#折叠,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#折叠,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#折叠,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="折叠,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">默认开启</span>]</span> %&#125;
-Markdown 内容
-&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-1"><ul>
-<li>[标题]：每个折叠块的标题，不包含逗号。</li>
-<li>[默认开启]：活动标签的索引号。
-<ul>
-<li>可填写任意内容，均视为默认开启</li>
-<li>可选参数</li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="折叠,-2"><details><summary>默认关闭</summary><div class="content"><p><strong>这是默认关闭的</strong></p></div></details>
-<details open="1"><summary>默认开启</summary><div class="content"><p><strong>这是默认开启的</strong></p></div></details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="折叠,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% fold 默认关闭 %&#125;
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认关闭的</span><span class="token punctuation">**</span></span>
-&#123;% endfold %&#125;
-&#123;% fold 默认开启 1 %&#125;
-<span class="token bold"><span class="token punctuation">**</span><span class="token content">这是默认开启的</span><span class="token punctuation">**</span></span>
-&#123;% endfold %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="时间轴-timeline">时间轴 timeline</h2>
-<div class="tabs" id="时间轴,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#时间轴,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#时间轴,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#时间轴,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="时间轴,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline [时间轴标题] %&#125;
-&#123;% timenode [时间节点标题] %&#125;
-内容
-&#123;% endtimenode %&#125;
-&#123;% timenode [时间节点标题] %&#125;
-内容
-&#123;% endtimenode %&#125;
-&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="时间轴,-1"><div class="timeline"><span class="timeline-title">时间轴样式预览</span><div class="timenode"><div class="meta"><p>2024-09-01</p></div><div class="body"><p>更新 ijkl。</p></div></div>
-<div class="timenode"><div class="meta"><p>2020-11-21</p></div><div class="body"><p>更新 efgh。</p></div></div>
-<div class="timenode"><div class="meta"><p>2010-02-02</p></div><div class="body"><p>更新 abcd。</p></div></div>
-<div class="timenode"><div class="meta"><p>2000-01-01</p></div><div class="body"><p>发布文章。</p></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="时间轴,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% timeline 时间轴样式预览 %&#125;
-&#123;% timenode 2024-09-01 %&#125;
-更新 ijkl。
-&#123;% endtimenode %&#125;
-&#123;% timenode 2020-11-21 %&#125;
-更新 efgh。
-&#123;% endtimenode %&#125;
-&#123;% timenode 2010-02-02 %&#125;
-更新 abcd。
-&#123;% endtimenode %&#125;
-&#123;% timenode 2000-01-01 %&#125;
-发布文章。
-&#123;% endtimenode %&#125;
-&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="链接卡片-link">链接卡片 link</h2>
-<div class="tabs" id="链接卡片,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#链接卡片,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#链接卡片,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#链接卡片,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="链接卡片,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link <span class="token url">[<span class="token content">标题</span>] [<span class="token variable">描述</span>]</span> [链接] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="链接卡片,-1"><a class="tag-link" href="/equipment/" target="_self">
-    <div class="tag-link-tips">站内链接</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left">
-          <i class="solitude fas fa-link"></i>
-        </div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">我的装备</div>
-            <div class="tag-link-sitename">生活与出行的必备品</div>
-        </div>
-        <i class="solitude fas fa-chevron-right"></i>
-    </div></a><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% link '我的装备' '生活与出行的必备品' '/equipment/' %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<!-- ## 媒体 -->
-<h2 id="仓库-repo">仓库 repo</h2>
-<div class="tabs" id="仓库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#仓库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#仓库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#仓库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="仓库,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github [repo] %&#125;
-&#123;% gitlab [repo] %&#125;
-&#123;% gitee [repo] %&#125;
-&#123;% gitea [repo] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-  <a class='name-ujm4nccoz repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
-  <p class='desc-ujm4nccoz repo-desc'></p>
-  <div class="repo-gist">
-    <i class="fas fa-star"></i>
-    <span class='star-ujm4nccoz'></span>
-    <i class="fas fa-code-branch"></i>
-    <span class='fork-ujm4nccoz'></span>
-  </div>
-  <img class='lang-ujm4nccoz repo-language no-lightbox' />
-  <script>
-    fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-ujm4nccoz').innerText = data.name;
-        document.querySelector('.desc-ujm4nccoz').innerText = data.description;
-        document.querySelector('.star-ujm4nccoz').innerText = data.stargazers_count;
-        document.querySelector('.fork-ujm4nccoz').innerText = data.forks_count;
-        document.querySelector('.lang-ujm4nccoz').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  </script>
-  </div>
-<div class="repo-card">
-  <a class='name-r8weuatmz repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-r8weuatmz repo-desc'></p>
-  <div class="repo-gist">
-    <i class="fas fa-star"></i>
-    <span class='star-r8weuatmz'></span>
-    <i class="fas fa-code-branch"></i>
-    <span class='fork-r8weuatmz'></span>
-  </div>
-  <img class='lang-r8weuatmz repo-language no-lightbox' />
-  <script>
-    fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-r8weuatmz').innerText = data.name;
-        document.querySelector('.desc-r8weuatmz').innerText = data.description;
-        document.querySelector('.star-r8weuatmz').innerText = data.stargazers_count;
-        document.querySelector('.fork-r8weuatmz').innerText = data.forks_count;
-        document.querySelector('.lang-r8weuatmz').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  </script>
-  </div>
-<div class="repo-card">
-  <a class='name-f1vm63jec repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-f1vm63jec repo-desc'></p>
-  <div class="repo-gist">
-    <i class="fas fa-star"></i>
-    <span class='star-f1vm63jec'></span>
-    <i class="fas fa-code-branch"></i>
-    <span class='fork-f1vm63jec'></span>
-  </div>
-  <img class='lang-f1vm63jec repo-language no-lightbox' />
-  <script>
-    fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-f1vm63jec').innerText = data.name;
-        document.querySelector('.desc-f1vm63jec').innerText = data.description;
-        document.querySelector('.star-f1vm63jec').innerText = data.stargazers_count;
-        document.querySelector('.fork-f1vm63jec').innerText = data.forks_count;
-        document.querySelector('.lang-f1vm63jec').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  </script>
-  </div>
-<div class="repo-card">
-  <a class='name-6mnmjzow7 repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
-  <p class='desc-6mnmjzow7 repo-desc'></p>
-  <div class="repo-gist">
-    <i class="fas fa-star"></i>
-    <span class='star-6mnmjzow7'></span>
-    <i class="fas fa-code-branch"></i>
-    <span class='fork-6mnmjzow7'></span>
-  </div>
-  <img class='lang-6mnmjzow7 repo-language no-lightbox' />
-  <script>
-    fetch('https://gitlab.com/api/v4/projects/efu/hexo-theme-solitude')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-6mnmjzow7').innerText = data.name;
-        document.querySelector('.desc-6mnmjzow7').innerText = data.description;
-        document.querySelector('.star-6mnmjzow7').innerText = data.star_count;
-        document.querySelector('.fork-6mnmjzow7').innerText = data.forks_count;
-        document.querySelector('.lang-6mnmjzow7').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  </script>
-  </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github HPCesia/HPCesia.github.io %&#125;
-&#123;% github everfu/hexo-theme-solitude %&#125;
-&#123;% gitee everfu/hexo-theme-solitude %&#125;
-&#123;% gitlab efu/hexo-theme-solitude %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="标签-label">标签 label</h2>
-<div class="tabs" id="标签,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#标签,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#标签,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#标签,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#标签,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="标签,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label <span class="token url">[<span class="token content">内容</span>] [<span class="token variable">颜色</span>]</span> %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签,-1"><ul>
-<li>[内容]：标签内的文字</li>
-<li>[颜色]：标签的背景颜色
-<ul>
-<li>可用颜色：<code>red | green | blue | yellow | pink | purple | orange</code></li>
-</ul>
-</li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="标签,-2"><p><span class="hl-label bg-red">这是红色</span><br>
-<span class="hl-label bg-green">这是绿色</span><br>
-<span class="hl-label bg-blue">这是蓝色</span><br>
-<span class="hl-label bg-yellow">这是黄色</span><br>
-<span class="hl-label bg-pink">这是粉色</span><br>
-<span class="hl-label bg-purple">这是紫色</span><br>
-<span class="hl-label bg-orange">这是橙色</span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% label 这是红色 red %&#125;
-&#123;% label 这是绿色 green %&#125;
-&#123;% label 这是蓝色 blue %&#125;
-&#123;% label 这是黄色 yellow %&#125;
-&#123;% label 这是粉色 pink %&#125;
-&#123;% label 这是紫色 purple %&#125;
-&#123;% label 这是橙色 orange %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
-]]></content>
-      <categories>
-        <category>小屋相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Solitude</tag>
       </tags>
   </entry>
 </search>
