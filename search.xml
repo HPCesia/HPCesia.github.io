@@ -1145,6 +1145,82 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
       </tags>
   </entry>
   <entry>
+    <title>考研数据结构笔记 - KMP 算法</title>
+    <url>/posts/2024/fc617a15/</url>
+    <content><![CDATA[<div class="note info modern"><i class="solitude fas fa-info-circle"></i><p>本文基于考研 408 的 KMP 算法编写。</p></div>
+<p>KMP 算法核心思想：<strong>主字符串指针只进不退</strong></p>
+<h1 id="KMP-匹配算法">KMP 匹配算法</h1>
+<p>这个比较简单，基于 <code>next</code> 数组进行计算即可。</p>
+<p>匹配使用双指针进行，主字符串的指针只进不退，当模式串指针指向的字符与主字符串指针指向的字符匹配时，两个指针一起 +1；当模式串的某个字符不匹配时，则根据 <code>next</code> 数组中的对应值，将模式串指针移动到相应的地方。直接看代码更简单：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>optional<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">kmpMatch</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> str<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> next <span class="token operator">=</span> <span class="token function">generateNext</span><span class="token punctuation">(</span>pattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// pattern无符号，需要额外+1来处理首字符不匹配的情况</span>
+    size_t str_ptr <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pattern_ptr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>str_ptr <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> pattern_ptr <span class="token operator">&lt;=</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> str<span class="token punctuation">[</span>str_ptr<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 匹配时，指针都后移</span>
+            str_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
+            pattern_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 不匹配时，模式串指针回到next数组中对应位置</span>
+            pattern_ptr <span class="token operator">=</span> next<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">></span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 匹配成功，返回匹配的首个字符位置</span>
+        <span class="token keyword">return</span> str_ptr <span class="token operator">-</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 匹配失败，返回空</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="KMP-next-数组生成算法">KMP next 数组生成算法</h1>
+<p>这个才是重中之重。先上算法代码：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">generateNext</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">next</span><span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            next<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以下为叙述方便起见，采用类似 MATLAB 的 <code>str[a:b]</code> 的形式来表示 <code>str.substr(a, b - a)</code> 这一子串。</p>
+<p>算法的输出 <code>next</code> 数组中，<code>next[i]</code> 对应的是 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1。算法的循环可以看作两个部分，一个部分是递增 <code>i</code>，而另一个循环则是移动 <code>j</code> 来找到 <code>pattern[0:i]</code> 的最长公共前后缀长度，所以每次 <code>i++</code> 后，<code>j</code> 都表示 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1(因为 <code>j</code> 也跟着递增了)。</p>
+<p>着重考虑第二个循环，即 <code>i++</code> 后移动 <code>j</code> 的部分。循环开始时，比较 <code>pattern[0:i]</code> 后缀的最后一个字符，即 <code>pattern[i]</code> ，与 <code>pattern[0:i - 1]</code> 的最长公共前后缀所对应前缀的下一个字符，即 <code>pattern[j - 1]</code> 是否相等。</p>
+<p>如果相等，就说明 <code>pattern[0:i]</code> 的最长公共前后缀为 <code>pattern[0:j - 1]</code> 和 <code>pattern[i - j:i]</code>，因为 <code>pattern[0:i - 1]</code> 的最长公共前后缀恰为 <code>pattern[0:j - 2]</code> 和 <code>pattern[i - j:i - 1]</code>。</p>
+<p>如果不相等，则回退 <code>j</code>。这是因为 <code>pattern[0:j - 2] == pattern[i - j:i - 1]</code>，而 <code>next[j - 1]</code> 就是 <code>pattern[0:j - 2]</code> 的最大公共前后缀长度 +1，也是 <code>pattern[i - j:i - 1]</code> 的最大公共前后缀长度 +1，所以要把 <code>j</code> 回退到 <code>next[j - 1]</code>。</p>
+<p>换句话来说，第二个循环就是利用已经计算好的公共前后缀长度与前后缀相同的性质，按顺序不断尝试寻找最长的公共前后缀，如果发现前后缀不匹配，就回退到次长公共前后缀继续尝试寻找，直到 <code>j</code> 回退到 <code>pattern[0]</code>，也就是找不到任何公共前后缀时循环结束，递增 <code>i</code>。</p>
+<h1 id="KMP-nextval-数组">KMP nextval 数组</h1>
+<p>在 KMP 的匹配算法中，如果 <code>pattern[i]</code> 失配，则模式串指针回退到 <code>next[i] - 1</code> 处。但如果 <code>pattern[i] = pattern[next[i] - 1]</code>，那回退后进行的下一次匹配一定是失配的，还要继续回退，相当于进行了一次无用的匹配。</p>
+<p><code>nextval</code> 就是用来解决这个问题的，在计算出 <code>next</code> 数组后，再遍历 <code>next</code> 数组做一次修改，如果 <code>pattern[i] = pattern[next[i] - 1]</code>，就让 <code>next[i] = next[next[i] - 1]</code>，省去一次无用的跳转。</p>
+<p>算法代码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">generateNextval</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span><span class="token operator">&amp;</span> next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Hexo + Github Page 搭建个人博客的实践记录。</title>
     <url>/posts/2024/48acad6d/</url>
     <content><![CDATA[<details><summary>更新日志</summary><div class="timeline"><span class="timeline-title"><div class="timenode"><div class="meta"><p>2024-09-03</p></div><div class="body"><p>迁移「添加网站到搜索引擎」部分到<a href="/posts/2024/1f77b1be/" title="Hexo 博客搜索引擎收录与 SEO 优化个人经验">另一篇文章</a>。<br>规范了更新日志格式。</p></div></div>
@@ -1434,82 +1510,6 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
         <tag>Hexo</tag>
         <tag>博客</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>考研数据结构笔记 - KMP 算法</title>
-    <url>/posts/2024/fc617a15/</url>
-    <content><![CDATA[<div class="note info modern"><i class="solitude fas fa-info-circle"></i><p>本文基于考研 408 的 KMP 算法编写。</p></div>
-<p>KMP 算法核心思想：<strong>主字符串指针只进不退</strong></p>
-<h1 id="KMP-匹配算法">KMP 匹配算法</h1>
-<p>这个比较简单，基于 <code>next</code> 数组进行计算即可。</p>
-<p>匹配使用双指针进行，主字符串的指针只进不退，当模式串指针指向的字符与主字符串指针指向的字符匹配时，两个指针一起 +1；当模式串的某个字符不匹配时，则根据 <code>next</code> 数组中的对应值，将模式串指针移动到相应的地方。直接看代码更简单：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>optional<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">kmpMatch</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> str<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> next <span class="token operator">=</span> <span class="token function">generateNext</span><span class="token punctuation">(</span>pattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// pattern无符号，需要额外+1来处理首字符不匹配的情况</span>
-    size_t str_ptr <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pattern_ptr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>str_ptr <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> pattern_ptr <span class="token operator">&lt;=</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> str<span class="token punctuation">[</span>str_ptr<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 匹配时，指针都后移</span>
-            str_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
-            pattern_ptr<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            <span class="token comment">// 不匹配时，模式串指针回到next数组中对应位置</span>
-            pattern_ptr <span class="token operator">=</span> next<span class="token punctuation">[</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">></span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 匹配成功，返回匹配的首个字符位置</span>
-        <span class="token keyword">return</span> str_ptr <span class="token operator">-</span> <span class="token punctuation">(</span>pattern_ptr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 匹配失败，返回空</span>
-        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="KMP-next-数组生成算法">KMP next 数组生成算法</h1>
-<p>这个才是重中之重。先上算法代码：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">generateNext</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span> <span class="token function">next</span><span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            next<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">++</span>j<span class="token punctuation">;</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-            j <span class="token operator">=</span> next<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span> next<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>以下为叙述方便起见，采用类似 MATLAB 的 <code>str[a:b]</code> 的形式来表示 <code>str.substr(a, b - a)</code> 这一子串。</p>
-<p>算法的输出 <code>next</code> 数组中，<code>next[i]</code> 对应的是 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1。算法的循环可以看作两个部分，一个部分是递增 <code>i</code>，而另一个循环则是移动 <code>j</code> 来找到 <code>pattern[0:i]</code> 的最长公共前后缀长度，所以每次 <code>i++</code> 后，<code>j</code> 都表示 <code>pattern[0:i - 1]</code> 的最长公共前后缀长度 +1(因为 <code>j</code> 也跟着递增了)。</p>
-<p>着重考虑第二个循环，即 <code>i++</code> 后移动 <code>j</code> 的部分。循环开始时，比较 <code>pattern[0:i]</code> 后缀的最后一个字符，即 <code>pattern[i]</code> ，与 <code>pattern[0:i - 1]</code> 的最长公共前后缀所对应前缀的下一个字符，即 <code>pattern[j - 1]</code> 是否相等。</p>
-<p>如果相等，就说明 <code>pattern[0:i]</code> 的最长公共前后缀为 <code>pattern[0:j - 1]</code> 和 <code>pattern[i - j:i]</code>，因为 <code>pattern[0:i - 1]</code> 的最长公共前后缀恰为 <code>pattern[0:j - 2]</code> 和 <code>pattern[i - j:i - 1]</code>。</p>
-<p>如果不相等，则回退 <code>j</code>。这是因为 <code>pattern[0:j - 2] == pattern[i - j:i - 1]</code>，而 <code>next[j - 1]</code> 就是 <code>pattern[0:j - 2]</code> 的最大公共前后缀长度 +1，也是 <code>pattern[i - j:i - 1]</code> 的最大公共前后缀长度 +1，所以要把 <code>j</code> 回退到 <code>next[j - 1]</code>。</p>
-<p>换句话来说，第二个循环就是利用已经计算好的公共前后缀长度与前后缀相同的性质，按顺序不断尝试寻找最长的公共前后缀，如果发现前后缀不匹配，就回退到次长公共前后缀继续尝试寻找，直到 <code>j</code> 回退到 <code>pattern[0]</code>，也就是找不到任何公共前后缀时循环结束，递增 <code>i</code>。</p>
-<h1 id="KMP-nextval-数组">KMP nextval 数组</h1>
-<p>在 KMP 的匹配算法中，如果 <code>pattern[i]</code> 失配，则模式串指针回退到 <code>next[i] - 1</code> 处。但如果 <code>pattern[i] = pattern[next[i] - 1]</code>，那回退后进行的下一次匹配一定是失配的，还要继续回退，相当于进行了一次无用的匹配。</p>
-<p><code>nextval</code> 就是用来解决这个问题的，在计算出 <code>next</code> 数组后，再遍历 <code>next</code> 数组做一次修改，如果 <code>pattern[i] = pattern[next[i] - 1]</code>，就让 <code>next[i] = next[next[i] - 1]</code>，省去一次无用的跳转。</p>
-<p>算法代码如下：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">generateNextval</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> pattern<span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">></span><span class="token operator">&amp;</span> next<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pattern<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pattern<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">[</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>考研</tag>
       </tags>
   </entry>
   <entry>
@@ -2116,90 +2116,90 @@ Markdown 内容
 &#123;% gitlab [repo] %&#125;
 &#123;% gitee [repo] %&#125;
 &#123;% gitea [repo] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-  <a class='name-8mqz8k9yn repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
-  <p class='desc-8mqz8k9yn repo-desc'></p>
+  <a class='name-849h6k82j repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
+  <p class='desc-849h6k82j repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-8mqz8k9yn'></span>
+    <span class='star-849h6k82j'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-8mqz8k9yn'></span>
+    <span class='fork-849h6k82j'></span>
   </div>
-  <img class='lang-8mqz8k9yn repo-language no-lightbox' />
+  <img class='lang-849h6k82j repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-8mqz8k9yn').innerText = data.name;
-        document.querySelector('.desc-8mqz8k9yn').innerText = data.description;
-        document.querySelector('.star-8mqz8k9yn').innerText = data.stargazers_count;
-        document.querySelector('.fork-8mqz8k9yn').innerText = data.forks_count;
-        document.querySelector('.lang-8mqz8k9yn').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-849h6k82j').innerText = data.name;
+        document.querySelector('.desc-849h6k82j').innerText = data.description;
+        document.querySelector('.star-849h6k82j').innerText = data.stargazers_count;
+        document.querySelector('.fork-849h6k82j').innerText = data.forks_count;
+        document.querySelector('.lang-849h6k82j').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-7o6urzxyo repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-7o6urzxyo repo-desc'></p>
+  <a class='name-sox278xoz repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-sox278xoz repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-7o6urzxyo'></span>
+    <span class='star-sox278xoz'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-7o6urzxyo'></span>
+    <span class='fork-sox278xoz'></span>
   </div>
-  <img class='lang-7o6urzxyo repo-language no-lightbox' />
+  <img class='lang-sox278xoz repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-7o6urzxyo').innerText = data.name;
-        document.querySelector('.desc-7o6urzxyo').innerText = data.description;
-        document.querySelector('.star-7o6urzxyo').innerText = data.stargazers_count;
-        document.querySelector('.fork-7o6urzxyo').innerText = data.forks_count;
-        document.querySelector('.lang-7o6urzxyo').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-sox278xoz').innerText = data.name;
+        document.querySelector('.desc-sox278xoz').innerText = data.description;
+        document.querySelector('.star-sox278xoz').innerText = data.stargazers_count;
+        document.querySelector('.fork-sox278xoz').innerText = data.forks_count;
+        document.querySelector('.lang-sox278xoz').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-s2zocqovc repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
-  <p class='desc-s2zocqovc repo-desc'></p>
+  <a class='name-z7rhql7aa repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
+  <p class='desc-z7rhql7aa repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-s2zocqovc'></span>
+    <span class='star-z7rhql7aa'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-s2zocqovc'></span>
+    <span class='fork-z7rhql7aa'></span>
   </div>
-  <img class='lang-s2zocqovc repo-language no-lightbox' />
+  <img class='lang-z7rhql7aa repo-language no-lightbox' />
   <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-s2zocqovc').innerText = data.name;
-        document.querySelector('.desc-s2zocqovc').innerText = data.description;
-        document.querySelector('.star-s2zocqovc').innerText = data.stargazers_count;
-        document.querySelector('.fork-s2zocqovc').innerText = data.forks_count;
-        document.querySelector('.lang-s2zocqovc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-z7rhql7aa').innerText = data.name;
+        document.querySelector('.desc-z7rhql7aa').innerText = data.description;
+        document.querySelector('.star-z7rhql7aa').innerText = data.stargazers_count;
+        document.querySelector('.fork-z7rhql7aa').innerText = data.forks_count;
+        document.querySelector('.lang-z7rhql7aa').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-9f5pp531a repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
-  <p class='desc-9f5pp531a repo-desc'></p>
+  <a class='name-ozsccmmcw repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
+  <p class='desc-ozsccmmcw repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-9f5pp531a'></span>
+    <span class='star-ozsccmmcw'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-9f5pp531a'></span>
+    <span class='fork-ozsccmmcw'></span>
   </div>
-  <img class='lang-9f5pp531a repo-language no-lightbox' />
+  <img class='lang-ozsccmmcw repo-language no-lightbox' />
   <script>
     fetch('https://gitlab.com/api/v4/projects/efu%2Fhexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-9f5pp531a').innerText = data.name;
-        document.querySelector('.desc-9f5pp531a').innerText = data.description;
-        document.querySelector('.star-9f5pp531a').innerText = data.star_count;
-        document.querySelector('.fork-9f5pp531a').innerText = data.forks_count;
-        document.querySelector('.lang-9f5pp531a').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-ozsccmmcw').innerText = data.name;
+        document.querySelector('.desc-ozsccmmcw').innerText = data.description;
+        document.querySelector('.star-ozsccmmcw').innerText = data.star_count;
+        document.querySelector('.fork-ozsccmmcw').innerText = data.forks_count;
+        document.querySelector('.lang-ozsccmmcw').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% github HPCesia/HPCesia.github.io %&#125;
@@ -2278,7 +2278,23 @@ Markdown 内容
 &#123;% radio yellow 这是黄色 %&#125;
 &#123;% radio pink 这是粉色 %&#125;
 &#123;% radio purple 这是紫色 %&#125;
-&#123;% radio orange 这是橙色 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>]]></content>
+&#123;% radio orange 这是橙色 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="气泡注释-bubble">气泡注释 bubble</h2>
+<div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>包含 bubble 标签的 tabs 的 <code>position</code> 样式会强制转为 <code>static</code>，以解决层叠上下文样式覆盖问题。如果你修改了 tabs 的位置样式，在使用 bubble 标签时请注意。</p>
+<p>另：这个标签因为上述问题，还没提 PR，暂时不可用。</p></div>
+<div class="tabs" id="气泡注释,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#气泡注释,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#气泡注释,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#气泡注释,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#气泡注释,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="气泡注释,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% bubble <span class="token url">[<span class="token content">文字</span>] [<span class="token variable">注释</span>]</span> [颜色] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释,-1"><ul>
+<li>[文字]：显示的文字内容</li>
+<li>[注释]：气泡内显示的文字内容</li>
+<li>[颜色]：气泡的背景颜色
+<ul>
+<li>可用颜色：<code>red | green | blue | yellow | pink | purple | orange</code></li>
+<li>也可使用十六进制颜色，如 <code>#ec5830</code></li>
+<li>气泡内的文字颜色会根据给定的背景颜色计算近似亮度，以此设置为白色 / 黑色</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="气泡注释,-2"><p><span class="bubble-content">贝塞尔曲线</span><span class="bubble-notation"><span class="bubble-item bg-red">Bézier curve</span></span>是一种广泛应用于二维图形应用程序的数学曲线，于 1962 年由<span class="bubble-content">皮埃尔·贝塞尔</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830; color: var(--efu-black)">Pierre Bézier（1910 年 9 月 1 日——1999 年 11 月 25 日），法国机械和电气工程师，计算机几何建模创始人之一。</span></span>所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释,-3"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% bubble '贝塞尔曲线' 'Bézier curve' 'red' %&#125;是一种广泛应用于二维图形应用程序的数学曲线，于 1962 年由&#123;% bubble '皮埃尔·贝塞尔' 'Pierre Bézier（1910 年 9 月 1 日——1999 年 11 月 25 日），法国机械和电气工程师，计算机几何建模创始人之一。' '#ec5830' %&#125;所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="B-站视频-bvideo">B 站视频 bvideo</h2>
+<div class="tabs" id="b站视频,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#b站视频,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#b站视频,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#b站视频,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="b站视频,-0"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% bvideo [BV号] %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="b站视频,-1"><div class="video-container"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=BV1z34y1C7Kc" frameborder="0" loading="lazy" allowfullscreen></iframe></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="b站视频,-2"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% bvideo BV1z34y1C7Kc %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>]]></content>
       <categories>
         <category>小屋相关</category>
       </categories>
