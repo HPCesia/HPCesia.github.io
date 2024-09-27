@@ -2,9 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hpcesia.github.io/posts/2024/5252cfe9/</loc>
+    
+    <lastmod>2024-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/2024/ef7d6a4/</loc>
+    
+    <lastmod>2024-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hpcesia.github.io/posts/2024/d6f83120/</loc>
     
-    <lastmod>2024-09-21</lastmod>
+    <lastmod>2024-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/2024/48acad6d/</loc>
+    
+    <lastmod>2024-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/2024/e5415539/</loc>
+    
+    <lastmod>2024-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/2024/1f77b1be/</loc>
+    
+    <lastmod>2024-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/2024/a0486011/</loc>
+    
+    <lastmod>2024-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/2024/a06e351a/</loc>
+    
+    <lastmod>2024-09-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -14,33 +77,6 @@
     <loc>https://hpcesia.github.io/posts/2024/9632325/</loc>
     
     <lastmod>2024-09-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hpcesia.github.io/posts/2024/e5415539/</loc>
-    
-    <lastmod>2024-09-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hpcesia.github.io/posts/2024/a06e351a/</loc>
-    
-    <lastmod>2024-09-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hpcesia.github.io/posts/2024/1f77b1be/</loc>
-    
-    <lastmod>2024-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -57,24 +93,6 @@
   
   <url>
     <loc>https://hpcesia.github.io/posts/2024/fc617a15/</loc>
-    
-    <lastmod>2024-09-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hpcesia.github.io/posts/2024/48acad6d/</loc>
-    
-    <lastmod>2024-09-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hpcesia.github.io/posts/2024/a0486011/</loc>
     
     <lastmod>2024-09-10</lastmod>
     
@@ -166,7 +184,7 @@
 
   <url>
     <loc>https://hpcesia.github.io/</loc>
-    <lastmod>2024-09-21</lastmod>
+    <lastmod>2024-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
