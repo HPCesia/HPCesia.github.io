@@ -1,6 +1,21 @@
 user-agent: *
+
+# --------- Disallows ---------
+# Hexo internal
 Disallow: /about/
 Disallow: /categories/
 Disallow: /tags/
+Disallow: /archives/
+
+# Custom pages
+Disallow: /essay/
+Disallow: /links/
+Disallow: /music/
+Disallow: /recentcomments/
+Disallow: /tools/
+Disallow: /games/
+Disallow: /equipment/
+# --------- Disallows ---------
+
 Crawl-delay: 120
 Sitemap: https://hpcesia.github.io/sitemap.xml
