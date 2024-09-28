@@ -1424,7 +1424,7 @@ Region)为复平面上所有使差分格式的解稳定的 <span class="math inl
   <entry>
     <title>Solitude 主题内置与外挂标签插件使用说明</title>
     <url>/posts/2024/e5415539/</url>
-    <content><![CDATA[<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>由于 <a href="https://solitude.js.org/zh/">Solitude 主题</a>的<a
+    <content><![CDATA[<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>由于 <a href="https://solitude.js.org/zh/" rel="external nofollow noreferrer">Solitude 主题</a>的<a
 href="https://solitude.js.org/preview/zh/posts/e19cb4b7.html">标签插件文档</a>内容不够全面，我编写了这个文章，用于记录翻源码找到的可用的标签和使用方式。</p></div>
 <h1 id="内置标签">内置标签</h1>
 <p>内置标签可直接使用。</p>
@@ -1742,7 +1742,8 @@ class="post-meta-date"><time datetime="Sat Sep 07 2024 22:59:33 GMT+0800" style=
 <h1 id="外挂标签">外挂标签</h1>
 <p>外挂标签需安装 <a
 href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code></a>
-插件。</p>
+插件。 <div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>外挂标签样式由于渲染顺序问题，css
+引入有可能失效。如果发现外挂标签的样式缺失，可以修改一下文章然后再生成一次试试。</p></div></p>
 <h2 id="引用-note">引用 note</h2>
 <div class="tabs" id="引用,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#引用,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#引用,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#引用,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#引用,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="引用,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% note [类型] [图标] %&#125;</span><br><span class="line">Markdown 内容</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用,-1"><ul>
 <li>[类型]：引用的色彩类型。
@@ -1893,90 +1894,90 @@ href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code
 <!-- ## 媒体 -->
 <h2 id="仓库-repo">仓库 repo</h2>
 <div class="tabs" id="仓库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#仓库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#仓库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#仓库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="仓库,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% github [repo] %&#125;</span><br><span class="line">&#123;% gitlab [repo] %&#125;</span><br><span class="line">&#123;% gitee [repo] %&#125;</span><br><span class="line">&#123;% gitea [repo] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-<a class='name-1bzvkwq4m repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io"></a>
-<p class="desc-1bzvkwq4m repo-desc">
+<a class='name-bgymbelsr repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io" rel="external nofollow noreferrer"></a>
+<p class="desc-bgymbelsr repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-1bzvkwq4m"></span><i class="fas fa-code-branch"></i><span
-class="fork-1bzvkwq4m"></span>
+class="star-bgymbelsr"></span><i class="fas fa-code-branch"></i><span
+class="fork-bgymbelsr"></span>
 </div>
-<img class='lang-1bzvkwq4m repo-language no-lightbox' />
+<img class='lang-bgymbelsr repo-language no-lightbox' />
 <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-1bzvkwq4m').innerText = data.name;
-        document.querySelector('.desc-1bzvkwq4m').innerText = data.description;
-        document.querySelector('.star-1bzvkwq4m').innerText = data.stargazers_count;
-        document.querySelector('.fork-1bzvkwq4m').innerText = data.forks_count;
-        document.querySelector('.lang-1bzvkwq4m').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-bgymbelsr').innerText = data.name;
+        document.querySelector('.desc-bgymbelsr').innerText = data.description;
+        document.querySelector('.star-bgymbelsr').innerText = data.stargazers_count;
+        document.querySelector('.fork-bgymbelsr').innerText = data.forks_count;
+        document.querySelector('.lang-bgymbelsr').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-zpl99kfuu repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude"></a>
-<p class="desc-zpl99kfuu repo-desc">
+<a class='name-hcadgwu30 repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-hcadgwu30 repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-zpl99kfuu"></span><i class="fas fa-code-branch"></i><span
-class="fork-zpl99kfuu"></span>
+class="star-hcadgwu30"></span><i class="fas fa-code-branch"></i><span
+class="fork-hcadgwu30"></span>
 </div>
-<img class='lang-zpl99kfuu repo-language no-lightbox' />
+<img class='lang-hcadgwu30 repo-language no-lightbox' />
 <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-zpl99kfuu').innerText = data.name;
-        document.querySelector('.desc-zpl99kfuu').innerText = data.description;
-        document.querySelector('.star-zpl99kfuu').innerText = data.stargazers_count;
-        document.querySelector('.fork-zpl99kfuu').innerText = data.forks_count;
-        document.querySelector('.lang-zpl99kfuu').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-hcadgwu30').innerText = data.name;
+        document.querySelector('.desc-hcadgwu30').innerText = data.description;
+        document.querySelector('.star-hcadgwu30').innerText = data.stargazers_count;
+        document.querySelector('.fork-hcadgwu30').innerText = data.forks_count;
+        document.querySelector('.lang-hcadgwu30').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-nhoofeeqp repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude"></a>
-<p class="desc-nhoofeeqp repo-desc">
+<a class='name-2o6f13g5o repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-2o6f13g5o repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-nhoofeeqp"></span><i class="fas fa-code-branch"></i><span
-class="fork-nhoofeeqp"></span>
+class="star-2o6f13g5o"></span><i class="fas fa-code-branch"></i><span
+class="fork-2o6f13g5o"></span>
 </div>
-<img class='lang-nhoofeeqp repo-language no-lightbox' />
+<img class='lang-2o6f13g5o repo-language no-lightbox' />
 <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-nhoofeeqp').innerText = data.name;
-        document.querySelector('.desc-nhoofeeqp').innerText = data.description;
-        document.querySelector('.star-nhoofeeqp').innerText = data.stargazers_count;
-        document.querySelector('.fork-nhoofeeqp').innerText = data.forks_count;
-        document.querySelector('.lang-nhoofeeqp').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-2o6f13g5o').innerText = data.name;
+        document.querySelector('.desc-2o6f13g5o').innerText = data.description;
+        document.querySelector('.star-2o6f13g5o').innerText = data.stargazers_count;
+        document.querySelector('.fork-2o6f13g5o').innerText = data.forks_count;
+        document.querySelector('.lang-2o6f13g5o').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-dxwhw28ef repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude"></a>
-<p class="desc-dxwhw28ef repo-desc">
+<a class='name-wrqy67l38 repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-wrqy67l38 repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-dxwhw28ef"></span><i class="fas fa-code-branch"></i><span
-class="fork-dxwhw28ef"></span>
+class="star-wrqy67l38"></span><i class="fas fa-code-branch"></i><span
+class="fork-wrqy67l38"></span>
 </div>
-<img class='lang-dxwhw28ef repo-language no-lightbox' />
+<img class='lang-wrqy67l38 repo-language no-lightbox' />
 <script>
     fetch('https://gitlab.com/api/v4/projects/efu%2Fhexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-dxwhw28ef').innerText = data.name;
-        document.querySelector('.desc-dxwhw28ef').innerText = data.description;
-        document.querySelector('.star-dxwhw28ef').innerText = data.star_count;
-        document.querySelector('.fork-dxwhw28ef').innerText = data.forks_count;
-        document.querySelector('.lang-dxwhw28ef').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-wrqy67l38').innerText = data.name;
+        document.querySelector('.desc-wrqy67l38').innerText = data.description;
+        document.querySelector('.star-wrqy67l38').innerText = data.star_count;
+        document.querySelector('.fork-wrqy67l38').innerText = data.forks_count;
+        document.querySelector('.lang-wrqy67l38').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% github HPCesia/HPCesia.github.io %&#125;</span><br><span class="line">&#123;% github everfu/hexo-theme-solitude %&#125;</span><br><span class="line">&#123;% gitee everfu/hexo-theme-solitude %&#125;</span><br><span class="line">&#123;% gitlab efu/hexo-theme-solitude %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
@@ -2101,13 +2102,9 @@ class="hl-label bg-orange">这是橙色</span></p><button type="button" class="t
 </p>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单选栏,-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio red checked 这是红色 %&#125;</span><br><span class="line">&#123;% radio green unchecked 这是绿色 %&#125;</span><br><span class="line">&#123;% radio blue 这是蓝色 %&#125;</span><br><span class="line">&#123;% radio yellow 这是黄色 %&#125;</span><br><span class="line">&#123;% radio pink 这是粉色 %&#125;</span><br><span class="line">&#123;% radio purple 这是紫色 %&#125;</span><br><span class="line">&#123;% radio orange 这是橙色 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="气泡注释-bubble">气泡注释 bubble</h2>
-<div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>包含 bubble 标签的 tabs 的 <code>position</code> 样式会强制转为
-<code>static</code>，以解决层叠上下文样式覆盖问题。如果你修改了 tabs
-的位置样式，在使用 bubble 标签时请注意。</p>
-<p>另：这个标签因为上述问题，还没提 PR，暂时不可用。</p></div>
 <div class="tabs" id="气泡注释,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#气泡注释,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#气泡注释,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#气泡注释,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#气泡注释,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="气泡注释,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [文字] [注释] [颜色] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释,-1"><ul>
 <li>[文字]：显示的文字内容</li>
-<li>[注释]：气泡内显示的文字内容</li>
+<li>[注释]：气泡内显示的文字内容（不支持 Markdown 语法）</li>
 <li>[颜色]：气泡的背景颜色
 <ul>
 <li>可用颜色：<code>red | green | blue | yellow | pink | purple | orange</code></li>
@@ -2122,7 +2119,23 @@ curve</span></span>是一种广泛应用于二维图形应用程序的数学曲�
 class="bubble-notation"><span class="bubble-item"
 style="background-color:#ec5830; color: var(--efu-black)">Pierre
 Bézier（1910 年 9 月 1 日——1999 年 11 月 25
-日），法国机械和电气工程师，计算机几何建模创始人之一。</span></span>所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释,-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble &#x27;贝塞尔曲线&#x27; &#x27;Bézier curve&#x27; &#x27;red&#x27; %&#125;是一种广泛应用于二维图形应用程序的数学曲线，于 1962 年由&#123;% bubble &#x27;皮埃尔·贝塞尔&#x27; &#x27;Pierre Bézier（1910 年 9 月 1 日——1999 年 11 月 25 日），法国机械和电气工程师，计算机几何建模创始人之一。&#x27; &#x27;#ec5830&#x27; %&#125;所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+日），法国机械和电气工程师，计算机几何建模创始人之一。</span></span>所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。</p>
+<details open="1">
+<summary>
+在 fold 标签内嵌套使用示例
+</summary>
+<div class="note warning modern">
+<i class="solitude fas fa-vial-circle-check"></i>
+<p>
+在 <span class="bubble-content">note 标签和 fold 标签</span><span
+class="bubble-notation"><span
+class="bubble-item bg-pink">外挂标签插件的另外两个标签，你可以在这篇文章内找到他们的使用方法。</span></span>内嵌套使用示例。
+</p>
+<p>
+<em>fold 和 tabs 标签内部嵌套的气泡标签会被遮挡！！！</em>
+</p>
+</div>
+</details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释,-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble &#x27;贝塞尔曲线&#x27; &#x27;Bézier curve&#x27; &#x27;red&#x27; %&#125;是一种广泛应用于二维图形应用程序的数学曲线，于 1962 年由&#123;% bubble &#x27;皮埃尔·贝塞尔&#x27; &#x27;Pierre Bézier（1910 年 9 月 1 日——1999 年 11 月 25 日），法国机械和电气工程师，计算机几何建模创始人之一。&#x27; &#x27;#ec5830&#x27; %&#125;所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。</span><br><span class="line"></span><br><span class="line">&#123;% fold &#x27;在 fold 标签内嵌套使用示例&#x27; 1 %&#125;</span><br><span class="line">&#123;% note warning &#x27;fas fa-vial-circle-check&#x27; %&#125;</span><br><span class="line">在 &#123;% bubble &#x27;note 标签和 fold 标签&#x27; &#x27;外挂标签插件的另外两个标签，你可以在这篇文章内找到他们的使用方法。&#x27; &#x27;pink&#x27; %&#125;内嵌套使用示例。</span><br><span class="line"></span><br><span class="line"><span class="emphasis">*fold 和 tabs 标签内部嵌套的气泡标签会被遮挡！！！*</span></span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line">&#123;% endfold %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="b-站视频-bvideo">B 站视频 bvideo</h2>
 <div class="tabs" id="b站视频,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#b站视频,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#b站视频,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#b站视频,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="b站视频,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bvideo [BV号] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="b站视频,-1"><div class="video-container">
 <iframe src="//player.bilibili.com/player.html?autoplay=0&amp;bvid=BV1z34y1C7Kc" frameborder="0" loading="lazy" allowfullscreen>
