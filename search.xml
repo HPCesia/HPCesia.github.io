@@ -2455,10 +2455,11 @@ class="math inline">\({a_b^c}_d\)</span></li>
       </tags>
   </entry>
   <entry>
-    <title>Twikoo 使用米游社表情包</title>
+    <title>Twikoo 评论区利用 Python 脚本自动化导入米游社表情包</title>
     <url>/posts/2024/8c78f339/</url>
     <content><![CDATA[<h1 id="twikoo-评论系统表情包设置">Twikoo 评论系统表情包设置</h1>
-<p>参考设置面板说明即可，可以选择使用网站内的 json。</p>
+<p>打开Twikoo设置面板，打开「配置管理」 - 「插件」 -
+「EMOTION_CDN」，输入你自己的 emotion.json 路径即可。</p>
 <h1 id="python-脚本">Python 脚本</h1>
 <p>找个地方创建一个 <code>.py</code>
 文件，填入以下内容（为了开箱即用，使用的是 <code>urllib</code>
