@@ -2315,6 +2315,18 @@ Lipschitz 连续。</p>
 <div class="timenode">
 <div class="meta">
 <p>
+2024-10-01
+</p>
+</div>
+<div class="body">
+<p>
+更新「&lt;ahref=“#目录不同层级标题使用不同样式”&gt;目录不同层级标题使用不同样式</a>」
+</p>
+</div>
+</div>
+<div class="timenode">
+<div class="meta">
+<p>
 2024-09-27
 </p>
 </div>
@@ -2400,7 +2412,7 @@ src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/2024092610
 <img
 src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409261019055.webp" /></p>
 <h2 id="页眉使用当前页面标题">页眉使用当前页面标题</h2>
-<p>使用 <a href="https://github.com/tingerrr/hydra">hydra</a>
+<p>使用 <a href="https://github.com/tingerrr/hydra" rel="external nofollow noreferrer">hydra</a>
 包。需要其他设置可以参考 hydra 包的<a
 href="https://github.com/tingerrr/hydra/blob/main/doc/manual.pdf">文档</a>
 <figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">import</span> <span class="string">&quot;@preview/hydra:0.5.1&quot;</span><span class="punctuation">:</span> <span class="variable">hydra</span>
@@ -2420,13 +2432,50 @@ href="https://github.com/tingerrr/hydra/blob/main/doc/manual.pdf">文档</a>
 src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409272323462.webp" />
 <div class="note default modern"><i class="solitude fas fa-info-circle"></i><p>效果演示使用的是我的<a href="/posts/2024/d6f83120/" title="多复变函数论笔记 - 第一章 全纯函数 - 第一节 复欧氏空间">多复变函数论笔记</a>的
 Typst 版本。</p></div></p>
+<h2 id="目录不同层级标题使用不同样式">目录不同层级标题使用不同样式</h2>
+<h3 id="简易版">简易版</h3>
+<figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">show</span> <span class="variable">outline</span><span class="operator">.</span><span class="variable">entry</span><span class="punctuation">:</span> <span class="variable">it</span> <span class="operator">=&gt;</span> <span class="punctuation">{</span>
+  <span class="keyword">if</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">level</span> <span class="operator">==</span> <span class="number">1</span> <span class="punctuation">{</span>
+    <span class="title function_">strong</span><span class="punctuation">(</span><span class="variable">it</span><span class="punctuation">)</span>
+  <span class="punctuation">}</span> <span class="keyword">else</span> <span class="keyword">if</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">level</span> <span class="operator">&gt;=</span> <span class="number">3</span> <span class="punctuation">{</span>
+    <span class="title function_">emph</span><span class="punctuation">(</span><span class="variable">it</span><span class="punctuation">)</span>
+  <span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span>
+    <span class="variable">it</span>
+  <span class="punctuation">}</span>
+<span class="punctuation">}</span></pre></td></tr></table></figure>
+<p>效果如下： <img
+src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202410010058523.webp"
+alt="效果" />
+可以发现，页码也变得歪七倒八的。如果不介意，那么用这个简易版即可；反之，可以看下面的复杂版
+### 复杂版 <figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">show</span> <span class="variable">outline</span><span class="operator">.</span><span class="variable">entry</span><span class="punctuation">:</span> <span class="variable">it</span> <span class="operator">=&gt;</span> <span class="punctuation">{</span>
+  <span class="keyword">let</span> <span class="variable">loc</span> <span class="operator">=</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">element</span><span class="operator">.</span><span class="title function_">location</span><span class="punctuation">(</span><span class="punctuation">)</span>
+  <span class="title function_">link</span><span class="punctuation">(</span>
+    <span class="variable">loc</span><span class="punctuation">,</span>
+    <span class="keyword">if</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">level</span> <span class="operator">==</span> <span class="number">1</span> <span class="punctuation">{</span>
+      <span class="title function_">strong</span><span class="punctuation">(</span><span class="variable">it</span><span class="operator">.</span><span class="variable">body</span><span class="punctuation">)</span>
+    <span class="punctuation">}</span> <span class="keyword">else</span> <span class="keyword">if</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">level</span> <span class="operator">&gt;=</span> <span class="number">3</span> <span class="punctuation">{</span>
+      <span class="title function_">emph</span><span class="punctuation">(</span><span class="variable">it</span><span class="operator">.</span><span class="variable">body</span><span class="punctuation">)</span>
+    <span class="punctuation">}</span> <span class="keyword">else</span> <span class="punctuation">{</span>
+      <span class="variable">it</span><span class="operator">.</span><span class="variable">body</span>
+    <span class="punctuation">}</span><span class="punctuation">,</span>
+  <span class="punctuation">)</span>
+  <span class="variable">sym</span><span class="operator">.</span><span class="variable">space</span>
+  <span class="title function_">box</span><span class="punctuation">(</span><span class="variable">width</span><span class="punctuation">:</span> <span class="number">1fr</span><span class="punctuation">,</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">fill</span><span class="punctuation">)</span>
+  <span class="variable">sym</span><span class="operator">.</span><span class="variable">space</span>
+  <span class="title function_">link</span><span class="punctuation">(</span><span class="variable">loc</span><span class="punctuation">,</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">page</span><span class="punctuation">)</span>
+<span class="punctuation">}</span></pre></td></tr></table></figure> 复杂版是直接照着 Typst 的 <code>outline</code>
+函数<a
+href="https://github.com/typst/typst/blob/main/crates/typst/src/model/outline.rs#L486">源码</a>来写的，只有标题的文字部分会修改样式，效果如下：
+<img
+src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202410010102694.webp"
+alt="效果" /></p>
 <h1 id="转换为-markdown">转换为 Markdown</h1>
 <p>我使用 Pandoc 将 Typst 转换为 Markdown 文件，方便放在博客。
 <div class="note default modern"><i class="solitude fas fa-info-circle"></i><p>如果你的 Hexo 版本为 6.x，可以尝试使用 <a
 href="https://github.com/Myriad-Dreamin/typst.ts/tree/main/projects/hexo-renderer-typst">hexo-renderer-typst</a>，我试过了，Hexo
 7.0 版本会报错。</p></div></p>
 <h2 id="基础操作">基础操作</h2>
-<p>下载 <a href="https://github.com/jgm/pandoc/releases">Pandoc</a>
+<p>下载 <a href="https://github.com/jgm/pandoc/releases" rel="external nofollow noreferrer">Pandoc</a>
 的最新版本，配置相应环境变量（如果有需要的话），然后就可以开始了。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pandoc --from=typst --to=markdown --output=path/to/your/blog/source/_draft/post_name.md --wrap=preserve &quot;path/to/your/typst_file.typ&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="不能转换的情形">不能转换的情形</h2>
