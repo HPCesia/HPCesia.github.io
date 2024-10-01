@@ -1894,90 +1894,90 @@ href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code
 <!-- ## 媒体 -->
 <h2 id="仓库-repo">仓库 repo</h2>
 <div class="tabs" id="仓库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#仓库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#仓库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#仓库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="仓库,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% github [repo] %&#125;</span><br><span class="line">&#123;% gitlab [repo] %&#125;</span><br><span class="line">&#123;% gitee [repo] %&#125;</span><br><span class="line">&#123;% gitea [repo] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-<a class='name-c3z3bas43 repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io" rel="external nofollow noreferrer"></a>
-<p class="desc-c3z3bas43 repo-desc">
+<a class='name-i3yilwb3d repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io" rel="external nofollow noreferrer"></a>
+<p class="desc-i3yilwb3d repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-c3z3bas43"></span><i class="fas fa-code-branch"></i><span
-class="fork-c3z3bas43"></span>
+class="star-i3yilwb3d"></span><i class="fas fa-code-branch"></i><span
+class="fork-i3yilwb3d"></span>
 </div>
-<img class='lang-c3z3bas43 repo-language no-lightbox' />
+<img class='lang-i3yilwb3d repo-language no-lightbox' />
 <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-c3z3bas43').innerText = data.name;
-        document.querySelector('.desc-c3z3bas43').innerText = data.description;
-        document.querySelector('.star-c3z3bas43').innerText = data.stargazers_count;
-        document.querySelector('.fork-c3z3bas43').innerText = data.forks_count;
-        document.querySelector('.lang-c3z3bas43').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-i3yilwb3d').innerText = data.name;
+        document.querySelector('.desc-i3yilwb3d').innerText = data.description;
+        document.querySelector('.star-i3yilwb3d').innerText = data.stargazers_count;
+        document.querySelector('.fork-i3yilwb3d').innerText = data.forks_count;
+        document.querySelector('.lang-i3yilwb3d').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-a77jfhudu repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
-<p class="desc-a77jfhudu repo-desc">
+<a class='name-fj52wl83b repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-fj52wl83b repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-a77jfhudu"></span><i class="fas fa-code-branch"></i><span
-class="fork-a77jfhudu"></span>
+class="star-fj52wl83b"></span><i class="fas fa-code-branch"></i><span
+class="fork-fj52wl83b"></span>
 </div>
-<img class='lang-a77jfhudu repo-language no-lightbox' />
+<img class='lang-fj52wl83b repo-language no-lightbox' />
 <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-a77jfhudu').innerText = data.name;
-        document.querySelector('.desc-a77jfhudu').innerText = data.description;
-        document.querySelector('.star-a77jfhudu').innerText = data.stargazers_count;
-        document.querySelector('.fork-a77jfhudu').innerText = data.forks_count;
-        document.querySelector('.lang-a77jfhudu').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-fj52wl83b').innerText = data.name;
+        document.querySelector('.desc-fj52wl83b').innerText = data.description;
+        document.querySelector('.star-fj52wl83b').innerText = data.stargazers_count;
+        document.querySelector('.fork-fj52wl83b').innerText = data.forks_count;
+        document.querySelector('.lang-fj52wl83b').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-ibiir4l84 repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
-<p class="desc-ibiir4l84 repo-desc">
+<a class='name-34m4ltn95 repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-34m4ltn95 repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-ibiir4l84"></span><i class="fas fa-code-branch"></i><span
-class="fork-ibiir4l84"></span>
+class="star-34m4ltn95"></span><i class="fas fa-code-branch"></i><span
+class="fork-34m4ltn95"></span>
 </div>
-<img class='lang-ibiir4l84 repo-language no-lightbox' />
+<img class='lang-34m4ltn95 repo-language no-lightbox' />
 <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-ibiir4l84').innerText = data.name;
-        document.querySelector('.desc-ibiir4l84').innerText = data.description;
-        document.querySelector('.star-ibiir4l84').innerText = data.stargazers_count;
-        document.querySelector('.fork-ibiir4l84').innerText = data.forks_count;
-        document.querySelector('.lang-ibiir4l84').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-34m4ltn95').innerText = data.name;
+        document.querySelector('.desc-34m4ltn95').innerText = data.description;
+        document.querySelector('.star-34m4ltn95').innerText = data.stargazers_count;
+        document.querySelector('.fork-34m4ltn95').innerText = data.forks_count;
+        document.querySelector('.lang-34m4ltn95').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-z1ihmpm9m repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
-<p class="desc-z1ihmpm9m repo-desc">
+<a class='name-ff35ejyam repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-ff35ejyam repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-z1ihmpm9m"></span><i class="fas fa-code-branch"></i><span
-class="fork-z1ihmpm9m"></span>
+class="star-ff35ejyam"></span><i class="fas fa-code-branch"></i><span
+class="fork-ff35ejyam"></span>
 </div>
-<img class='lang-z1ihmpm9m repo-language no-lightbox' />
+<img class='lang-ff35ejyam repo-language no-lightbox' />
 <script>
     fetch('https://gitlab.com/api/v4/projects/efu%2Fhexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-z1ihmpm9m').innerText = data.name;
-        document.querySelector('.desc-z1ihmpm9m').innerText = data.description;
-        document.querySelector('.star-z1ihmpm9m').innerText = data.star_count;
-        document.querySelector('.fork-z1ihmpm9m').innerText = data.forks_count;
-        document.querySelector('.lang-z1ihmpm9m').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-ff35ejyam').innerText = data.name;
+        document.querySelector('.desc-ff35ejyam').innerText = data.description;
+        document.querySelector('.star-ff35ejyam').innerText = data.star_count;
+        document.querySelector('.fork-ff35ejyam').innerText = data.forks_count;
+        document.querySelector('.lang-ff35ejyam').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% github HPCesia/HPCesia.github.io %&#125;</span><br><span class="line">&#123;% github everfu/hexo-theme-solitude %&#125;</span><br><span class="line">&#123;% gitee everfu/hexo-theme-solitude %&#125;</span><br><span class="line">&#123;% gitlab efu/hexo-theme-solitude %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
@@ -2109,8 +2109,8 @@ class="hl-label bg-orange">这是橙色</span></p><button type="button" class="t
 <ul>
 <li>可用颜色：<code>red | green | blue | yellow | pink | purple | orange</code></li>
 <li>也可使用十六进制颜色，如 <code>#ec5830</code></li>
-<li>气泡内的文字颜色会根据给定的背景颜色计算近似亮度，以此设置为白色 /
-黑色</li>
+<li>使用自定义颜色时，气泡内的文字颜色会根据给定的背景颜色计算近似亮度，以此设置为白色
+/ 黑色</li>
 </ul></li>
 </ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="气泡注释,-2"><p><span class="bubble-content">贝塞尔曲线</span><span
 class="bubble-notation"><span class="bubble-item bg-red">Bézier
@@ -2142,13 +2142,17 @@ class="bubble-item bg-pink">外挂标签插件的另外两个标签，你可以�
 </iframe>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="b站视频,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bvideo BV1z34y1C7Kc %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="键盘按键-keyboard">键盘按键 keyboard</h2>
-<div class="tabs" id="键盘按键,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#键盘按键,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#键盘按键,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#键盘按键,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="键盘按键,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% keyboard [按键] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="键盘按键,-1"><p>在 Windows 系统中可以使用 <span class="keyboard">Win⌘</span> + <span
+<div class="tabs" id="键盘按键,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#键盘按键,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#键盘按键,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#键盘按键,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#键盘按键,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="键盘按键,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% keyboard [按键] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="键盘按键,-1"><ul>
+<li>[按键]：按键内文字，会自动转换大小写，<code>Enter | Windows | Command | Option</code>
+键会附带特殊图标</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="键盘按键,-2"><p>在 Windows 系统中可以使用 <span class="keyboard">Win⌘</span> + <span
 class="keyboard">Shift⇧</span> + <span class="keyboard">S</span>
 来截图，在 Mac 中则是 <span class="keyboard">Command⌘</span> + <span
-class="keyboard">Shift⇧</span> + <span class="keyboard">3</span>。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="键盘按键,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">在 Windows 系统中可以使用 &#123;% keyboard Windows %&#125; + &#123;% keyboard Shift %&#125; + &#123;% keyboard S %&#125; 来截图，在 Mac 中则是 &#123;% keyboard Command %&#125; + &#123;% keyboard Shift %&#125; + &#123;% keyboard 3 %&#125;。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+class="keyboard">Shift⇧</span> + <span class="keyboard">3</span>。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="键盘按键,-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">在 Windows 系统中可以使用 &#123;% keyboard Windows %&#125; + &#123;% keyboard Shift %&#125; + &#123;% keyboard S %&#125; 来截图，在 Mac 中则是 &#123;% keyboard Command %&#125; + &#123;% keyboard Shift %&#125; + &#123;% keyboard 3 %&#125;。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="剧透文本-spoiler">剧透文本 spoiler</h2>
-<div class="tabs" id="剧透文本,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#剧透文本,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#剧透文本,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#剧透文本,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#剧透文本,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="剧透文本,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% spoiler [样式] [文本] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="剧透文本,-1"><ul>
+<div class="tabs" id="剧透文本,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#剧透文本,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#剧透文本,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#剧透文本,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#剧透文本,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="剧透文本,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% spoiler [样式] [文字] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="剧透文本,-1"><ul>
 <li>[样式]：剧透文本遮罩类型 <code>blur | block</code></li>
+<li>[文字]：遮罩的文字内容（不支持 Markdown 语法）</li>
 </ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="剧透文本,-2"><p>《<span class="spoiler block-text">原神</span>》是由<span
 class="spoiler blur-text">米哈游</span>自研的一款全新开放世界冒险
 RPG。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="剧透文本,-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">《&#123;% spoiler block 原神 %&#125;》是由&#123;% spoiler blur 米哈游 %&#125;自研的一款全新开放世界冒险 RPG。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
