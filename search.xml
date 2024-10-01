@@ -1894,90 +1894,90 @@ href="https://github.com/everfu/hexo-solitude-tag"><code>hexo-solitude-tag</code
 <!-- ## 媒体 -->
 <h2 id="仓库-repo">仓库 repo</h2>
 <div class="tabs" id="仓库,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#仓库,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#仓库,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#仓库,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="仓库,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% github [repo] %&#125;</span><br><span class="line">&#123;% gitlab [repo] %&#125;</span><br><span class="line">&#123;% gitee [repo] %&#125;</span><br><span class="line">&#123;% gitea [repo] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="仓库,-1"><div class="repo-card">
-<a class='name-bgymbelsr repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io" rel="external nofollow noreferrer"></a>
-<p class="desc-bgymbelsr repo-desc">
+<a class='name-c3z3bas43 repo-title fancybox' href="https://github.com/HPCesia/HPCesia.github.io" rel="external nofollow noreferrer"></a>
+<p class="desc-c3z3bas43 repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-bgymbelsr"></span><i class="fas fa-code-branch"></i><span
-class="fork-bgymbelsr"></span>
+class="star-c3z3bas43"></span><i class="fas fa-code-branch"></i><span
+class="fork-c3z3bas43"></span>
 </div>
-<img class='lang-bgymbelsr repo-language no-lightbox' />
+<img class='lang-c3z3bas43 repo-language no-lightbox' />
 <script>
     fetch('https://api.github.com/repos/HPCesia/HPCesia.github.io')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-bgymbelsr').innerText = data.name;
-        document.querySelector('.desc-bgymbelsr').innerText = data.description;
-        document.querySelector('.star-bgymbelsr').innerText = data.stargazers_count;
-        document.querySelector('.fork-bgymbelsr').innerText = data.forks_count;
-        document.querySelector('.lang-bgymbelsr').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-c3z3bas43').innerText = data.name;
+        document.querySelector('.desc-c3z3bas43').innerText = data.description;
+        document.querySelector('.star-c3z3bas43').innerText = data.stargazers_count;
+        document.querySelector('.fork-c3z3bas43').innerText = data.forks_count;
+        document.querySelector('.lang-c3z3bas43').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-hcadgwu30 repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
-<p class="desc-hcadgwu30 repo-desc">
+<a class='name-a77jfhudu repo-title fancybox' href="https://github.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-a77jfhudu repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-hcadgwu30"></span><i class="fas fa-code-branch"></i><span
-class="fork-hcadgwu30"></span>
+class="star-a77jfhudu"></span><i class="fas fa-code-branch"></i><span
+class="fork-a77jfhudu"></span>
 </div>
-<img class='lang-hcadgwu30 repo-language no-lightbox' />
+<img class='lang-a77jfhudu repo-language no-lightbox' />
 <script>
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-hcadgwu30').innerText = data.name;
-        document.querySelector('.desc-hcadgwu30').innerText = data.description;
-        document.querySelector('.star-hcadgwu30').innerText = data.stargazers_count;
-        document.querySelector('.fork-hcadgwu30').innerText = data.forks_count;
-        document.querySelector('.lang-hcadgwu30').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-a77jfhudu').innerText = data.name;
+        document.querySelector('.desc-a77jfhudu').innerText = data.description;
+        document.querySelector('.star-a77jfhudu').innerText = data.stargazers_count;
+        document.querySelector('.fork-a77jfhudu').innerText = data.forks_count;
+        document.querySelector('.lang-a77jfhudu').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-2o6f13g5o repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
-<p class="desc-2o6f13g5o repo-desc">
+<a class='name-ibiir4l84 repo-title fancybox' href="https://gitee.com/everfu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-ibiir4l84 repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-2o6f13g5o"></span><i class="fas fa-code-branch"></i><span
-class="fork-2o6f13g5o"></span>
+class="star-ibiir4l84"></span><i class="fas fa-code-branch"></i><span
+class="fork-ibiir4l84"></span>
 </div>
-<img class='lang-2o6f13g5o repo-language no-lightbox' />
+<img class='lang-ibiir4l84 repo-language no-lightbox' />
 <script>
     fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-2o6f13g5o').innerText = data.name;
-        document.querySelector('.desc-2o6f13g5o').innerText = data.description;
-        document.querySelector('.star-2o6f13g5o').innerText = data.stargazers_count;
-        document.querySelector('.fork-2o6f13g5o').innerText = data.forks_count;
-        document.querySelector('.lang-2o6f13g5o').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-ibiir4l84').innerText = data.name;
+        document.querySelector('.desc-ibiir4l84').innerText = data.description;
+        document.querySelector('.star-ibiir4l84').innerText = data.stargazers_count;
+        document.querySelector('.fork-ibiir4l84').innerText = data.forks_count;
+        document.querySelector('.lang-ibiir4l84').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div>
 <div class="repo-card">
-<a class='name-wrqy67l38 repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
-<p class="desc-wrqy67l38 repo-desc">
+<a class='name-z1ihmpm9m repo-title fancybox' href="https://gitlab.com/efu/hexo-theme-solitude" rel="external nofollow noreferrer"></a>
+<p class="desc-z1ihmpm9m repo-desc">
 </p>
 <div class="repo-gist">
 <i class="fas fa-star"></i><span
-class="star-wrqy67l38"></span><i class="fas fa-code-branch"></i><span
-class="fork-wrqy67l38"></span>
+class="star-z1ihmpm9m"></span><i class="fas fa-code-branch"></i><span
+class="fork-z1ihmpm9m"></span>
 </div>
-<img class='lang-wrqy67l38 repo-language no-lightbox' />
+<img class='lang-z1ihmpm9m repo-language no-lightbox' />
 <script>
     fetch('https://gitlab.com/api/v4/projects/efu%2Fhexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-wrqy67l38').innerText = data.name;
-        document.querySelector('.desc-wrqy67l38').innerText = data.description;
-        document.querySelector('.star-wrqy67l38').innerText = data.star_count;
-        document.querySelector('.fork-wrqy67l38').innerText = data.forks_count;
-        document.querySelector('.lang-wrqy67l38').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-z1ihmpm9m').innerText = data.name;
+        document.querySelector('.desc-z1ihmpm9m').innerText = data.description;
+        document.querySelector('.star-z1ihmpm9m').innerText = data.star_count;
+        document.querySelector('.fork-z1ihmpm9m').innerText = data.forks_count;
+        document.querySelector('.lang-z1ihmpm9m').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="仓库,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% github HPCesia/HPCesia.github.io %&#125;</span><br><span class="line">&#123;% github everfu/hexo-theme-solitude %&#125;</span><br><span class="line">&#123;% gitee everfu/hexo-theme-solitude %&#125;</span><br><span class="line">&#123;% gitlab efu/hexo-theme-solitude %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
@@ -2141,6 +2141,17 @@ class="bubble-item bg-pink">外挂标签插件的另外两个标签，你可以�
 <iframe src="//player.bilibili.com/player.html?autoplay=0&amp;bvid=BV1z34y1C7Kc" frameborder="0" loading="lazy" allowfullscreen>
 </iframe>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="b站视频,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bvideo BV1z34y1C7Kc %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="键盘按键-keyboard">键盘按键 keyboard</h2>
+<div class="tabs" id="键盘按键,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#键盘按键,-0">标签语法</button></li><li class="tab active"><button type="button" data-href="#键盘按键,-1">样式预览</button></li><li class="tab"><button type="button" data-href="#键盘按键,-2">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="键盘按键,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% keyboard [按键] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="键盘按键,-1"><p>在 Windows 系统中可以使用 <span class="keyboard">Win⌘</span> + <span
+class="keyboard">Shift⇧</span> + <span class="keyboard">S</span>
+来截图，在 Mac 中则是 <span class="keyboard">Command⌘</span> + <span
+class="keyboard">Shift⇧</span> + <span class="keyboard">3</span>。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="键盘按键,-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">在 Windows 系统中可以使用 &#123;% keyboard Windows %&#125; + &#123;% keyboard Shift %&#125; + &#123;% keyboard S %&#125; 来截图，在 Mac 中则是 &#123;% keyboard Command %&#125; + &#123;% keyboard Shift %&#125; + &#123;% keyboard 3 %&#125;。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="剧透文本-spoiler">剧透文本 spoiler</h2>
+<div class="tabs" id="剧透文本,"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#剧透文本,-0">标签语法</button></li><li class="tab"><button type="button" data-href="#剧透文本,-1">参数说明</button></li><li class="tab active"><button type="button" data-href="#剧透文本,-2">样式预览</button></li><li class="tab"><button type="button" data-href="#剧透文本,-3">示例源码</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="剧透文本,-0"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% spoiler [样式] [文本] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="剧透文本,-1"><ul>
+<li>[样式]：剧透文本遮罩类型 <code>blur | block</code></li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="剧透文本,-2"><p>《<span class="spoiler block-text">原神</span>》是由<span
+class="spoiler blur-text">米哈游</span>自研的一款全新开放世界冒险
+RPG。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="剧透文本,-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">《&#123;% spoiler block 原神 %&#125;》是由&#123;% spoiler blur 米哈游 %&#125;自研的一款全新开放世界冒险 RPG。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
 ]]></content>
       <categories>
         <category>小屋相关</category>
@@ -2320,7 +2331,7 @@ Lipschitz 连续。</p>
 </div>
 <div class="body">
 <p>
-更新「&lt;ahref=“#目录不同层级标题使用不同样式”&gt;目录不同层级标题使用不同样式</a>」
+更新「目录不同层级标题使用不同样式」
 </p>
 </div>
 </div>
@@ -2336,24 +2347,17 @@ Lipschitz 连续。</p>
 </p>
 </div>
 </div>
-</div></details>
-<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>文章中 Typst 代码高亮设置方法：<a
-href="https://yihui-liu.github.io/posts/202402-typst-block.html">Hexo
+</span></div></details>
+<div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>文章中 Typst 代码高亮设置方法：<a href="https://yihui-liu.github.io/posts/202402-typst-block.html" rel="external nofollow noreferrer">Hexo
 配置 Typst 代码高亮 | Fox Home</a></p></div>
 <h1 id="怎么找解决方案">怎么找解决方案</h1>
-<p>多翻翻别人趟过的坑： + 翻文档 - <a
-href="https://typst-doc-cn.github.io/docs/">Typst 中文文档</a> - <a
-href="https://typst.app/docs">Typst Documentation</a> + 翻示例 - <a
-href="https://typst-doc-cn.github.io/guide/FAQ.html">常见问题 | Typst
-中文社区导航</a> - <a
-href="https://typst-doc-cn.github.io/tutorial/introduction.html">The
-Raindrop-Blue Book (Typst中文教程)</a> - <a
-href="https://sitandr.github.io/typst-examples-book/book/">Typst
+<p>多翻翻别人趟过的坑： + 翻文档 - <a href="https://typst-doc-cn.github.io/docs/" rel="external nofollow noreferrer">Typst 中文文档</a> - <a href="https://typst.app/docs" rel="external nofollow noreferrer">Typst Documentation</a> + 翻示例 - <a href="https://typst-doc-cn.github.io/guide/FAQ.html" rel="external nofollow noreferrer">常见问题 | Typst
+中文社区导航</a> - <a href="https://typst-doc-cn.github.io/tutorial/introduction.html" rel="external nofollow noreferrer">The
+Raindrop-Blue Book (Typst中文教程)</a> - <a href="https://sitandr.github.io/typst-examples-book/book/" rel="external nofollow noreferrer">Typst
 Examples Book</a></p>
 <h1 id="排版经验">排版经验</h1>
 <h2 id="不同层级标题使用不同序号格式">不同层级标题使用不同序号格式</h2>
-<p>其实是<a
-href="https://typst-doc-cn.github.io/guide/FAQ.html#heading-formats">如何为每一级标题指定不同的编号格式？
+<p>其实是<a href="https://typst-doc-cn.github.io/guide/FAQ.html#heading-formats" rel="external nofollow noreferrer">如何为每一级标题指定不同的编号格式？
 - 常见问题 | Typst
 中文社区导航</a>的重复造轮子，但是造轮子的时候没看到这个东西，造都造了就发出来算了。
 <figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">let</span> <span class="title function_">diff_numbering</span><span class="punctuation">(</span><span class="operator">..</span><span class="variable">schemes</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="punctuation">{</span>
@@ -2368,14 +2372,13 @@ href="https://typst-doc-cn.github.io/guide/FAQ.html#heading-formats">如何为�
   <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 <span class="comment">// 使用</span>
-<span class="keyword">#</span><span class="keyword">set</span> <span class="title function_">heading</span><span class="punctuation">(</span><span class="variable">numbering</span><span class="punctuation">:</span> <span class="title function_">diff_numbering</span><span class="punctuation">(</span><span class="string">&quot;第一章&quot;</span><span class="punctuation">,</span> <span class="string">&quot;1.1&quot;</span><span class="punctuation">,</span> <span class="string">&quot;1-1-1&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span>
+<span class="keyword">#</span><span class="keyword">set</span> <span class="title function_">heading</span><span class="punctuation">(</span><span class="variable">numbering</span><span class="punctuation">:</span> <span class="title function_">diff_numbering</span><span class="punctuation">(</span><span class="string">"第一章"</span><span class="punctuation">,</span> <span class="string">"1.1"</span><span class="punctuation">,</span> <span class="string">"1-1-1"</span><span class="punctuation">)</span><span class="punctuation">)</span>
 <span class="section">= 一个章节</span>
 <span class="section">== 一个小节</span>
 <span class="section">=== 一个小节的小节</span>
 <span class="section">= 第二个章节</span>
 <span class="section">== 第二个章节的小节</span>
-<span class="section">=== 第二个章节的小节的小节</span></pre></td></tr></table></figure> 效果： <img
-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409252346845.webp" /></p>
+<span class="section">=== 第二个章节的小节的小节</span></pre></td></tr></table></figure> 效果： <img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409252346845.webp"></p>
 <h2 id="填空栏">填空栏</h2>
 <figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">let</span> <span class="title function_">grid_blanks</span><span class="punctuation">(</span><span class="variable">cell</span><span class="punctuation">:</span> <span class="variable">grid</span><span class="operator">.</span><span class="variable">cell</span><span class="punctuation">,</span> <span class="variable">blank-width</span><span class="punctuation">:</span> <span class="number">2em</span><span class="punctuation">,</span> <span class="variable">line-width</span><span class="punctuation">:</span> <span class="number">0.05em</span><span class="punctuation">,</span> <span class="variable">colon</span><span class="punctuation">:</span> <span class="punctuation">[</span>: <span class="punctuation">]</span><span class="punctuation">,</span> <span class="operator">..</span><span class="variable">args</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="title function_">grid</span><span class="punctuation">(</span>
   <span class="operator">..</span><span class="variable">args</span><span class="operator">.</span><span class="title function_">named</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span>
@@ -2389,10 +2392,10 @@ src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/2024092523
   <span class="variable">row-gutter</span><span class="punctuation">:</span> <span class="number">1.5em</span><span class="punctuation">,</span>
   <span class="variable">column-gutter</span><span class="punctuation">:</span> <span class="number">1em</span><span class="punctuation">,</span>
   <span class="variable">blank-width</span><span class="punctuation">:</span> <span class="number">3cm</span><span class="punctuation">,</span>
-  <span class="string">&quot;姓名&quot;</span><span class="punctuation">,</span>
-  <span class="string">&quot;班级&quot;</span><span class="punctuation">,</span>
-  <span class="string">&quot;学号&quot;</span><span class="punctuation">,</span>
-  <span class="string">&quot;学校&quot;</span><span class="punctuation">,</span>
+  <span class="string">"姓名"</span><span class="punctuation">,</span>
+  <span class="string">"班级"</span><span class="punctuation">,</span>
+  <span class="string">"学号"</span><span class="punctuation">,</span>
+  <span class="string">"学校"</span><span class="punctuation">,</span>
 <span class="punctuation">)</span>
 
 <span class="title function_">#</span><span class="title function_">grid_blanks</span><span class="punctuation">(</span>
@@ -2402,20 +2405,17 @@ src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/2024092523
   <span class="variable">column-gutter</span><span class="punctuation">:</span> <span class="number">1em</span><span class="punctuation">,</span>
   <span class="variable">blank-width</span><span class="punctuation">:</span> <span class="number">3cm</span><span class="punctuation">,</span>
   <span class="variable">colon</span><span class="punctuation">:</span> <span class="punctuation">[</span> <span class="punctuation">$</span><span class="formula">==&gt;</span><span class="formula">  </span><span class="formula">integral</span><span class="formula">_</span><span class="formula">0</span><span class="formula">^</span><span class="formula">1</span><span class="formula"> </span><span class="formula">pi</span><span class="formula"> </span><span class="formula">-</span><span class="formula"> </span><span class="formula">1</span><span class="punctuation">$</span> <span class="punctuation">]</span><span class="punctuation">,</span>
-  <span class="string">&quot;Name&quot;</span><span class="punctuation">,</span>
-  <span class="string">&quot;Class&quot;</span><span class="punctuation">,</span>
-  <span class="string">&quot;Id&quot;</span><span class="punctuation">,</span>
-  <span class="string">&quot;Grade&quot;</span><span class="punctuation">,</span>
+  <span class="string">"Name"</span><span class="punctuation">,</span>
+  <span class="string">"Class"</span><span class="punctuation">,</span>
+  <span class="string">"Id"</span><span class="punctuation">,</span>
+  <span class="string">"Grade"</span><span class="punctuation">,</span>
 <span class="punctuation">)</span></pre></td></tr></table></figure>
-<p>效果： <img
-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409261014797.webp" />
-<img
-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409261019055.webp" /></p>
+<p>效果： <img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409261014797.webp">
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409261019055.webp"></p>
 <h2 id="页眉使用当前页面标题">页眉使用当前页面标题</h2>
 <p>使用 <a href="https://github.com/tingerrr/hydra" rel="external nofollow noreferrer">hydra</a>
-包。需要其他设置可以参考 hydra 包的<a
-href="https://github.com/tingerrr/hydra/blob/main/doc/manual.pdf">文档</a>
-<figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">import</span> <span class="string">&quot;@preview/hydra:0.5.1&quot;</span><span class="punctuation">:</span> <span class="variable">hydra</span>
+包。需要其他设置可以参考 hydra 包的<a href="https://github.com/tingerrr/hydra/blob/main/doc/manual.pdf" rel="external nofollow noreferrer">文档</a>
+<figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">import</span> <span class="string">"@preview/hydra:0.5.1"</span><span class="punctuation">:</span> <span class="variable">hydra</span>
 
 <span class="keyword">#</span><span class="keyword">set</span> <span class="title function_">page</span><span class="punctuation">(</span>
   <span class="variable">header</span><span class="punctuation">:</span> <span class="variable">context</span> <span class="title function_">align</span><span class="punctuation">(</span>
@@ -2428,8 +2428,7 @@ href="https://github.com/tingerrr/hydra/blob/main/doc/manual.pdf">文档</a>
     <span class="punctuation">}</span><span class="punctuation">,</span>
     <span class="title function_">emph</span><span class="punctuation">(</span><span class="title function_">hydra</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="variable">skip-starting</span><span class="punctuation">:</span> <span class="literal">false</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span>
   <span class="punctuation">)</span><span class="punctuation">,</span>
-<span class="punctuation">)</span></pre></td></tr></table></figure> 效果： <img
-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409272323462.webp" />
+<span class="punctuation">)</span></pre></td></tr></table></figure> 效果： <img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202409272323462.webp">
 <div class="note default modern"><i class="solitude fas fa-info-circle"></i><p>效果演示使用的是我的<a href="/posts/2024/d6f83120/" title="多复变函数论笔记 - 第一章 全纯函数 - 第一节 复欧氏空间">多复变函数论笔记</a>的
 Typst 版本。</p></div></p>
 <h2 id="目录不同层级标题使用不同样式">目录不同层级标题使用不同样式</h2>
@@ -2443,11 +2442,10 @@ Typst 版本。</p></div></p>
     <span class="variable">it</span>
   <span class="punctuation">}</span>
 <span class="punctuation">}</span></pre></td></tr></table></figure>
-<p>效果如下： <img
-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202410010058523.webp"
-alt="效果" />
-可以发现，页码也变得歪七倒八的。如果不介意，那么用这个简易版即可；反之，可以看下面的复杂版
-### 复杂版 <figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">show</span> <span class="variable">outline</span><span class="operator">.</span><span class="variable">entry</span><span class="punctuation">:</span> <span class="variable">it</span> <span class="operator">=&gt;</span> <span class="punctuation">{</span>
+<p>效果如下： <img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202410010058523.webp" alt="效果">
+可以发现，页码也变得歪七倒八的。如果不介意，那么用这个简易版即可；反之，可以看下面的复杂版</p>
+<h3 id="复杂版">复杂版</h3>
+<figure class="highlight typst"><table><tr><td class="code"><pre><span class="keyword">#</span><span class="keyword">show</span> <span class="variable">outline</span><span class="operator">.</span><span class="variable">entry</span><span class="punctuation">:</span> <span class="variable">it</span> <span class="operator">=&gt;</span> <span class="punctuation">{</span>
   <span class="keyword">let</span> <span class="variable">loc</span> <span class="operator">=</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">element</span><span class="operator">.</span><span class="title function_">location</span><span class="punctuation">(</span><span class="punctuation">)</span>
   <span class="title function_">link</span><span class="punctuation">(</span>
     <span class="variable">loc</span><span class="punctuation">,</span>
@@ -2463,21 +2461,17 @@ alt="效果" />
   <span class="title function_">box</span><span class="punctuation">(</span><span class="variable">width</span><span class="punctuation">:</span> <span class="number">1fr</span><span class="punctuation">,</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">fill</span><span class="punctuation">)</span>
   <span class="variable">sym</span><span class="operator">.</span><span class="variable">space</span>
   <span class="title function_">link</span><span class="punctuation">(</span><span class="variable">loc</span><span class="punctuation">,</span> <span class="variable">it</span><span class="operator">.</span><span class="variable">page</span><span class="punctuation">)</span>
-<span class="punctuation">}</span></pre></td></tr></table></figure> 复杂版是直接照着 Typst 的 <code>outline</code>
-函数<a
-href="https://github.com/typst/typst/blob/main/crates/typst/src/model/outline.rs#L486">源码</a>来写的，只有标题的文字部分会修改样式，效果如下：
-<img
-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202410010102694.webp"
-alt="效果" /></p>
+<span class="punctuation">}</span></pre></td></tr></table></figure>
+<p>复杂版是直接照着 Typst 的 <code>outline</code> 函数<a href="https://github.com/typst/typst/blob/main/crates/typst/src/model/outline.rs#L486" rel="external nofollow noreferrer">源码</a>来写的，只有标题的文字部分会修改样式，效果如下：
+<img src= "/img/loading.avif" data-lazy-src="https://gcore.jsdelivr.net/gh/HPCesia/PicGo-ImageBed/images/blog/202410010102694.webp" alt="效果"></p>
 <h1 id="转换为-markdown">转换为 Markdown</h1>
 <p>我使用 Pandoc 将 Typst 转换为 Markdown 文件，方便放在博客。
-<div class="note default modern"><i class="solitude fas fa-info-circle"></i><p>如果你的 Hexo 版本为 6.x，可以尝试使用 <a
-href="https://github.com/Myriad-Dreamin/typst.ts/tree/main/projects/hexo-renderer-typst">hexo-renderer-typst</a>，我试过了，Hexo
+<div class="note default modern"><i class="solitude fas fa-info-circle"></i><p>如果你的 Hexo 版本为 6.x，可以尝试使用 <a href="https://github.com/Myriad-Dreamin/typst.ts/tree/main/projects/hexo-renderer-typst" rel="external nofollow noreferrer">hexo-renderer-typst</a>，我试过了，Hexo
 7.0 版本会报错。</p></div></p>
 <h2 id="基础操作">基础操作</h2>
 <p>下载 <a href="https://github.com/jgm/pandoc/releases" rel="external nofollow noreferrer">Pandoc</a>
 的最新版本，配置相应环境变量（如果有需要的话），然后就可以开始了。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pandoc --from=typst --to=markdown --output=path/to/your/blog/source/_draft/post_name.md --wrap=preserve &quot;path/to/your/typst_file.typ&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pandoc --from=typst --to=markdown --output=path/to/your/blog/source/_draft/post_name.md --wrap=preserve "path/to/your/typst_file.typ"</span><br></pre></td></tr></table></figure>
 <h2 id="不能转换的情形">不能转换的情形</h2>
 <div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>以下内容基于 pandoc 3.4 说明</p></div>
 <ul>
@@ -2490,9 +2484,7 @@ href="https://github.com/Myriad-Dreamin/typst.ts/tree/main/projects/hexo-rendere
 <h2 id="转换可能出现的错误">转换可能出现的错误</h2>
 <ul>
 <li>与标签相关的内容，转换可能出错</li>
-<li>数学公式中未使用括号限制范围的嵌套上下标，转换可能出错，如<code>a_b^c_d</code>（<span
-class="math inline">\(a_b^{c_d}\)</span>）转换为 <span
-class="math inline">\({a_b^c}_d\)</span></li>
+<li>数学公式中未使用括号限制范围的嵌套上下标，转换可能出错，如<code>a_b^c_d</code>（<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.735ex;" xmlns="http://www.w3.org/2000/svg" width="2.798ex" height="2.493ex" role="img" focusable="false" viewBox="0 -777.2 1236.9 1102.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="TeXAtom" transform="translate(562,464.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g><g data-mml-node="mi" transform="translate(466,-150) scale(0.707)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g></g><g data-mml-node="mi" transform="translate(562,-317.1) scale(0.707)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g></g></g></g></svg></mjx-container></span>）转换为 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.827ex;" xmlns="http://www.w3.org/2000/svg" width="3.097ex" height="2.356ex" role="img" focusable="false" viewBox="0 -675.5 1368.9 1041.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(562,363) scale(0.707)"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g><g data-mml-node="mi" transform="translate(562,-315.5) scale(0.707)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g></g></g><g data-mml-node="mi" transform="translate(951.2,-358.6) scale(0.707)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g></g></g></svg></mjx-container></span></li>
 </ul>
 <p>可能有更多转换错误的情形，欢迎在本文评论区留言告诉我。</p>
 ]]></content>
@@ -2501,6 +2493,8 @@ class="math inline">\({a_b^c}_d\)</span></li>
       </categories>
       <tags>
         <tag>Typst</tag>
+        <tag>Pandoc</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
