@@ -1402,10 +1402,24 @@ alt="动画效果演示" />
 <div class="note primary modern"><i class="solitude fas fa-info-circle"></i><p>文章中 Typst 代码高亮设置方法：<a href="https://yihui-liu.github.io/posts/202402-typst-block.html" rel="external nofollow noreferrer">Hexo
 配置 Typst 代码高亮 | Fox Home</a></p></div>
 <h1 id="怎么找解决方案">怎么找解决方案</h1>
-<p>多翻翻别人趟过的坑： + 翻文档 - <a href="https://typst-doc-cn.github.io/docs/" rel="external nofollow noreferrer">Typst 中文文档</a> - <a href="https://typst.app/docs" rel="external nofollow noreferrer">Typst Documentation</a> + 翻示例 - <a href="https://typst-doc-cn.github.io/guide/FAQ.html" rel="external nofollow noreferrer">常见问题 | Typst
-中文社区导航</a> - <a href="https://typst-doc-cn.github.io/tutorial/introduction.html" rel="external nofollow noreferrer">The
-Raindrop-Blue Book (Typst中文教程)</a> - <a href="https://sitandr.github.io/typst-examples-book/book/" rel="external nofollow noreferrer">Typst
-Examples Book</a></p>
+<p>多翻翻别人趟过的坑：</p>
+<ul>
+<li>翻文档
+<ul>
+<li><a href="https://typst-doc-cn.github.io/docs/" rel="external nofollow noreferrer">Typst
+中文文档</a></li>
+<li><a href="https://typst.app/docs" rel="external nofollow noreferrer">Typst Documentation</a></li>
+</ul></li>
+<li>翻示例
+<ul>
+<li><a href="https://typst-doc-cn.github.io/guide/FAQ.html" rel="external nofollow noreferrer">常见问题 |
+Typst 中文社区导航</a></li>
+<li><a href="https://typst-doc-cn.github.io/tutorial/introduction.html" rel="external nofollow noreferrer">The
+Raindrop-Blue Book (Typst中文教程)</a></li>
+<li><a href="https://sitandr.github.io/typst-examples-book/book/" rel="external nofollow noreferrer">Typst
+Examples Book</a></li>
+</ul></li>
+</ul>
 <h1 id="排版经验">排版经验</h1>
 <h2 id="不同层级标题使用不同序号格式">不同层级标题使用不同序号格式</h2>
 <p>其实是<a href="https://typst-doc-cn.github.io/guide/FAQ.html#heading-formats" rel="external nofollow noreferrer">如何为每一级标题指定不同的编号格式？
