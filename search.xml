@@ -2432,6 +2432,30 @@ modules）</a></li>
 <div class="timenode">
 <div class="meta">
 <p>
+2024-10-08
+</p>
+</div>
+<div class="body">
+<p>
+更新「在文本中使用美观的大括号分类」
+</p>
+</div>
+</div>
+<div class="timenode">
+<div class="meta">
+<p>
+2024-10-02
+</p>
+</div>
+<div class="body">
+<p>
+更新「结合 showybox 与 ctheorems 包制作美观定理环境」
+</p>
+</div>
+</div>
+<div class="timenode">
+<div class="meta">
+<p>
 2024-10-01
 </p>
 </div>
@@ -2707,7 +2731,7 @@ typst/typst</a></li>
 <h2 id="基础操作">基础操作</h2>
 <p>下载 <a href="https://github.com/jgm/pandoc/releases" rel="external nofollow noreferrer">Pandoc</a>
 的最新版本，配置相应环境变量（如果有需要的话），然后就可以开始了。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pandoc --from=typst --to=markdown --output=path/to/your/blog/source/_draft/post_name.md --wrap=preserve "path/to/your/typst_file.typ"</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>pandoc --from=typst --to=markdown --output=path/to/your/blog/source/_draft/post_name.md --wrap=preserve "path/to/your/typst_file.typ"</code></pre>
 <h2 id="不能转换的情形">不能转换的情形</h2>
 <div class="note warning modern"><i class="solitude fas fa-info-circle"></i><p>以下内容基于 pandoc 3.4 说明</p></div>
 <ul>
