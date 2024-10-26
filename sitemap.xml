@@ -2,9 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hpcesia.github.io/posts/48acad6d/</loc>
+    
+    <lastmod>2024-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/a06e351a/</loc>
+    
+    <lastmod>2024-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/ba9eeffb/</loc>
+    
+    <lastmod>2024-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hpcesia.github.io/posts/4ca8244b/</loc>
     
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hpcesia.github.io/posts/9632325/</loc>
+    
+    <lastmod>2024-10-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -38,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://hpcesia.github.io/posts/9632325/</loc>
-    
-    <lastmod>2024-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hpcesia.github.io/posts/a0486011/</loc>
     
     <lastmod>2024-10-25</lastmod>
@@ -56,25 +83,7 @@
   </url>
   
   <url>
-    <loc>https://hpcesia.github.io/posts/a06e351a/</loc>
-    
-    <lastmod>2024-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hpcesia.github.io/posts/1f77b1be/</loc>
-    
-    <lastmod>2024-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hpcesia.github.io/posts/48acad6d/</loc>
     
     <lastmod>2024-10-25</lastmod>
     
@@ -119,15 +128,6 @@
   </url>
   
   <url>
-    <loc>https://hpcesia.github.io/posts/ba9eeffb/</loc>
-    
-    <lastmod>2024-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hpcesia.github.io/posts/5252cfe9/</loc>
     
     <lastmod>2024-10-25</lastmod>
@@ -148,7 +148,7 @@
 
   <url>
     <loc>https://hpcesia.github.io/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
