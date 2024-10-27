@@ -18,4 +18,4 @@ Disallow: /equipment/
 # --------- Disallows ---------
 
 Crawl-delay: 120
-Sitemap: https://hpcesia.github.io/sitemap.xml
+Sitemap: https://blog.hpcesia.com/sitemap.xml
