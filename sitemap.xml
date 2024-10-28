@@ -11,24 +11,6 @@
   </url>
   
   <url>
-    <loc>https://blog.hpcesia.com/posts/8c78f339/</loc>
-    
-    <lastmod>2024-10-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hpcesia.com/resource/emotion.json</loc>
-    
-    <lastmod>2024-10-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.hpcesia.com/posts/5252cfe9/</loc>
     
     <lastmod>2024-10-28</lastmod>
@@ -38,7 +20,34 @@
   </url>
   
   <url>
+    <loc>https://blog.hpcesia.com/posts/bb896ab4/</loc>
+    
+    <lastmod>2024-10-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.hpcesia.com/posts/ba9eeffb/</loc>
+    
+    <lastmod>2024-10-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hpcesia.com/posts/e5415539/</loc>
+    
+    <lastmod>2024-10-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hpcesia.com/posts/8c78f339/</loc>
     
     <lastmod>2024-10-28</lastmod>
     
@@ -65,54 +74,18 @@
   </url>
   
   <url>
-    <loc>https://blog.hpcesia.com/posts/a0486011/</loc>
-    
-    <lastmod>2024-10-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hpcesia.com/posts/e5415539/</loc>
-    
-    <lastmod>2024-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.hpcesia.com/posts/a06e351a/</loc>
     
-    <lastmod>2024-10-26</lastmod>
+    <lastmod>2024-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.hpcesia.com/posts/9632325/</loc>
+    <loc>https://blog.hpcesia.com/posts/a0486011/</loc>
     
-    <lastmod>2024-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hpcesia.com/posts/af3287de/</loc>
-    
-    <lastmod>2024-10-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hpcesia.com/posts/fc617a15/</loc>
-    
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,7 +94,16 @@
   <url>
     <loc>https://blog.hpcesia.com/posts/d6f83120/</loc>
     
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-10-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hpcesia.com/posts/af3287de/</loc>
+    
+    <lastmod>2024-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,16 +112,34 @@
   <url>
     <loc>https://blog.hpcesia.com/posts/ef7d6a4/</loc>
     
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.hpcesia.com/posts/bb896ab4/</loc>
+    <loc>https://blog.hpcesia.com/posts/9632325/</loc>
     
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-10-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hpcesia.com/posts/fc617a15/</loc>
+    
+    <lastmod>2024-10-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hpcesia.com/resource/emotion.json</loc>
+    
+    <lastmod>2024-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
