@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hpcesia.com/posts/e5415539/</loc>
+    
+    <lastmod>2024-10-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.hpcesia.com/posts/48acad6d/</loc>
     
     <lastmod>2024-10-30</lastmod>
@@ -50,15 +59,6 @@
     <loc>https://blog.hpcesia.com/posts/1f77b1be/</loc>
     
     <lastmod>2024-10-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hpcesia.com/posts/e5415539/</loc>
-    
-    <lastmod>2024-10-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
