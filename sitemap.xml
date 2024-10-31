@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hpcesia.com/resource/emotion.json</loc>
+    
+    <lastmod>2024-10-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.hpcesia.com/posts/e5415539/</loc>
     
     <lastmod>2024-10-30</lastmod>
@@ -137,15 +146,6 @@
   </url>
   
   <url>
-    <loc>https://blog.hpcesia.com/resource/emotion.json</loc>
-    
-    <lastmod>2024-10-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.hpcesia.com/posts/bb896ab4/</loc>
     
     <lastmod>2024-10-28</lastmod>
@@ -157,7 +157,7 @@
 
   <url>
     <loc>https://blog.hpcesia.com/</loc>
-    <lastmod>2024-10-30</lastmod>
+    <lastmod>2024-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
