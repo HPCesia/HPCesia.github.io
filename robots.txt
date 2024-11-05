@@ -1,13 +1,11 @@
 user-agent: *
 
 # --------- Disallows ---------
-# Hexo internal
 Disallow: /about/
+Disallow: /about-site/
 Disallow: /categories/
 Disallow: /tags/
 Disallow: /archives/
-
-# Custom pages
 Disallow: /essay/
 Disallow: /links/
 Disallow: /music/
@@ -15,6 +13,7 @@ Disallow: /recentcomments/
 Disallow: /tools/
 Disallow: /games/
 Disallow: /equipment/
+Disallow: /fcircle/
 # --------- Disallows ---------
 
 Crawl-delay: 120
