@@ -2,12 +2,15 @@ window.addEventListener("load",(()=>{let e=[]
 const t=document.getElementById("search-mask"),n=document.querySelector("#local-search .search-dialog")
 window.openSearch=()=>{utils.animateIn(t,"to_show 0.5s"),n.style.display="flex",setTimeout((()=>{document.querySelector("#local-search .search-box-input").focus()}),100),document.addEventListener("keydown",(function e(t){"Escape"===t.code&&(s(),document.removeEventListener("keydown",e))})),c(),window.addEventListener("resize",c)}
 const c=()=>{window.innerWidth<768&&n.style.setProperty("--search-height",window.innerHeight+"px")},s=()=>{utils.animateOut(n,"search_close .5s"),utils.animateOut(t,"to_hide 0.5s"),window.removeEventListener("resize",c)};(()=>{const e=document.querySelectorAll("#local-search .tag-list")
-e.length>0&&e.forEach((e=>e.addEventListener("click",(e=>s()))))})(),document.addEventListener("keydown",(function(e){e.ctrlKey&&"k"===e.key&&(e.preventDefault(),openSearch())})),t.addEventListener("click",s),utils.addEventListenerPjax(document.querySelector("#local-search .search-close-button"),"click",s)
+e.length>0&&e.forEach((e=>e.addEventListener("click",(e=>s()))))})()
+document.addEventListener("keydown",(function(e){e.ctrlKey&&"k"===e.key&&(e.preventDefault(),openSearch())}))
+t.addEventListener("click",s),utils.addEventListenerPjax(document.querySelector("#local-search .search-close-button"),"click",s)
 const a=()=>{utils.addEventListenerPjax(document.querySelector("#search-button > .search"),"click",openSearch),GLOBAL_CONFIG.right_menu&&document.getElementById("menu-search").addEventListener("click",(function(){rm.hideRightMenu(),openSearch()
 let e=document.getElementsByClassName("search-box-input")[0],t=document.createEvent("HTMLEvents")
 t.initEvent("input",!0,!0),e.value=selectTextNow,e.dispatchEvent(t)}))}
 a()
-let o="",i=0,l=[]
+let o="",i=0
+let l=[]
 function r(){const t=document.getElementById("search-results")
 document.getElementById("search-input").addEventListener("input",(function(n){t.innerHTML="",o=this.value.trim(),""!==o?(l=function(t){const n=new RegExp(t.split("").join(".*"),"i")
 return e.filter((e=>n.test(e.title)||n.test(e.content)))}(o),d(l,i),function(e){const t=Math.ceil(e/10),n=document.getElementById("search-pagination")
