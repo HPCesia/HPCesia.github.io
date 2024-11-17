@@ -5,7 +5,7 @@ const rm={mask:document.getElementById("rightmenu-mask"),menu:document.getElemen
 r.href=o,r.download=t,document.body.appendChild(r),r.click(),document.body.removeChild(r),URL.revokeObjectURL(o)}catch(e){utils.snackbarShow(GLOBAL_CONFIG.right_menu.img_error,!1,2e3)}},copyImage(e=this.domsrc){window.open(e)},mode(e){document.querySelector(".menu-darkmode-text").textContent=e?GLOBAL_CONFIG.right_menu.mode.light:GLOBAL_CONFIG.right_menu.mode.dark,this.hideRightMenu()},barrage(e){document.querySelector(".menu-commentBarrage-text").textContent=e?GLOBAL_CONFIG.right_menu.barrage.open:GLOBAL_CONFIG.right_menu.barrage.close,this.hideRightMenu()}}
 function stopMaskScroll(){const e=rm.hideRightMenu.bind(rm)
 utils.addEventListenerPjax(rm.menu,"mousewheel",e,{passive:!0}),utils.addEventListenerPjax(rm.mask,"mousewheel",e,{passive:!0}),utils.addEventListenerPjax(rm.mask,"click",e,{passive:!0})}window.oncontextmenu=e=>{if(document.body.clientWidth<=768)return
-if(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu&&firstShowRightMenu&&(firstShowRightMenu=!1,utils.snackbarShow(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu,!1,2e3),e.ctrlKey))return!0
+if(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu&&(firstShowRightMenu&&(firstShowRightMenu=!1,utils.snackbarShow(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu,!1,2e3)),e.ctrlKey))return!0
 let t=e.clientX+10,n=e.clientY
 Array.from(rm.menuItems.other).forEach((e=>e.style.display="flex")),rm.globalEvent=e
 const m=e.target.href,o=e.target.currentSrc,r=e.target.tagName.toLowerCase(),i=e.target.className.toLowerCase(),c=!(!selectTextNow||!window.getSelection())||!!m||!!o||"input"===r||"textarea"===r||i.match(/aplayer/)
