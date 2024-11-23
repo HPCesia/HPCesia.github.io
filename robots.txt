@@ -14,6 +14,7 @@ Disallow: /tools/
 Disallow: /games/
 Disallow: /equipment/
 Disallow: /fcircle/
+Disallow: /page/
 # --------- Disallows ---------
 
 Crawl-delay: 120
