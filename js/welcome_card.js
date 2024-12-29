@@ -3,7 +3,8 @@ function getDistance(a,e,t,c){const{sin:o,cos:i,asin:s,PI:n,hypot:r}=Math
 let p=(a,e)=>(a*=n/180,{x:i(e*=n/180)*i(a),y:i(e)*o(a),z:o(e)}),b=p(a,e),k=p(t,c),d=2*s(r(b.x-k.x,b.y-k.y,b.z-k.z)/2)*6371
 return Math.round(d)}function showWelcome(){if(!ipLocation||!ipLocation.data)return void console.error("ipLocation data is not available.")
 let a,e,t=getDistance(118.1,24.44,ipLocation.data.lng,ipLocation.data.lat),c=ipLocation.data.country
-switch(ipLocation.ip,ipLocation.data.country){case"日本":a="よろしく，一起去看樱花吗"
+ipLocation.ip
+switch(ipLocation.data.country){case"日本":a="よろしく，一起去看樱花吗"
 break
 case"美国":a="Let us live in peace!"
 break
@@ -62,11 +63,14 @@ break
 case"洛阳市":a="千年古都洛阳，牡丹花开的城市。"
 break
 default:a="这里是河南，历史悠久文化灿烂。"}break
-case"湖南省":a="长沙市"===ipLocation.data.city?"热辣长沙，吃小龙虾逛黄兴路步行街。":"湖南，烟雨迷蒙的湘江流过这片土地。"
+case"湖南省":if("长沙市"===ipLocation.data.city)a="热辣长沙，吃小龙虾逛黄兴路步行街。"
+else a="湖南，烟雨迷蒙的湘江流过这片土地。"
 break
-case"湖北省":a="武汉市"===ipLocation.data.city?"来大武汉，过长江大桥，吃热干面！":"湖北，长江中游的明珠，风景秀丽。"
+case"湖北省":if("武汉市"===ipLocation.data.city)a="来大武汉，过长江大桥，吃热干面！"
+else a="湖北，长江中游的明珠，风景秀丽。"
 break
-case"安徽省":a="合肥市"===ipLocation.data.city?"创新之城合肥，科教文化汇聚地。":"安徽山水，黄山、九华山欢迎你。"
+case"安徽省":if("合肥市"===ipLocation.data.city)a="创新之城合肥，科教文化汇聚地。"
+else a="安徽山水，黄山、九华山欢迎你。"
 break
 case"广西壮族自治区":switch(ipLocation.data.city){case"桂林市":a="桂林山水甲天下，风景如画。"
 break
