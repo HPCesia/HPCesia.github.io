@@ -51,8 +51,7 @@ if(!t)return
 const o=document.getElementById("toPageButton"),n=document.querySelectorAll(".page-number"),s=+n[n.length-1].textContent
 t&&1!==s?(t.addEventListener("keydown",(e=>{13===e.keyCode&&(sco.toPage(),pjax.loadUrl(o.href))})),t.addEventListener("input",(()=>{o.classList.toggle("haveValue",""!==t.value&&"0"!==t.value),+t.value>s&&(t.value=s)}))):e.style.display="none"},addNavBackgroundInit(){0!==document.documentElement.scrollTop&&document.getElementById("page-header").classList.add("nav-fixed","nav-visible")},toPage(){const e=document.querySelectorAll(".page-number"),t=parseInt(e[e.length-1].innerHTML),o=document.getElementById("toPageText"),n=parseInt(o.value)
 document.getElementById("toPageButton").href=!isNaN(n)&&n<=t&&n>1?window.location.href.replace(/\/page\/\d+\/$/,"/")+"page/"+n+"/":"/"},owoBig(e){let t=document.getElementById("owo-big")
-t||(t=document.createElement("div"),t.id="owo-big",document.body.appendChild(t))
-document.addEventListener("mouseover",(o=>{const n=o.target,s=n.closest(e.item)
+t||(t=document.createElement("div"),t.id="owo-big",document.body.appendChild(t)),document.addEventListener("mouseover",(o=>{const n=o.target,s=n.closest(e.item)
 if(s&&n.closest(e.body)){const e=s.querySelector("img")?.src
 e&&(t.innerHTML=`<img src="${e}" style="max-width: 100%; height: auto;">`,t.style.display="block",(e=>{const o=e.getBoundingClientRect()
 t.style.left=o.left-t.offsetWidth/4+"px",t.style.top=`${o.top}px`})(s))}})),document.addEventListener("mouseout",(o=>{o.target.closest(e.item)&&o.target.closest(e.body)&&(t.style.display="none")}))},changeTimeFormat(e){e.forEach((e=>{const t=e.getAttribute("datetime")
