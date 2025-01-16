@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hpcesia.com/posts/1ec6f507/</loc>
+    
+    <lastmod>2025-01-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.hpcesia.com/posts/63c8a3ae/</loc>
     
     <lastmod>2025-01-08</lastmod>
@@ -256,7 +265,7 @@
 
   <url>
     <loc>https://blog.hpcesia.com/</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
