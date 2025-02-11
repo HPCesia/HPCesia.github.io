@@ -9,8 +9,40 @@
     <atom:link href="https://blog.hpcesia.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个普通的个人博客网站，记录了个人的一些互联网使用、数学、编程的学习经验</description>
-    <pubDate>Fri, 31 Jan 2025 15:31:02 GMT</pubDate>
+    <pubDate>Tue, 11 Feb 2025 11:43:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>月寄-03</title>
+      <link>https://blog.hpcesia.com/posts/a77e8b62/</link>
+      <guid>https://blog.hpcesia.com/posts/a77e8b62/</guid>
+      <pubDate>Tue, 11 Feb 2025 11:43:43 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;ai-辅助开发&quot;&gt;AI 辅助开发&lt;/h2&gt;
+&lt;p&gt;最近，我在使用 Astro
+给自己开发一个全新的主题，同时也第一次尝试了新一代的 AI
+辅助开发。此前，我主要都是在使用 VSCode 的 Continue 插件，使用</description>
+          
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="ai-辅助开发">AI 辅助开发</h2><p>最近，我在使用 Astro给自己开发一个全新的主题，同时也第一次尝试了新一代的 AI辅助开发。此前，我主要都是在使用 VSCode 的 Continue 插件，使用 AI进行代码补全，以及使用对话功能来问问题。随着 Cursor、DeepSeek的火爆，我决定也尝试一下新一代的 AI 辅助编程。</p><p>出于某种 VSCode 情结，我没有选择去试用 Cursor，而是选择了 VSCode的插件 Roo Cline。选择 Cline 的分支 Roo Cline 是因为这个分支版本可以调用VSCode 自己的大模型接口，即调用 GitHub Copilot，而 GitHub Copilot只限制对话次数，不限制每次对话使用的 token 量，Pro 版本不限次数，10刀每月的价格也还算负担得起。</p><p>使用体验下来，用来写一些简单的脚本，或者使用 AI来进行「重复性」的修改，比如相似的两个代码，改完一个，让 AI参考已有修改帮忙改另一个代码，这类工作 AI做的还是很不错的。但是，对于一些复杂的逻辑，或者小众一点的插件，AI的表现就不尽如人意了。很多时候 AI会生成一些完全不可用的代码，与其慢慢通过对话让 AI调整，还不如我自己直接看文档和其他开源代码自己手搓。</p><h2 id="新主题">新主题</h2><p>经过大半个月的爆肝开发，目前我的 Astro新主题已经基本可用了。新主题基本就是缝的 <ahref="https://github.com/saicaca/fuwari">Fuwari</a> 和现在用的Solitude，而且因为用了比较新的包，比如 Tailwind4，所以浏览器兼容性也比较悲惨。目前，新主题还处于开发阶段，我个人想要的功能还差一些没实现，但基本的功能已经差不多了，所以我就先把它开源并上线了一个<a href="https://astral-halo.netlify.app/" rel="external nofollow noreferrer">Demo</a>。</p><p>新主题名字叫「Astral Halo」，从「Moon Halo」根据开发框架的名字 Astro变化而来，和 Halo 框架没啥关系。</p><h2 id="初试-deepseek">初试 DeepSeek</h2><p>初试 DeepSeekR1，我选择让它来从我的过往周/月记来分析我在这个博客中的人设。得到的结果，让我亲身体验了一把什么叫“作者本人做阅读理解都及不了格”（笑）。比如在周寄（三） 中，我聊到了我的保温杯迭代史。DeepSeek R1分析认为，保温杯这节“是作者生存焦虑的具象化，反映了作者对完美容器的追寻，最终选择将博客作为自己的精神容器”。</p><p>嗯，分析得很好，要是我自己写的时候也是这么想的就好了。事实只是我只是没啥好写的了，就拿保温杯来说事。</p><h2 id="拖延症晚期">拖延症晚期</h2><p>当初和导师说好了，要每周汇报一下学习进度，但到今天，我已经 3周没跟导师汇报任何进度了。本来想着年前的周一肝一下进度，给导师发点东西凑合一下，结果中午突然被我爸拉到爷爷奶奶家里了，还没带电脑，只能一边躺在沙发上就着电视节目的声音当BGM 打手机摸鱼，一边心里全是对论文的焦虑。</p><p>若是正常完成了学习进度，倒也不必如此焦虑，但我那天因为忙着搓博客的新主题，已经连着两周没有碰论文相关的东西了，就等着周一赶一点东西先糊弄一下导师，过年在家里蹲着的时候补回来，结果被我爸一下打断了计划。</p><h2 id="游戏">游戏</h2><p>最近又把《辐射：新维加斯》（以下简称FONV）捡回来了。之前因为这游戏翻来覆去玩了太多遍有些腻，外加上游戏原先使用的内核汉化（翻译游戏内部的文本字符串）会和我喜欢的mod 起冲突，直接玩英文原版看着又太费劲，所以弃了半年。</p><p>最近翻到之前知乎上对我配置畅玩 FONV 的 mod配置帮助极大的《游骑兵指南》更新了，将汉化换成了外挂汉化（直接翻译游戏时屏幕显示文本）。外挂汉化除去一些文字位置和大小的问题外，与各种mod 都算兼容相当良好的。简单尝试了一下后，我对 FONV的激情又重新点燃了，这些天基本就是肝论文学习进度、肝新主题和打FONV，顺便穿插一下几个米哈游游戏的活动和日常<del>（然后因为春节活动相比惯例提前一天结束，错过了好多剧情和奖励，死线战士大失败）</del>。</p><h2 id="轻功">轻功</h2><p>起因是我最近做的一个梦，梦里我被人追杀，跑着跑着就开始飘了起来，追逐直接变成了皇牌空战。这种飘起来的感觉我很熟悉——在记忆里，我小时候经常在回家路上走着走着就飘起来，一开始是一步能跨上两三米才落地，然后越飘越高，直接飘到和家里阳台齐平。理性告诉我，这应当是我将自己的梦境和小时候的记忆混淆了，但这种印象却如此真实，让我难以否定这种飘起来的感觉只是臆想。</p><p>过了两天，和我爸在吃完饭后闲聊，聊到我妈最近在学习中医，顺带着就聊到了一些比较「封建迷信」的东西。我爸说，他以前会做梦梦到自己飘了起来，就像小说里的轻功一般。我听了这话，心里一惊，这不就是我梦里的感觉吗？很好奇，这种感觉是不是人人都有的。此前我从没想过会有人与我有相同的「飘起来」的感受，如果这种感受是普遍存在的，那这可能就是所谓轻功的源头之一吧。</p><h2 id="中医与科学迷信">中医与「科学迷信」</h2><p>既然上文提到了我妈在学中医，那就顺便聊聊这个可能有点争议的点吧。我对中医的看法，很长一段时间都是「中医作为一种经验医学，应当通过科学的方式现代化」，具体到治疗手段，我对中药基本是嗤之以鼻的，对理疗则还算接受。</p><p>而转折点则是我妈，在当了几十年医生以后，选择自学中医，并自费报名中医院的中医课程（正规课程，学习完可以开中药处方，但不能以中医身份行医）。这种中医学习名额，在不少医院都是免费拉人都难，但我妈却选择交钱也要学，还会通宵背书考试。本来在一开始，看到我妈买了一堆中药熬汤喝、拉住我去中医院看病的时候，我还觉得只是她人老了开始搞迷信了，直到我开始思考。</p><p>我意识到一个问题：我有什么资格，来认为一个当了几十年医生，还会偶尔去任教医学生的人，她学习中医就是「封建迷信」？我自己又有什么资格，来认为中医是「迷信」？我对中医是「迷信」的认知，来源于网络上各种评论、文章对中医、中药的攻击，但我自己又有多少了解中医呢？我只有对中医是「迷信」的认知，却对这些认知的来源没有足够的了解，这不就是「科学迷信」吗？</p>]]></content:encoded>
+      
+      
+      <category domain="https://blog.hpcesia.com/categories/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/">生活点滴</category>
+      
+      
+      <category domain="https://blog.hpcesia.com/tags/%E5%91%A8-%E6%9C%88%E8%AE%B0/">周/月记</category>
+      
+      
+      <comments>https://blog.hpcesia.com/posts/a77e8b62/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Hello, PyTorch (1.5) | 环境配置（非 Docker 版)</title>
@@ -530,31 +562,6 @@ Subsystem Linux 2）。以下以</description>
       
       
       <comments>https://blog.hpcesia.com/posts/ef7d6a4/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>多复变函数论笔记 - 第一章 全纯函数 - 第一节 复欧氏空间</title>
-      <link>https://blog.hpcesia.com/posts/d6f83120/</link>
-      <guid>https://blog.hpcesia.com/posts/d6f83120/</guid>
-      <pubDate>Fri, 20 Sep 2024 12:48:48 GMT</pubDate>
-      
-      <description>多复变函数论学习笔记 - 复欧氏空间</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="符号简述">符号简述</h2><p><span class="math inline">\(\mathbb{R}\)</span> 和 <spanclass="math inline">\(\mathbb{C}\)</span> 分别表示实数域和复数域，<spanclass="math inline">\(\mathbb{Z}\)</span> 和 <spanclass="math inline">\(\mathbb{N}\)</span> 分别表示整数和非负整数，<spanclass="math inline">\({\mathbb{N}}^{+}\)</span> 表示正整数。</p><h2 id="定义">定义</h2><p>对 <span class="math inline">\(n \in {\mathbb{N}}^{+}\)</span>，定义<span class="math inline">\(n\)</span> 个复平面的笛卡尔积为 <spanclass="math inline">\(n\)</span> 维复数空间 <spanclass="math display">\[{\mathbb{C}}^{n} = \left\{ z:z = \left(z_{1},z_{2},\cdots,z_{n} \right),z_{j} \in {\mathbb{C}},1 \leq j \leq n\right\},\]</span> 其具有自然的 <span class="math inline">\(n\)</span>维复向量空间结构。<span class="math inline">\({\mathbb{C}}^{n}\)</span>上的<strong>标准 Hermite 内积</strong>为 <spanclass="math display">\[\left\langle a,b \right\rangle = \sum_{j =1}^{n}a_{j}\overline{b_{j}},\quad a,b \in {\mathbb{C}}^{n},\]</span>该内积产生的<strong>范数</strong> <span class="math inline">\(\left\| a\right\| = \left\langle a,a \right\rangle\)</span> 诱导出了 <spanclass="math inline">\({\mathbb{C}}^{n}\)</span>中的<strong>欧氏距离</strong> <spanclass="math display">\[\operatorname{dist}(a,b) = \left\| {a - b}\right\|,\quad\forall a,b \in {\mathbb{C}}^{n}.\]</span>为与一维复空间的 <span class="math inline">\(|z| =z\overline{z}\)</span> 书写形式统一，对 <span class="math inline">\(z\in {\mathbb{C}}^{n}\)</span>，也记 <span class="math inline">\(|z| =\left\| z \right\|\)</span>。</p><h2 id="与-r²ⁿ-的联系">与 R²ⁿ 的联系</h2><p>定义以 <span class="math inline">\(a \in {\mathbb{C}}^{n}\)</span>为圆心，<span class="math inline">\(r &gt; 0\)</span>为半径的<strong>开球</strong>为 <span class="math display">\[B(a,r) =\left\{ z \in {\mathbb{C}}^{n}:\left| {z - a} \right| &lt; r\right\}.\]</span></p><p>设 <span class="math inline">\(z = \left( z_{1},z_{2},\cdots,z_{n}\right) \in {\mathbb{C}}^{n}\)</span>，记 <spanclass="math inline">\(z_{j} = x_{j} + ix_{j + n},x_{j},x_{j + n} \in{\mathbb{R}}\)</span>，则映射 <spanclass="math display">\[f:{\mathbb{C}}^{n} \rightarrow{\mathbb{R}}^{2n},\quad f(z) = \left( x_{1},\cdots,x_{2n}\right)\]</span> 是 <spanclass="math inline">\({\mathbb{C}}^{n}\)</span> 到 <spanclass="math inline">\({\mathbb{R}}^{2n}\)</span> 的一个实线性同构，且对<span class="math inline">\({\mathbb{R}}^{2n}\)</span> 上的 L-2 范数有<span class="math inline">\(\left| {f(z)} \right|_{2} =|z|\)</span>，所以 <span class="math inline">\(f\left( B(a,r)\right)\)</span> 为 <spanclass="math inline">\({\mathbb{R}}^{2n}\)</span> 上以 <spanclass="math inline">\(f(a) \in {\mathbb{R}}^{n}\)</span> 为圆心，<spanclass="math inline">\(r &gt; 0\)</span> 为半径的开球，即 <spanclass="math inline">\({\mathbb{C}}^{n}\)</span> 与 <spanclass="math inline">\({\mathbb{R}}^{2n}\)</span> 拓扑同胚。</p><p>由此可将 <span class="math inline">\({\mathbb{R}}^{2n}\)</span>中的拓扑、分析的通常概念替换到 <spanclass="math inline">\({\mathbb{C}}^{n}\)</span> 中。</p><h2 id="基础概念">基础概念</h2><ul><li><p><strong>开集</strong>：设 <span class="math inline">\(D \subset{\mathbb{C}}^{n}\)</span> 为一点集，若 <spanclass="math inline">\(\forall a \in D\)</span>，<spanclass="math inline">\(\exists r &gt; 0\)</span>，使得 <spanclass="math inline">\(B(a,r) \subset D\)</span>，则称 <spanclass="math inline">\(D\)</span> 为开集。</p></li><li><p><strong>连通集</strong>：设 <span class="math inline">\(D \subset{\mathbb{C}}^{n}\)</span> 为一点集，若 <spanclass="math inline">\(D\)</span> 不能表示为两个非空开集之并，则称 <spanclass="math inline">\(D\)</span> 是连通的。</p></li><li><p><strong>区域</strong>：连通的开集。</p></li><li><p><strong>相对紧子集</strong>：设 <spanclass="math inline">\(\Omega \subset D\)</span> 为一子集，若其闭包 <spanclass="math inline">\(\overline{\Omega} \subset D\)</span>，则称 <spanclass="math inline">\(\Omega\)</span> 为 <spanclass="math inline">\(D\)</span> 的一个相对紧子集，记为 <spanclass="math inline">\(\Omega \subset \subset D\)</span>。</p></li><li><p><strong>多圆柱</strong>：</p><p>定义以 <span class="math inline">\(a = \left( a_{1},\cdots,a_{n}\right) \in {\mathbb{C}}^{n}\)</span> 为圆心，<spanclass="math inline">\(r = \left( r_{1},\cdots,r_{n} \right)\left( r_{j}&gt; 0,1 \leq j \leq n \right)\)</span>为（多）半径的<strong>开多圆柱</strong>为 <spanclass="math display">\[P(a,r) = \left\{ z \in {\mathbb{C}}^{n}:\left|{z_{j} - a_{j}} \right| &lt; r_{j},1 \leq j \leq n \right\},\]</span>其为 <span class="math inline">\(\mathbb{C}\)</span> 中 <spanclass="math inline">\(n\)</span> 个开圆盘的笛卡尔积。</p></li><li><p><strong>多圆域</strong>：</p><p>更一般地，称 <span class="math inline">\(n\)</span> 个复平面区域<span class="math inline">\(D_{j} \in {\mathbb{C}}(1 \leq j \leqn)\)</span> 的笛卡尔积 <span class="math inline">\(D = D_{1} \times\cdots \times D_{n}\)</span> 为一个<strong>多圆域</strong>。</p></li></ul><p>点集 <span class="math inline">\(A \subset {\mathbb{C}}^{n}\)</span>的<strong>拓扑边界</strong>记为 <spanclass="math inline">\(\mathfrak{b}A\)</span></p><h2 id="绝对空间">绝对空间</h2><p>称映射 <span class="math inline">\(\tau:{\mathbb{C}}^{n} \rightarrow{\mathbb{R}}_{+}^{n},f(a) = f\left( \left( a_{1},\cdots,d_{n} \right)\right) = \left( \left| a_{1} \right|,\cdots,\left| a_{n} \right|\right)\)</span> 为<strong>绝对空间</strong>，<spanclass="math inline">\({\mathbb{C}}^{n}\)</span>中点集在绝对空间下的像可更为方便地用几何表示。</p><p>例如，容易画出 <span class="math inline">\(\tau(B(0,r))\)</span> 和<span class="math inline">\(\tau(P\left( 0,\left( r_{1},r_{2} \right)\right))\)</span> 在绝对空间的图形如下： <imgsrc="https://bu.dusays.com/2024/10/28/671f2b666adb9.webp" /></p><h2 id="hartogs-图形">Hartogs 图形</h2><p>当 <span class="math inline">\(n &gt; 2\)</span>时，为简化书写，通常记 <span class="math inline">\(z = \left(z&#39;,z_{n} \right)\)</span>，其中 <span class="math inline">\(z&#39; =\left( z_{1},\cdots,z_{n - 1} \right) \in {\mathbb{C}}^{n -1}\)</span>。</p><p>设 <span class="math inline">\(r = \left( r_{1},\cdots,r_{n}\right)\)</span> 满足 <span class="math inline">\(0 &lt; r_{j} &lt; 1,1\leq j \leq n\)</span>，定义区域 <spanclass="math display">\[\begin{aligned}H(r) = &amp; \left\{ z = \left( z&#39;,z_{n} \right) \in{\mathbb{C}}^{n}:z&#39; \in P&#39;(0,r&#39;),\left| z_{n} \right| &lt; 1\right\} \\&amp; \cup \left\{ z = \left( z&#39;,z_{n} \right) \in{\mathbb{C}}^{n}:z&#39; \in P&#39;(0,r&#39;),r_{n} &lt; \left| z_{n}\right| &lt; 1 \right\}\end{aligned}\]</span> 则 <span class="math inline">\(H(r)\)</span>的图形可表示如下：</p><p><img src= "" data-lazy-src="https://bu.dusays.com/2024/10/28/671f2b64b306f.webp" /></p><p>称 <span class="math inline">\(\left( H(r),P(0,1) \right)\)</span>这样的一个「对」为一个（欧式）Hartogs 图形。</p><h2 id="reinhardt-域">Reinhardt 域</h2><p>注意对 <span class="math inline">\(r = \left( r_{1},\cdots,r_{n}\right) \in {\mathbb{R}}_{+}^{n}\)</span> 而言， <spanclass="math display">\[\tau^{( - 1)(r)} = \left\{ \left(r_{1}e^{i\theta_{1}},\cdots,r_{n}e^{i\theta_{n}} \right):0 \leq\theta_{j} \leq 2\pi,1 \leq j \leq n \right\}\]</span> 是一个 <spanclass="math inline">\(n\)</span> 维的<span class="bubble-content">实环面</span><span class="bubble-notation"><span class="bubble-item bg-red">n 个圆环的笛卡尔积</span></span>。因此有如下定义：</p><p>设 <span class="math inline">\(\Omega \in {\mathbb{C}}^{n}\)</span>为一点集，若 <span class="math inline">\(\forall a \in\Omega\)</span>，环面 <span class="math display">\[\tau^{( - 1)\left(\tau(a) \right)} = \left\{ z \in {\mathbb{C}}^{n}:z = \left(a_{1}e^{i\theta_{1}},\cdots,a_{n}e^{i\theta_{n}} \right),0 \leq\theta_{j} \leq 2\pi,1 \leq j \leq n \right\}\]</span> 也落在 <spanclass="math inline">\(\Omega\)</span> 内，则称 <spanclass="math inline">\(\Omega\)</span> 是<strong>圆形的</strong>。在<span class="math inline">\({\mathbb{C}}^{n}\)</span>中，只有圆形点集的绝对空间表示才是有意义的。</p><p>设 <span class="math inline">\(\Omega \in {\mathbb{C}}^{n}\)</span>为以原点为中心的开圆形域，则称 <spanclass="math inline">\(\Omega\)</span> 为 <strong>Reinhardt域</strong>。若 <span class="math inline">\(\Omega\)</span> 还满足 <spanclass="math inline">\(\forall a \in \Omega\)</span>，均有 <spanclass="math inline">\(P\left( 0,\tau(a) \right) \subset\Omega\)</span>，则称 <span class="math inline">\(\Omega\)</span>是<strong>完备的</strong>。<span class="math inline">\(B(0,r)\)</span>和 <span class="math inline">\(P(0,r)\)</span> 是完备的 Reinhardt域，但是 <span class="math inline">\(H(r)\)</span> 是不完备的 Reinhardt域。</p><p>考虑全纯函数的洛朗级数展开时就会遇到 Reinhardt 域，<spanclass="math inline">\(\mathbb{C}\)</span> 中典型的完备 Reinhardt域是以原点为圆心的开圆盘，而典型的不完备 Reinhardt域是以原点为圆心的圆环区域。</p>]]></content:encoded>
-      
-      
-      <category domain="https://blog.hpcesia.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</category>
-      
-      
-      <category domain="https://blog.hpcesia.com/tags/%E6%95%B0%E5%AD%A6/">数学</category>
-      
-      <category domain="https://blog.hpcesia.com/tags/%E5%A4%9A%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/">多复变函数</category>
-      
-      
-      <comments>https://blog.hpcesia.com/posts/d6f83120/#disqus_thread</comments>
       
     </item>
     
